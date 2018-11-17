@@ -1,20 +1,121 @@
-*{
-	margin: 0;
-	padding: 0;
+.top{
+	height: 40px;
+	background: #333333;
+	line-height: 40px;
 }
-.center{
-	width: 1226px;
-	margin-left: auto;
-	margin-right: auto;
+.top-top1-span{
+	color: #3B423B;
 }
-li{
+.top-top2{
+	float: right;
+	height: 40px;
+	width: 120px;
+	background: #424242;
+	box-sizing: border-box;
+}
+.top-top2-i{
+	font-size: 20px;
+	margin-right: 5px;
+}
+.top-top2 a{
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.top-top3{
+	float: right;
+	margin-right: 20px;
+}
+.top-top3-span{
+	color: #3B423B;
+}
+.top1{
+	height: 100px;
+	border: 1px solid #000;
+}
+.top1-top1{
 	float: left;
-	list-style: none;
+	width: 55px;
+	height: 55px;
+	margin-top: 22px;
+	background: #ff6700;
 }
-a{
-	text-decoration: none;
-	font-size: 12px;
+.top1-top1 a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: -9999em;
 }
-a:hover{
+.top1 .top1-top2{
+	float: left;
+	margin-left: 190px;
+}
+.top1-top2 li{
+	float: left;
+	height: 100px;
+	line-height: 100px;	
+	margin-right: 20px;
+}
+.top1-top2 li a{
+	font-size: 16px;
+	color: #333;
+}
+.top1-top2 li a:hover{
+	color: #ff6700;
+}
+.top1-top3{
+	float: right;
+	width: 296px;
+	height: 50px;
+	margin-top: 25px;
+	display: inline-block;
+	position: relative;
+}
+.top1-top3 .top1-top3-text{
+	float: left;
+	width: 246px;
+	height: 100%;
+	border: 1px solid #e0e0e0;
+	outline: none;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.top1-top3 .top1-top3-botton{
+	float: left;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	cursor: pointer;
+	border: 1px solid #e0e0e0;
+	border-left: none;
+	box-sizing: border-box;
+	text-align:center;
+	font-size: 18px;
+}
+.top1-top3 .top1-top3-botton:hover{
+	background:  #ff6700;
 	color: white;
+}
+.top1-top3 span{
+	position: absolute;
+	left:100px;
+	line-height: 50px;
+}
+.top1-top3 span a{
+	display: inline-block;
+	height: 18px;
+	line-height: 18px;
+	padding: 0 6px;
+	color: #757575;
+	background: #eee;
+}
+.top1-top3 span a:hover{
+	background: #ff6700;
+	color: white;
+
 }
