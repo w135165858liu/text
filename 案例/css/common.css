@@ -35,3 +35,6 @@ a{
 a:hover{
 	color: #fff;
 }
+div{
+	box-sizing: border-box;
+}
