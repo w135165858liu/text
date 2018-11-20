@@ -23,6 +23,7 @@ li{
 	clear: both;
 	height: 0;
 	visibility: hidden;
+	list-style-type: none;
 }
 .clearfix{
 	*zoom:1;
@@ -37,4 +38,9 @@ a:hover{
 }
 div{
 	box-sizing: border-box;
+}
+.exposure{
+	display:block;
+	height: 100%;
+	width: 100%;
 }
