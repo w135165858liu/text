@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>换肤</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			margin: 200px auto;
+			background-image: url(../text/6.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+	</style>
+	<script>
+		function spin1(){
+			document.getElementById('box').style.backgroundImage="url(../text/6.jpg)"
+		}
+		function spin2(){
+			document.getElementById('box').style.backgroundImage="url(../text/5.jpg)"
+		}
+	</script>
+</head>
+<body>
+	<input type="button" onclick="spin1()" value="点我">
+	<input type="button" onclick="spin2()" value="点我">
+	<div id="box"></div>
+</body>
+</html>

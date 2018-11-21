@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-内部样式</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			margin:200px auto;
+			background: red;
+		}
+	</style>
+	<script>
+		function toBig(){
+			var oDiv=document.getElementById('box')
+			oDiv.style.width='400px';
+			oDiv.style.height='400px';
+			oDiv.style.background='blue';
+		}
+		function toSmall(){
+			var oDiv = document.getElementById('box')
+			oDiv.style.width='200px';
+			oDiv.style.height='200px';
+			oDiv.style.background='#ff6700';
+		}
+		function toBig(){
+			var oDiv = document.getElementById('box')
+			oDiv.style.border='10px solid #ff6700';
+			oDiv.style.width='400px';
+			oDiv.style.height='400px';
+			oDiv.style.background='#fff';
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="点我" onclick="toBig()" onmouseout="toSmall()">
+	<div id="box" onmouseover="toBig()" onmouseout="toSmall()"></div>
+</body>
+</html>
