@@ -226,6 +226,73 @@
 	border-bottom: 2px solid #ff6700;
 }
 
+.top-last .video-list{
+	display: block;
+	box-sizing: border-box;
+}
+.top-last .video-item{
+	width: 296px;
+	height: 285px;
+	margin-left: 14px;
+}
+.top-last .video-item-first{
+	margin-left: 0px;
+}
+.top-last .figure-img{
+	position: relative;
+	
+	margin-bottom: 28px;
+}
+
+.top-last .figure-img img{
+	width: 296px;
+	height: 180px;
+	margin-bottom: 28px;
+}
+.top-last .figure-img a{
+	height: 180px;
+	display: block;
+}
+.top-last .figure-img span{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    width: 32px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background-color: #424242;
+    color: #fff;
+    transition: all .2s;
+    overflow: hidden;
+}
+.top-last .figure-img i {
+    font-size: 30px;
+    line-height: 20px;
+}
+.top-last h3{
+	margin: 0 0 6px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #333;
+}
+.top-last h3 a{
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*通用样式结束*/
 
 /*顶部样式开始*/
@@ -520,7 +587,7 @@
 /*闪购结束*/
 /*闪购部分开始*/
  .top4{
-	height: 564px;
+	display: block;
 	margin-bottom: 42px;
 }
  .top4-top1{
