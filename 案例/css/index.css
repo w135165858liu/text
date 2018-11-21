@@ -106,6 +106,48 @@
 	transform: translateY(-2px);
 	box-shadow: 0px 14px 5px rgba(0,0,0,0.1);
 }
+.brick-item-active:hover .review-wrapper{
+	height: 76px;
+	opacity: 1;
+}
+.review-wrapper{
+	background: #ff6700;
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    height: 0;
+    overflow: hidden;
+    font-size: 12px;
+    background: #ff6700;
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+.review-wrapper a{
+	display: block;
+	width: 234px;
+	padding: 8px 30px;
+	font-size: 12px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.review-wrapper a span{
+	display: block;
+}
+.review-wrapper a span:nth-child(1){
+	color: #fff;
+	margin-bottom: 5px;
+}
+.review-wrapper a span:nth-child(2){
+	color: rgba(255,255,255,0.6);
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
 
 
 
@@ -125,9 +167,9 @@
 	border-bottom: 2px solid #ff6700;
 }
 
+/*通用样式结束*/
 
-
-
+/*顶部样式开始*/
 .top{
 	height: 40px;
 	background: #333333;
@@ -168,6 +210,8 @@
 .top-top3-span{
 	color: #3B423B;
 }
+/*顶部样式结束*/
+/*导航部分开始*/
 .top1{
 	height: 100px;
 	overflow: hidden;
@@ -290,6 +334,8 @@
 	float: right;
 	margin-right: 0px;
 }
+/*导航部分结束*/
+/*黄金区域开始*/
 .top2{
 	width: 100%;
 	height:460px;
@@ -362,6 +408,8 @@
 	border-radius: 50%;
 	margin-right: 10px;
 }
+/*黄金区域结束*/
+/*闪购开始*/
 .top3{
 	height: 170px;
 	margin-bottom: 14px;
@@ -410,8 +458,10 @@
 .top3-top2 .first-img{
 	margin-left: 0px;
 }
+/*闪购结束*/
+/*闪购部分开始*/
  .top4{
-	height: 560px;
+	height: 378px;
 	margin-bottom: 42px;
 }
  .top4-top1{
@@ -419,9 +469,12 @@
  	height: 58px;
  	line-height: 58px;
  }
- .top4-top1-hd{
-	float: left;
-	font-size: 20px;
+ .top4-top1-hd h3{
+	margin: 0;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
 }
 .top4 .top4-top1-bt{
 	float: right;
@@ -538,9 +591,10 @@
 .top4-top2 li:last-child{
 	margin-right: 0px;
 }
-
+/*闪购部分结束*/
+/*手机部分开始*/
 .top5{
-	height: 5654px;
+	height: 6774px;
 	padding-top: 22px;
 	background: #f5f5f5;
 }
@@ -621,6 +675,8 @@
 .top5-box1{
 	height: 686px;
 }
+/*手机部分结束*/
+/*家居部分开始*/
 .top5-box2 .top5-box2-col1{
 	height: 300px;
 	width: 234px;
@@ -630,6 +686,116 @@
 	width: 234px;
 	margin-bottom: 14px;
 }
+
+/*家居部分结束*/
+/*为你推荐开始*/
+.xm-recommend{
+	width: 100%;
+	height: 320px;
+	overflow: hidden;
+	display: block;
+}
+.xm-recommend li{
+	height: 300px;
+	width:234px;
+	margin: 0 14px 14px 0;
+	text-align:center;
+	background: #fff;
+}
+.xm-recommend li:last-child{
+	margin-right: 0px;
+}
+.xm-recommend li dl{
+	height: 100%;
+	padding: 0 20px;
+}
+.xm-recommend li dt{
+	height: 200px;
+	padding: 40px 0 14px;
+	box-sizing: border-box;
+}
+.xm-recommend .xm-recommend-name{
+	margin-bottom: 10px;
+    height: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.xm-recommend .xm-recommend-price{
+	margin-bottom: 10px;
+    color: #ff6700;
+}
+
+.xm-recommend .xm-recommend-tips{
+	position: relative;
+	color: #757575;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*为你推荐结束*/
+/*热评产品开始*/
+
+.xm-review li{
+	height: 415px;
+	width: 296px;
+	margin-right: 14px;
+}
+.xm-review li:last-child{
+	margin-right: 0px;
+}
+
+.xm-review li img{
+	width: 296px;
+	height: 220px;
+	margin-bottom: 28px;
+}
+.xm-review li .review{
+	height: 72px;
+    margin: 0 28px 22px;
+}
+.xm-review li .review a{
+	color: #333;
+	font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    overflow: hidden;
+}
+.xm-review li .author{
+	position: relative;
+    height: 18px;
+    margin: 0 28px 8px;
+    padding: 0 10px 0 0;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+.info{
+	margin: 0 28px;
+}
+.info h3{
+	display: inline-block; 
+}
+.info h3 a{
+	color: #333;
+}
+.info .price{
+	display: inline;
+	color: #ff6700;
+}
+
+
+
+/*热评产品结束*/
+
 .top6{
 	height: 272px;
 }
