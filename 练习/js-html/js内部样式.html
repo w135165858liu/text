@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js外部样式</title>
+	<style>
+		div{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			transition: all 3s;
+			margin: 200px auto;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBox1 = document.getElementById('box1');
+			var oBox = document.getElementById('box');
+			function toChange(){
+				
+				oBox.style.width='100px';
+				oBox.style.height='100px';
+				oBox.style.background='red';
+				
+			}
+			oBox.onclick = function(){
+				toChange();
+			}
+			function spin1(){
+				oBox.style.width='500px';
+				oBox.style.height='500px';
+				oBox.style.background='#ff6700';
+			}
+			oBox1.onclick = function(){
+				spin1();
+			}
+
+		}
+		
+		
+	</script>
+</head>
+<body>
+	<input type="button" id="box1" value="点我">
+	<div id="box"></div>
+</body>
+</html>
