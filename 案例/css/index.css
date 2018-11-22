@@ -234,13 +234,17 @@
 	width: 296px;
 	height: 285px;
 	margin-left: 14px;
+	background: #fff;
+}
+.top-last .video-item:hover span{
+	background: #ff6700;
+	border-color: #ff6700;
 }
 .top-last .video-item-first{
 	margin-left: 0px;
 }
 .top-last .figure-img{
 	position: relative;
-	
 	margin-bottom: 28px;
 }
 
@@ -259,16 +263,15 @@
     bottom: 10px;
     width: 32px;
     height: 20px;
+    font-size: 30px;
+    line-height: 20px;
+    text-align: center;
     border: 2px solid #fff;
     border-radius: 12px;
-    background-color: #424242;
+    background-color: rgba(0,0,0,0.6);
     color: #fff;
     transition: all .2s;
     overflow: hidden;
-}
-.top-last .figure-img i {
-    font-size: 30px;
-    line-height: 20px;
 }
 .top-last h3{
 	margin: 0 0 6px;
@@ -280,7 +283,14 @@
 .top-last h3 a{
     color: #333;
 }
-
+.top-last p{
+	height: 18px;
+    margin: 0;
+    font-size: 12px;
+    color: #b0b0b0;
+    text-align: center;
+}
+    
 
 
 
@@ -923,7 +933,6 @@
 /*热评产品结束*/
 
 .top6{
-	height: 272px;
 }
 .top6 .footer-service{
 	height: 80px;
@@ -963,4 +972,95 @@
 	float: left;
 	width: 160px; 
 	height: 112px;
+}
+.col-links dt{
+	margin: -1px 0 26px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #424242;
+}
+.col-links dd{
+	margin: 10px 0 0;
+    font-size: 12px;
+    color: #333;
+}
+.col-links dd a{
+    color: #333;
+}
+.col-links dd:hover a{
+	color: #ff6700;
+}
+.top6-customer{
+	float: right;
+	text-align: center;
+	width: 252px;
+	height: 112px;
+	border-left: 1px solid #eee;
+}
+.top6-customer p{
+	text-align: center;
+	color: #616161;
+
+}
+.top6-customer .phone{
+	color: #ff6700;
+	margin: 0 0 5px;
+    font-size: 22px;
+    line-height: 1;
+    color: #ff6700;
+}
+.top6-customer a{
+	display: inline-block;
+	margin-top: 10px;
+	width: 112px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #ff6700;
+	color: #ff6700;
+}
+.top6-customer a:hover{
+	background: #ff6700;
+}
+.top6-footer{
+	height: 212px;
+	padding: 30px 0;
+}
+.top6 .top6-footer .logo-ir{
+	float: left;
+	margin-right: 10px;
+	width:57px;
+	height: 57px;
+	background: red;
+}
+.top6-footer .infor-text{
+	float: left;
+	width: 900px;
+	height: 100px;
+	color: #b0b0b0;
+}
+.top6-footer .infor-text .sites{
+	height: 18px;
+	line-height: 18px;
+}
+.top6-footer .infor-text .sites a{
+	color: #757575;
+}
+.top6-footer .infor-text .sites span{
+	color: #b0b0b0;
+    font-family: sans-serif;
+}
+.top6-footer .infor-text a:hover{
+	color: #ff6700;
+}
+.top6-footer .infor-links{
+	float: right;
+}
+.top6-footer .infor-links img{
+	height: 28px;
+}
+.top6 .slogan{
+    margin: 30px auto 0;
+    width: 267px;
+    height: 19px;
 }
