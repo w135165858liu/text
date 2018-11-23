@@ -1,6 +1,4 @@
-/*
-通用样式
-*/
+/*通用样式*/
 
 
 
@@ -306,6 +304,7 @@
 /*通用样式结束*/
 
 /*顶部样式开始*/
+
 .top{
 	height: 40px;
 	background: #333333;
@@ -347,6 +346,20 @@
 	color: #3B423B;
 }
 /*顶部样式结束*/
+.return{
+	width: 30px;
+	height: 30px;
+	border: 1px solid #000;
+	position: fixed;
+	top: 100px;
+	right: 100px;
+	text-align: center;
+	height: 30px;
+	color: #fff;
+	background: #ff6700;
+	font-size: 20px;
+	cursor: pointer;
+}
 /*导航部分开始*/
 .top1{
 	height: 100px;
@@ -1031,7 +1044,8 @@
 	margin-right: 10px;
 	width:57px;
 	height: 57px;
-	background: red;
+
+	background:#ff6700 url(../images/logo.png) no-repeat 50% 50%;
 }
 .top6-footer .infor-text{
 	float: left;
