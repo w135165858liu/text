@@ -5,7 +5,13 @@ html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre
 @font-face {
     font-family: 'iconfont';
     src: url("fonts/iconfont.eot");
-    src: url("fonts/iconfont.eot?#iefix") format("embedded-opentype")
+    src: url("fonts/iconfont.eot?#iefix") format("embedded-opentype");
+    src: url('iconfont.eot');
+  	src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  	url('iconfont.woff') format('woff'),
+  	url('iconfont.ttf') format('truetype'),
+  	url('iconfont.svg#iconfont') format('svg');
+    font-weight: normal
 }
 
 @font-face {
@@ -308,3 +314,74 @@ p{
 	color: rgba(0,0,0,1);
 }
 /*小标题结束*/
+/*分类*/
+.top3-box{
+	height: 173px;
+	padding: 18px 0;
+}
+.top3-box-box1{
+	border-bottom: 1px solid #eee;
+	min-height: 45px;
+	position: relative;
+}
+.top3-box-box1:last-child{
+	border-bottom: none;
+}
+.top3-dy-list{
+	height: 45px;
+	width: 1032px;
+	padding-left: 70px;
+	font-size: 12px;
+}
+.top3-dy-list dt{
+	position: absolute;
+    left: 0;
+    top: 11px;
+    width: 72px;
+    color: #b0b0b0;
+}
+.dd-all{
+	color: #ff6700;
+}
+.top3-dy-list dd{
+	width: 172px;
+	padding: 12px 0;
+	float: left;
+}
+.top3-dy-list dd a{
+	color: #424242;
+}
+.top3-dy-list dd a:hover{
+	color: #ff6700;
+}
+.top3-box-box1>a{
+	position: absolute;
+	top:11px;
+	right: 0px;
+    color: #757575;
+}
+
+
+
+/*分类结束*/
+/*产品展示区*/
+.top4{
+	height: 3362px;
+	background: #f5f5f5;
+	padding:20px 0 100px;
+}
+.top4-top{
+	height: 20px;
+	margin: 20px 0 ;
+}
+
+
+
+
+
+
+
+
+
+
+/*产品展示区结束*/

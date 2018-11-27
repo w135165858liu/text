@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<style>
+		#box1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			background: red;
+		}
+		#box2{
+			position: fixed;
+			top: 0px;
+			right: 0px;
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="我是按钮1" id="btn1">
+	<input type="button" value="我是按钮1" id="btn2">
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	oBtn1.onclick=function(){
+		if(oBox1.style.display=='none'){
+			oBox1.style.display='block';
+		}else{
+			oBox1.style.display='none';
+		}
+	}
+	oBtn2.onclick=function(){
+		if(oBox2.style.display=='none'){
+			oBox2.style.display='block';
+		}else{
+			oBox2.style.display='none';
+		}
+	}
+</script>
+</html>
