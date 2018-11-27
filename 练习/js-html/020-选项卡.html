@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		#tab-list{
+			overflow: hidden;
+		}
+		#tab-list li{
+			float: left;
+			width: 100px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			margin-bottom: 20px;
+		}
+		.active{
+			border-bottom: 2px solid #ff6700;
+		}
+		#tab-container li{
+			width: 400px;
+			height: 500px;
+			border: 1px solid #000;
+			text-align: center;
+			line-height: 500px;
+			font-size: 30px;
+			display: none;
+		}
+		ul #box1{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul id="tab-list">
+		<li class="active">热门</li>
+		<li>家具</li>
+		<li>电器</li>
+		<li>手机</li>
+	</ul>
+	<ul id="tab-container">
+		<li id="box1">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	var aBtn1 = document.querySelectorAll('#tab-list li');
+	console.log(aBtn1)
+</script>
+</html>
