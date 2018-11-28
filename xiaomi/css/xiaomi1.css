@@ -241,7 +241,7 @@ p{
 }
 .top1-top3 .hot-words{
 	position: absolute;
-	left:100px;
+	left:85px;
 	line-height: 50px;
 }
 .top1-top3 .hot-words a{
@@ -406,8 +406,11 @@ p{
 .top4-top-list2 li {
   padding-left: 30px;
 }
-.top4-top-list2 li input{
-  
+.top4-top-list2 li .btn1{
+  width: 18px;
+  height: 18px;
+  border:1px solid #eee;
+  background: #fff;
 }
 
 
