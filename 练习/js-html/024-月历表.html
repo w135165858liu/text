@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>月历表</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.clearfix:after{
+			display: block;
+			clear: both;
+			content: "";
+			visibility: hidden;
+			height: 0;
+		}
+		.clearfix{
+			*zoom:1;
+		}
+		.plan{
+			width: 380px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			background: #eee;
+		}
+		li{
+			list-style: none;
+			float: left;
+			width: 100px;
+			height: 100px;
+			background: #000;
+			text-align: center;
+			margin: 20px 0 0 20px;
+			line-height: 100px;
+			font-size: 30px;
+			color: #fff;
+		}
+		.active{
+			background: #fff;
+			color: #000;
+		}
+		#box{
+			width: 100%;
+			height: 100px;
+			padding:20px 20px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="plan">
+		<ul class="clearfix">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+		<div id="box">
+		<h3>1月</h3>
+		<p>吃饭</p>
+	</div>
+	</div>
+	
+</body>
+<script>
+	var aList=document.getElementsByTagName('li');
+	var oBox=document.getElementById('box');
+	oBox.innerHTML="<h3>1月</h3>";
+	console.log(oBox.innerHTML);
+
+
+	for(var i=0;i<aList.length;i++){
+		aList[i].index = i;
+		aList[i].onmouseover=function(){
+			for(var j=0;j<aList.length;j++){
+				aList[j].className='';
+			}
+			this.className='active';
+			oBox[this.index]
+		}
+	}
+</script>
+</html>

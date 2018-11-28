@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#tab-box1{
+			list-style: none;
+			width: 400px;
+			height: 50px;
+			margin-bottom: 20px;
+		}
+		#tab-box1 li{
+			width: 100px;
+			height: 50px;
+			float: left;
+			text-align: center;
+			line-height: 50px;
+			cursor: pointer;
+		}
+		.active1{
+			border-bottom: 2px solid #ff6700;
+		}
+		#tab-box2 li{
+			width: 400px;
+			height: 500px;
+			text-align: center;
+			line-height: 500px;
+			font-size: 15em;
+			display: none;
+			border: 1px solid #000;
+		}
+		#tab-box2 .active2{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul id="tab-box1">
+		<li class="active1">热门</li>
+		<li>手机</li>
+		<li>家电</li>
+		<li>家具</li>
+	</ul>
+	<ul id="tab-box2">
+		<li class="active2">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	var aBtn = document.querySelectorAll('#tab-box1 li');
+	var aBox = document.querySelectorAll('#tab-box2 li');
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].index=i;
+		aBtn[i].onclick=function(){
+			for(var j=0;j<aBtn.length;j++){
+				aBtn[j].className='';
+				aBox[j].style.display='none';
+			}
+			console.log(j)
+			this.className='active1';
+			aBox[this.index].style.display='block';
+			console.log(this);
+			console.log(this.index);
+		}
+	}
+</script>
+</html>
