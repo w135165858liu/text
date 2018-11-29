@@ -66,28 +66,28 @@
 			<li>12</li>
 		</ul>
 		<div id="box">
-		<h3>1月</h3>
-		<p>吃饭</p>
-	</div>
+			<h3>1月</h3>
+			<p>吃饭</p>
+		</div>
 	</div>
 	
 </body>
 <script>
 	var aList=document.getElementsByTagName('li');
 	var oBox=document.getElementById('box');
-	oBox.innerHTML="<h3>1月</h3>";
-	console.log(oBox.innerHTML);
-
-
+	var aBox=["吃饭","睡觉","吃饭","睡觉","吃饭","睡觉","吃饭","睡觉","吃饭","睡觉","吃饭","睡觉",]
 	for(var i=0;i<aList.length;i++){
+		aList[i].index=i;
 		aList[i].index = i;
 		aList[i].onmouseover=function(){
 			for(var j=0;j<aList.length;j++){
 				aList[j].className='';
 			}
 			this.className='active';
-			oBox[this.index]
+			oBox.innerHTML="<h1>"+(this.index+1)+"月</h1><p>"+aBox[this.index]+"</p>";
+			console.log(this.index);
 		}
+
 	}
 </script>
 </html>
