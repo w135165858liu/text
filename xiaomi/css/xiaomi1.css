@@ -425,6 +425,7 @@ p{
 /*产品展示区*/
 .goods-list{
   width: 1240px;
+  margin-bottom: 14px;
 }
 .goods-item{
   width: 296px;
@@ -435,10 +436,25 @@ p{
   float: left; 
   margin-top: 14px;
   margin-right: 14px;
+  padding-top: 47px;
+  box-sizing: content-box;
+  transition: box-shadow .5s linear;
+}
+.goods-item:hover{
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);  
 }
 .price{
   color: #ff6700;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
+.goods-item h3{
+  margin-bottom: 5px;
+}
+.goods-item h3 a{
+  color: #424242;
+}
+
 .goods-item a{
   color: #000;
 }
@@ -455,9 +471,332 @@ p{
 .icon{
   font-size: 24px;
   vertical-align: -5px;
+  font-weight: bold;
+  color: #424242;
+  opacity: 0;
+  transition: all .2s;
 }
 .icon-mean{
-  display: none;
+  opacity: 0;
+  transition: all .2s;
+}
+.goods-item:hover .icon{
+  opacity: 1;
+}
+.icon1:hover .icon-xh{
+  opacity: 1;
+}
+.icon2:hover .icon-gw{
+  opacity: 1;
+}
+.pic-big{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 25px;
+}
+.pic-small{
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  transition: all .2s;
+  margin:0px 2px; 
+}
+.pic-small img{
+  width: 34px;
+  height: 34px;
+}
+.pic-small:hover{
+  border: 1px solid #ff6700;
+}
+.item-zp{
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  padding: 1px 20px;
+  text-align: left;
+  background: #2196f3;
+  color: #fff;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+}
+.item-cx{
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  padding: 1px 20px;
+  text-align: left;
+  background:#e53935;
+  color: #fff;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  overflow: hidden;
+}
+.item-xp{
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  padding: 1px 20px;
+  text-align: left;
+  background:#83c44e;
+  color: #fff;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  overflow: hidden;
+}
+.top4-paging{
+    height: 30px;
+    padding: 15px 0;
+    text-align: center;
+    box-sizing: content-box;
 }
 
 /*产品展示区结束*/
+/*产品展示区换页*/
+
+.numbers{
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    padding: 3px 0;
+    margin: 0 7px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #b0b0b0;
+    transition: all .2s;
+}
+
+.page-first{
+  background:  #757575;
+  color: #fff;
+}
+.numbers:hover{
+  color: #fff;
+  background: #bbb;
+}
+/*产品展示区换页结束*/
+/*推荐展示*/
+.footder-container{
+  margin-top: 60px;
+  height: 410px;
+}
+.recommend-title{
+  height: 51px;
+  display: block;
+  text-align: center;
+  border-top: 1px solid #bbb;
+  position: relative;
+}
+.recommend-title span{
+  width: 482px;
+  height: 40px;
+  display: block;
+  font-size: 30px;
+  top:-22px;
+  left: 50%;
+  margin-left: -241px;
+  background: #f5f5f5;
+  color: #757575;
+  position: absolute;
+}
+.recommednd-content{
+  width: 1240px;
+  overflow: hidden;
+}
+.recommednd-content-list{
+  width: 2480px;
+  margin-bottom: 14px;
+}
+.recommednd-content-item{
+  width: 234px;
+  height: 300px;
+  background: #fff;
+  text-align: center;
+  padding-top: 40px;
+  margin-right: 14px;
+  box-sizing: border-box;
+}
+.recommednd-content-title a{
+  color: #424242;
+}
+.recommednd-content-title{
+  margin-bottom: 10px;
+}
+.recommednd-price{
+  margin-bottom: 20px;
+  
+}
+.comment{
+  color: rgba(0,0,0,0.5);
+  font-weight: bold;
+  font-size: 14px;
+}
+.recommednd-btn{
+  height: 44px;
+  text-align: center;
+}
+.recommednd-btn1{
+  width: 30px; 
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+}
+.btn{
+    display: block;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #ff6700;
+    border-radius: 6px;
+    text-align: left;
+    text-indent: -9999em;
+    overflow: hidden;
+    background-color: #fff;
+}
+.btn-active{
+    border: 2px solid #f5f5f5;
+    background-color: #bbb;
+    cursor: pointer;
+}
+.btn-active:hover{
+  background: #ff6700;
+}
+/*推荐展示结束*/
+/*最后*/
+
+.top6{
+}
+.top6 .footer-service{
+  height: 80px;
+  border-bottom:  1px solid #e0e0e0;
+  padding:27px 0 ;
+}
+.list-service{
+  height: 25px;
+  text-align: center;
+  
+}
+.list-service li{
+  width: 20%;
+  border-right:  1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-right:
+}
+.list-service li:last-child{
+  border-right: none;
+}
+.list-service a{
+  font-size: 16px;
+  color: #616161; 
+}
+.list-service a:hover{
+  color:#ff6700;
+}
+.list-service i{
+  font-size: 24px;
+  margin-right: 4px;
+  vertical-align: -4px;
+}
+.footer-links{
+  padding: 40px 0;
+}
+.col-links{
+  float: left;
+  width: 160px; 
+  height: 112px;
+}
+.col-links dt{
+  margin: -1px 0 26px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #424242;
+}
+.col-links dd{
+  margin: 10px 0 0;
+    font-size: 12px;
+    color: #333;
+}
+.col-links dd a{
+    color: #333;
+}
+.col-links dd:hover a{
+  color: #ff6700;
+}
+.top6-customer{
+  float: right;
+  text-align: center;
+  width: 252px;
+  height: 112px;
+  border-left: 1px solid #eee;
+}
+.top6-customer p{
+  text-align: center;
+  color: #616161;
+
+}
+.top6-customer .phone{
+  color: #ff6700;
+  margin: 0 0 5px;
+    font-size: 22px;
+    line-height: 1;
+    color: #ff6700;
+}
+.top6-customer a{
+  display: inline-block;
+  margin-top: 10px;
+  width: 112px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #ff6700;
+  color: #ff6700;
+}
+.top6-customer a:hover{
+  background: #ff6700;
+}
+.top6-footer{
+  height: 212px;
+  padding: 30px 0;
+}
+.top6 .top6-footer .logo-ir{
+  float: left;
+  margin-right: 10px;
+  width:57px;
+  height: 57px;
+
+  background:#ff6700 url(../images/logo.png) no-repeat 50% 50%;
+}
+.top6-footer .infor-text{
+  float: left;
+  width: 900px;
+  height: 100px;
+  color: #b0b0b0;
+}
+.top6-footer .infor-text .sites{
+  height: 18px;
+  line-height: 18px;
+}
+.top6-footer .infor-text .sites a{
+  color: #757575;
+}
+.top6-footer .infor-text .sites span{
+  color: #b0b0b0;
+    font-family: sans-serif;
+}
+.top6-footer .infor-text a:hover{
+  color: #ff6700;
+}
+.top6-footer .infor-links{
+  float: right;
+}
+.top6-footer .infor-links img{
+  height: 28px;
+}
+.top6 .slogan{
+    margin: 30px auto 0;
+    width: 267px;
+    height: 19px;
+}
