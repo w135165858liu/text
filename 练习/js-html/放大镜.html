@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			display: inline-block;
+			float: left;
+			*display: inline;
+			*zoom=1;
+		}
+		.box1{
+			width: 400px;
+			height: 225px;
+			border: 1px solid #000;
+			margin-right:20px;
+			background:url(images/HY.jpg) no-repeat;
+			background-size: contain; 
+			cursor: move;
+			overflow: hidden;
+			position: relative;
+		}
+		.box2{
+			width: 400px;
+			height: 225px;
+			border: 1px solid #000;
+			overflow: hidden;
+			position: relative;
+			display: none;
+		}
+		.big-pic{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+		.MB{
+			width: 80px;
+			height: 45px;
+			background: rgba(0,0,0,0.8);
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="MB"></div>
+	</div>
+	<div class="box2">
+		<img src="images/HY.jpg" alt="" class="big-pic">
+	</div>
+</body>
+<script>
+	var oBox1=document.querySelectorAll('.box1')[0];
+	var oBox2=document.querySelectorAll('.box2')[0];
+	var smallMb=document.querySelectorAll('.MB')[0];
+	var bigPic=document.querySelectorAll('.big-pic')[0];
+	function css(obj,attr,val){
+		obj.attr='val';
+	}
+	oBox1.onmouseout=function(){
+		css(smallMb.style.display='none');
+		css(oBox2.style.display='none');
+	}
+	oBox1.onmousemove=function(event){
+		css(smallMb.style.display='block');
+		css(oBox2.style.display='block');
+		var left=event.clientX-smallMb.offsetWidth/2;
+		var top=event.clientY-smallMb.offsetHeight/2;
+		if(left<0){
+			left=0;
+		}else if(left>oBox1.offsetWidth-smallMb.offsetWidth){
+			left=oBox1.offsetWidth-smallMb.offsetWidth;
+
+		};
+		if(top<0){
+			top=0;
+		}else if(top>oBox1.offsetHeight-smallMb.offsetHeight){
+			top=oBox1.offsetHeight-smallMb.offsetHeight;
+
+		};
+		css(smallMb.style.left=left+'px');
+		css(smallMb.style.top=top+'px');
+		css(bigPic.style.left=-(left*4)+'px');
+		css(bigPic.style.top=-(top*4)+'px');
+	}
+</script>
+</html>
