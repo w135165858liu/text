@@ -13,3 +13,22 @@ var aList1 = document.querySelectorAll('.top4-top-list2 li');
 			console.log(j)
 		}
 	}
+var aBtnr1=document.querySelectorAll('#recommednd-button1')[0];
+var aBtnr2=document.querySelectorAll('#recommednd-button2')[0];
+var oRcl=document.querySelectorAll('.recommednd-content-list')[0];
+console.log(aBtnr1);
+console.log(aBtnr2);
+console.log(oRcl);
+function css(obj,attr,val){
+	obj.attr=val;
+}
+aBtnr2.onclick=function(){
+	css(aBtnr2.className='btn');
+	css(aBtnr1.className='btn-active');
+	css(oRcl.style.marginLeft='-1240'+'px');
+}
+aBtnr1.onclick=function(){
+	css(aBtnr1.className='btn');
+	css(aBtnr2.className='btn-active');
+	css(oRcl.style.marginLeft='0'+'px');
+}

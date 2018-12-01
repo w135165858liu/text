@@ -222,6 +222,7 @@ p{
 }
 .top1-top3-text:focus ~ .top1-top4{
 	display: block;
+  z-index: 999;
 }
 .top1-top3 .top1-top3-botton{
 	float: left;
@@ -261,6 +262,7 @@ p{
 	width: 246px;
 	height: 300px;
 	border: 1px solid #ff6700;
+  background: #fff;
 	box-sizing: border-box;
 	display: block;
 	position: absolute;
@@ -609,6 +611,7 @@ p{
 .recommednd-content-list{
   width: 2480px;
   margin-bottom: 14px;
+  transition: all .5s;
 }
 .recommednd-content-item{
   width: 234px;
@@ -618,6 +621,7 @@ p{
   padding-top: 40px;
   margin-right: 14px;
   box-sizing: border-box;
+  position: relative;
 }
 .recommednd-content-title a{
   color: #424242;
@@ -628,6 +632,26 @@ p{
 .recommednd-price{
   margin-bottom: 20px;
   
+}
+.add-to-shop{
+  width: 150px;
+  height: 35px;
+  background: #ff6700;
+  text-align: center;
+  line-height:35px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;;
+  transition: all .2s;
+}
+.add-to-shop a{
+  color: #fff;
+  font-size: 14px;
+}
+.recommednd-content-item:hover .add-to-shop{
+  opacity: 1;;
 }
 .comment{
   color: rgba(0,0,0,0.5);
@@ -657,7 +681,14 @@ p{
     background-color: #fff;
 }
 .btn-active{
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    text-indent: -9999em;
+    text-align: left;
     border: 2px solid #f5f5f5;
+    overflow: hidden;
     background-color: #bbb;
     cursor: pointer;
 }
@@ -756,6 +787,7 @@ p{
 }
 .top6-customer a:hover{
   background: #ff6700;
+  color: #fff;
 }
 .top6-footer{
   height: 212px;
@@ -766,7 +798,6 @@ p{
   margin-right: 10px;
   width:57px;
   height: 57px;
-
   background:#ff6700 url(../images/logo.png) no-repeat 50% 50%;
 }
 .top6-footer .infor-text{
