@@ -62,16 +62,13 @@
 	var oBox2=document.querySelectorAll('.box2')[0];
 	var smallMb=document.querySelectorAll('.MB')[0];
 	var bigPic=document.querySelectorAll('.big-pic')[0];
-	function css(obj,attr,val){
-		obj.attr='val';
-	}
 	oBox1.onmouseout=function(){
-		css(smallMb.style.display='none');
-		css(oBox2.style.display='none');
+		smallMb.style.display='none';
+		oBox2.style.display='none';
 	}
 	oBox1.onmousemove=function(event){
-		css(smallMb.style.display='block');
-		css(oBox2.style.display='block');
+		smallMb.style.display='block';
+		oBox2.style.display='block';
 		var left=event.clientX-smallMb.offsetWidth/2;
 		var top=event.clientY-smallMb.offsetHeight/2;
 		if(left<0){
@@ -86,10 +83,10 @@
 			top=oBox1.offsetHeight-smallMb.offsetHeight;
 
 		};
-		css(smallMb.style.left=left+'px');
-		css(smallMb.style.top=top+'px');
-		css(bigPic.style.left=-(left*4)+'px');
-		css(bigPic.style.top=-(top*4)+'px');
+		smallMb.style.left=left+'px';
+		smallMb.style.top=top+'px';
+		bigPic.style.left=-(left*4)+'px';
+		bigPic.style.top=-(top*4)+'px';
 	}
 </script>
 </html>
