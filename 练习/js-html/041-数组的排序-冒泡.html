@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡</title>
+	<script>
+		var abc = [1,8,5,9,11,20,7];
+		// var abc = [1,8,5,9,11,20,7];
+		var tmp;
+		console.log('a',abc);
+		for(var i = 0; i<abc.length;i++){
+			for(var j = 0;j<abc.length;j++){
+				if(abc[i]<abc[j]){
+					tmp = abc[i];
+					abc[i] = abc[j];
+					abc[j] = tmp;
+				}
+			}
+			console.log('aaa',abc)
+		}
+		console.log('aa',abc)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

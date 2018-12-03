@@ -4,27 +4,28 @@
 	<meta charset="UTF-8">
 	<title>数组去除重复值</title>
 	<script>
-		var arr1=[1,1,2,2,5,4,3,5,1];
-		
-		function uniqueArray(arr){
-			var result=[];
-			for(var i=0;i<arr.length;i++){
-				var abc=false;
+		var arr1=[1,1,2,2,5,11,11,22,2,25,5,8,4,5,4,4,3,5,1];
+		var result = [];
+		function abc(arr){
+			for(var i = 0;i<arr.length;i++){
+				var bcd = false;
 				for(var j=0;j<arr.length;j++){
-					if(arr[i]==result[j]){
-						abc=true;
+					if(arr[i] == result[j]){
+						bcd = true;
 						break;
 					}
 				}
-				if(!abc){
+				if (!bcd) {
 					result.push(arr[i]);
 				}
+				console.log('a',!bcd);
+				console.log('aa',bcd);
 			}
-			return result;
+			// return result;
 		}
-		var arr2=uniqueArray(arr1);
-		console.log('a',arr1);
-		console.log('aa',arr2);
+		abc(arr1);
+		console.log(arr1)
+		console.log(result);
 	</script>
 </head>
 <body>

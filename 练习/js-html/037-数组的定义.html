@@ -4,10 +4,9 @@
 	<meta charset="UTF-8">
 	<title>数组的定义</title>
 	<script>
-		var arr = new Array(1,2,3,4,5,6,7);
-		arr.length=8;
+		var arr = new Array(1,2,3,7,7,7,7,74,5,6,7,11,22,33);
 		console.log(arr);
-		var arr1=[1,2,3,4,5,6,7];
+		var arr1=[1,2,3,4,5,6,7,1,2];
 		// var result=arr1.push(10,10,10,10,10);
 		// var result=arr1.pop();
 		// var result=arr1.pop();
@@ -17,13 +16,34 @@
 		// var result=arr1.unshift(111);
 		// var result=arr1.splice(2,2,111,111,111);
 		// var result=arr1.join("abc");
-		arr.concat(arr1);
 		var result=arr.concat(arr1);
+		console.log('aaa',result);
+		// var abc = result.slice(0,7);
+		// console.log('aaaa',abc);
+		// var bcd = abc.reverse();
+		// console.log('bbb',bcd);
+		var cbd = result.sort();
+		console.log('bb',cbd);
+		// var abc = result.sort(function(n1,n2){
+		// 	return n1-n2;
+		// });
+		// console.log('aaaa',abc);
+		var abc = result.sort(function(n1,n2){
+			if(n1<n2){
+				return -1;
+			}else if(n1>n2){
+				return 1;
+			}else{
+				return 0;
+			}
+		});
+		console.log('ccc',abc);
+
 		// arr.slice(2,8);
-		result.indexOf(7,0);
-		var result=result.indexOf(7,0);
-		console.log("a",arr1);fjjfkjfj
-		console.log("aa",result);
+		// result.indexOf(7,0);
+		// var result=result.indexOf(7,0);
+		// console.log("a",arr1);
+		// console.log("aa",result);
 	</script>
 </head>
 <body>
