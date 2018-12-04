@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>克隆节点</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			display: inline-block;
+		}
+		#son{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="克隆" id="btn">
+	<div id="box">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var aSon = oBox.children;
+	var allcol =3;
+	var iWidth = 100;
+	var iHeight = 100;
+	var iMargin = 15;
+	oBtn.onclick=function(){
+		var newSon = aSon[0].cloneNode(true);
+		oBox.appendChild(newSon);
+		for(var i = 0;i<aSon.length;i++){
+		var iCol =i % allcol;
+		var iRow = parseInt(i/allcol);
+		aSon[i].style.left = iCol*(iWidth+iMargin)+'px'; 
+		aSon[i].style.left = iRow*(iHeight+iMargin)+'px'; 
+		}
+
+	}
+	</script>
+</html>

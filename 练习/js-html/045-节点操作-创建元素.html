@@ -3,31 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>属性操作</title>
+	<style>
+		.active{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
 </head>
 <body>
 	<input type="text" id="in" value="">
 	<input type="button" value="点击" id="btn">
 	<textarea name="text" id="txt" cols="30" rows="10"></textarea>
+	<ul id="ul1">
+		
+	</ul>
 </body>
 <script>
 	var oIn = document.getElementById('in');
 	var oBtn = document.getElementById('btn');
 	var oTxt = document.getElementById('txt');
-	console.log(oIn);
-	console.log(oBtn);
-	console.log(oTxt);
-	var i=1;
-	
-	oBtn.onclick=function(){
-		// oIn.setAttribute(value,'111');
-		i++
-		if(i % 2 == 0){
-			oTxt.setAttribute('value','122');
-		}else{
-			oTxt.removeAttribute('value');
-		}
-		
-	}
-	console.log(oIn.value)
+	var oUl = document.getElementById('ul1')
+	var abc = document.createElement('div');
+	abc.setAttribute('class','active')
+	oUl.appendChild(abc)
+	console.log(abc)
 </script>
 </html>

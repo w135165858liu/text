@@ -5,7 +5,7 @@
 	<title>隐藏</title>
 </head>
 <body>
-	<ul>
+	<ul id="ul1">
 		<li><a href="javascript:;">隐藏</a></li>
 		<li><a href="javascript:;">隐藏</a></li>
 		<li><a href="javascript:;">隐藏</a></li>
@@ -19,6 +19,15 @@
 	</ul>
 </body>
 <script>
-	
+	 var oUl = document.getElementById('ul1');
+	 var aA = document.getElementsByTagName('a');
+	 console.log(aA)
+	 for(var i = 0;i<aA.length;i++){
+	 	aA[i].onclick=function(){
+	 		this.parentNode.style.display='none';
+	 		console.log(this.parentNode)
+	 	}
+	 	
+	 }
 </script>
 </html>

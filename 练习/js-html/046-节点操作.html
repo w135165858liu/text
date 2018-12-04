@@ -13,25 +13,22 @@
 		<li>1</li>
 		<li>7</li>
 	</ul>
-	<input type="button" value="排序" id="btn">
 	<ul id="box2">
 	</ul>
+	<input type="button" value="排序" id="btn">
 </body>
 <script>
 	var aLi = document.getElementsByTagName('li');
 	var oBtn = document.getElementById('btn');
 	var oBox2 = document.getElementById('box2')
-	var aLi1 = [];
-	for(var i=0;i<aLi.length;i++){
-		aLi1.push(aLi[i]);
-	}
-	var val = aLi1.sort(function(oLi1,oLi2){
-		return oLi1.innerHTML - oLi2.innerHTML;
-	});
 	oBtn.onclick=function(){
-		oBox2.appendChild()
+		aLi.sort(function(oLi1,oLi2){
+			return oLi1.innerHTML - oLi2.innerHTML;
+		});
+		for(var i=0;i<aLi1.length;i++){
+			oBox2.appendChild(aLi1[i])
+		}
 	}
-
 	console.log(aLi);
 	console.log(aLi1);
 	console.log(val);

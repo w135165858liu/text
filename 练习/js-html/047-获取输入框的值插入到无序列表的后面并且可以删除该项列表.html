@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>删除父元素案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 300px;
+			margin: 100px auto;
+		}
+		li{
+			width: 100%;
+			list-style: none;
+			float: left;
+			border-bottom: 1px dashed #000;
+		}
+		a{
+			float: right;
+			color: #67;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<textarea id="txt" cols="30" rows="10" ></textarea>
+		<input type="button" value="发布" id="btn">
+		<ul id="ul1">
+			
+		</ul>
+	</div>
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+	var oBtn = document.getElementById('btn');
+	var oTxt = document.getElementById('txt');
+	oBtn.onclick=function(){
+		var abc = document.createElement('li');
+		var val = oTxt.value;
+		abc.innerHTML = val;
+		oUl.insertBefore(abc,oUl[0]);
+		var aA = document.createElement('a');
+		abc.insertBefore(aA,abc);
+		aA.innerHTML = '删除';
+		aA.onclick=function(){
+			this.parentNode.parentNode.removeChild(this.parentNode)
+		}
+		oTxt.value='';
+	}
+</script>
+</html>

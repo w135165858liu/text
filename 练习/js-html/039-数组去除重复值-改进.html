@@ -8,20 +8,24 @@
 		var result = [];
 		function abc(arr){
 			for(var i = 0;i<arr.length;i++){
-				var bcd = false;
-				for(var j=0;j<arr.length;j++){
-					if(arr[i] == result[j]){
-						bcd = true;
-						break;
-					}
-				}
-				if (!bcd) {
-					result.push(arr[i]);
-				}
-				console.log('a',!bcd);
+				// var bcd = false;
+				// for(var j=0;j<arr.length;j++){
+				// 	if(arr[i] == result[j]){
+				// 		bcd = true;
+				// 		break;
+				// 	}
+				// }
+				// if (!bcd) {
+				// 	result.push(arr[i]);
+				// }
+				// console.log('a',!bcd);
 
+			//}
+				if(result.indexOf(arr[i]) == -1){
+					result.push(arr[i])
+				}
 			}
-			// return result;
+			return result;
 		}
 		abc(arr1);
 		console.log(arr1)
