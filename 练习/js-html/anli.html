@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12/4号案例练习</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+<script>
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.children;
+	var abc1 = document.createElement('li');
+	var abc2 = document.createElement('li');
+	abc1.innerHTML=0;
+	abc2.innerHTML=4;
+	oUl.insertBefore(abc1,aLi[0]);
+	oUl.appendChild(abc2);
+	oUl.removeChild(aLi[1]);
+</script>
+</html>
