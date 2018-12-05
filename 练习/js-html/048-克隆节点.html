@@ -8,40 +8,50 @@
 			margin: 0;
 			padding: 0;
 		}
-		div{
-			display: inline-block;
+		#box{
+			position: relative;
 		}
 		#son{
-			width: 100px;
-			height: 100px;
+			width: 200px;
+			height: 200px;
 			background: red;
+			position: absolute;
 		}
 	</style>
 </head>
 <body>
 	<input type="button" value="克隆" id="btn">
 	<div id="box">
-		<div id="son"></div>
+		<div id="son">
+		</div>
 	</div>
 </body>
-<script>
-	var oBtn = document.getElementById('btn');
-	var oBox = document.getElementById('box');
-	var aSon = oBox.children;
-	var allcol =3;
-	var iWidth = 100;
-	var iHeight = 100;
-	var iMargin = 15;
-	oBtn.onclick=function(){
-		var newSon = aSon[0].cloneNode(true);
-		oBox.appendChild(newSon);
-		for(var i = 0;i<aSon.length;i++){
-		var iCol =i % allcol;
-		var iRow = parseInt(i/allcol);
-		aSon[i].style.left = iCol*(iWidth+iMargin)+'px'; 
-		aSon[i].style.left = iRow*(iHeight+iMargin)+'px'; 
+	<script>
+		var oBtn = document.getElementById('btn');
+		var oBox = document.getElementById('box');
+		var aSon = oBox.children;
+		var allCol = 3; 
+		var iWidth = 200;
+		var iHeight = 200;
+		var iMargin = 15;
+		var i = 0;
+		oBtn.onclick=function(){
+			var newSon = aSon[0].cloneNode(true);
+			oBox.appendChild(newSon);
+			for(var i = 1;i<aSon.length;i++){
+				var iCol = i % allCol;
+				var iRow = parseInt(i / allCol);
+				aSon[i].style.left = iCol *(iWidth + iMargin)+'px';
+				aSon[i].style.top = iRow *(iHeight + iMargin)+'px';
+			}
+			var oBtn2 = document.createElement('button');
+			oBtn2.style.height=200+'px';
+			oBtn2.style.width=200+'px';
+			oBtn2.style.background='red';
+			newSon.appendChild(oBtn2);
+			oBtn2.onclick=function(){
+				this.parentNode.parentNode.removeChild(this.parentNode);
+			}
 		}
-
-	}
 	</script>
 </html>

@@ -41,14 +41,15 @@
 		var abc = document.createElement('li');
 		var val = oTxt.value;
 		abc.innerHTML = val;
-		oUl.insertBefore(abc,oUl[0]);
+		oUl.insertBefore(abc,oUl.children[0]);
 		var aA = document.createElement('a');
-		abc.insertBefore(aA,abc);
+		abc.appendChild(aA);
 		aA.innerHTML = '删除';
 		aA.onclick=function(){
 			this.parentNode.parentNode.removeChild(this.parentNode)
 		}
 		oTxt.value='';
+		console.log(oUl.children[0]);
 	}
 </script>
 </html>
