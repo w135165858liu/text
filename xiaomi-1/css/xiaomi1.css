@@ -878,17 +878,8 @@ p{
 .btn-active1:hover{
   background: #ff5700;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+.portion a img{
+  width: 100%;
+  display: block;
+}
 /*第二个人页面结束*/
