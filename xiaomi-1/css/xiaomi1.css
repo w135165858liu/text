@@ -88,7 +88,9 @@ p{
     overflow: hidden;
 }
 
-
+.classify{
+  position: absolute;
+}
 
 
 
@@ -877,6 +879,16 @@ p{
 }
 .btn-active1:hover{
   background: #ff5700;
+}
+.top5{
+  width: 2560px;
+  height: 8293px;
+}
+.main-content{
+  width: 2560px;
+  position: absolute;
+  left: 50%;
+  margin-left: -1280px;
 }
 .portion a img{
   width: 100%;
