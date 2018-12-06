@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  
+  <title>一个简单的数字时钟</title>
+  <script type="text/javascript" charset="utf-8">
+   // 定义一个函数用以显示当前时间
+   function displayTime() {
+    var elt = document.getElementById("clock"); // 通过id= "clock"找到元素
+    var now = new Date(); // 得到当前时间
+    elt.innerHTML = now.toLocaleTimeString(); //让elt来显示它
+    setTimeout(displayTime,1000); //在1秒后再次执行
+   }
+   
+   window.onload = displayTime; //当onload事件发生时开始显示时间
+  </script>
+  <style type="text/css" media="all">
+   #clock {
+    font: bold 24pt sans;
+    background: #ddf;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+   }
+  </style>
+ </head>
+ <body>
+  <h1>一个简单的数字时钟</h1>
+  <span id="clock"></span>
+ </body>
+ <script>
+   var today = new Date;
+    console.log(today.getFullYear()) //返回指定日期对象的年份。;
+    console.log(today.getMonth())//返回指定日期对象的月份，从0开始 (0表示一年中的第一月)//。
+    console.log(today.getDate())//返回指定日期对象在月中的第几天
+    console.log(today.getHours()) //返回指定日期对象的小时。
+    console.log(today.getMinutes()) //返回指定日期对象的分钟数。
+    console.log(today.getSeconds()) //返回指定日期对象的秒数。
+    console.log(today.getMilliseconds()) //返回指定日期对象的毫秒数。
+    console.log(today.getTime()) //返回值一个数值，表示从1970-1-1 00:00:00  UTC (世界标准时间)//距离该日期对象所代表时间的毫秒数。
+    console.log(today.getDay()) //返回指定日期对象在具体日期中一周的第几天，0 //表示星期天。
+    console.log(today.toLocaleDateString()) //返回指定日期对象的年月日字符串
+    console.log(today.toLocaleString()) //返回指定日期对象的年月日和时间字符串
+    console.log(today.toLocaleTimeString()) //返回指定日期对象的时间字符串
+ </script>
+</html>

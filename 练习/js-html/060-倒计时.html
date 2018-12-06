@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var endTime = new Date('2018/12/7 20:00:00');
+	var allseconds = (endTime - Date.now())/1000;
+	var iHours = parseInt(allseconds/3600),iMinutes = parseInt((allseconds/3600)/60),iSeconds = parseInt((allseconds/3600)%60);
+	oBox.innerHTML = '距离活动结束还剩'+iHours+'小时'+iMinutes+'分钟'+iSeconds+'秒';
+</script>
+</html>
