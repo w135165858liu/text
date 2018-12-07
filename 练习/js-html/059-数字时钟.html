@@ -5,7 +5,7 @@
 	<title>数字时钟</title>
 	<style>
 		#box{
-			width: 100px;
+			width: 300px;
 			height: 100px;
 			margin: 200px auto;
 			text-align: center;
@@ -18,18 +18,32 @@
 	</style>
 </head>
 <body>
-	<div id="box"></div>
+	<div id="box">
+		<img src="images/0.png" alt="">
+		<img src="images/0.png" alt="">
+		:
+		<img src="images/0.png" alt="">
+		<img src="images/0.png" alt="">
+		:
+		<img src="images/0.png" alt="">
+		<img src="images/0.png" alt="">
+	</div>
 </body>
 <script>
 	var oBox = document.getElementById('box');
+	var aImg = oBox.children;
+	console.log(aImg)
 	function toStr(num){
 		return num < 10 ? num = '0' + num : num = '' + num;
 	}
 	function time(){
 		var today = new Date();
 		var iHours = today.getHours(),iMinutes = today.getMinutes(),iSeconds = today.getSeconds();
-		var iTimes = toStr(iHours) + ':' + toStr(iMinutes) + ':' + toStr(iSeconds);
-		oBox.innerHTML = iTimes;
+		var iTimes = toStr(iHours) + toStr(iMinutes) + toStr(iSeconds);
+		// oBox.innerHTML = iTimes;
+		for(var i = 0 ; i < iTimes.length;i++){
+			aImg[i].src="images/"+iTimes.charAt(i)+".png"
+		}
 	}
 	setInterval(time,1000);
 	time();

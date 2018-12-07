@@ -21,11 +21,14 @@
 		return num < 10 ? num = '0' + num : num = num;
 	}
 	function Time(){
-		var endDate = new Date('2018-12-7 20:00:00');
-			var allMinseconds = endDate.getTime() - Date.now();
-			var allseconds = parseInt(allMinseconds/1000);
-			var iHours = parseInt(allseconds/3600),iMinutes = parseInt((allseconds%3600)/60),iSeconds = parseInt((allseconds%3600)%60);
-			oBox.innerHTML = '距离活动结束还剩'+toStr(iHours)+'小时'+toStr(iMinutes)+'分钟'+toStr(iSeconds)+'秒';
+		var endDate = new Date('2018-12-7 17:59:00');
+		var allMinseconds = endDate.getTime() - Date.now();
+		if(allMinseconds < 0){
+			allMinseconds=0;
+		}
+		var allseconds = parseInt(allMinseconds/1000);
+		var iHours = parseInt(allseconds/3600),iMinutes = parseInt((allseconds%3600)/60),iSeconds = parseInt((allseconds%3600)%60);
+		oBox.innerHTML = '距离活动结束还剩'+toStr(iHours)+'小时'+toStr(iMinutes)+'分钟'+toStr(iSeconds)+'秒';
 	}
 		setInterval(Time,1000);
 		Time()

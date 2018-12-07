@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>offset和clien</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			margin: 100px auto;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<div id="box2"></div>
+	</div>
+</body>
+	<script>
+		var aBox1 = document.getElementById('box1');
+		var aBox2 = document.getElementById('box2');
+		aBox1.offsetLeft//,元素的左外边框和参考父元素左内边框的距离
+		aBox1.offsetTop//,元素的上外边框和参考父元素上内边框的距离
+		aBox1.offsetWidth//,元素的宽(水平方向上边框+水平方向上内边距+内容宽+垂直滚动条)
+		aBox1.offsetHeight//,元素的高(垂直方向上边框+垂直方向上内边距+内容高+水平滚动条)
+		aBox1.clientWidth//,元素的客户区宽(水平方向上内边距+内容宽),不包括滚动条
+		aBox1.clientHeight//,元素的客户区高(垂直方向上内边距+内容高),不包括滚动条
+		if(document.compatMode == "CSS1Compat"){
+			aBox2.clientWidth=document.documentElement.clientWidth;
+		}else{
+			aBox2.clientWidth=document.body.clientWidth;
+		}
+	</script>
+</html>
