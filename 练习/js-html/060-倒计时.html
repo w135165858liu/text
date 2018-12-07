@@ -3,15 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>倒计时</title>
+	<style>
+		#box{
+			text-align: center;
+			background-color: #000;
+			color: #fff;
+			font-size: 30px;
+		}
+	</style>
 </head>
 <body>
 	<div id="box"></div>
 </body>
 <script>
 	var oBox = document.getElementById('box');
-	var endTime = new Date('2018/12/7 20:00:00');
-	var allseconds = (endTime - Date.now())/1000;
-	var iHours = parseInt(allseconds/3600),iMinutes = parseInt((allseconds/3600)/60),iSeconds = parseInt((allseconds/3600)%60);
-	oBox.innerHTML = '距离活动结束还剩'+iHours+'小时'+iMinutes+'分钟'+iSeconds+'秒';
-</script>
-</html>
+	function toStr(num){
+		return num < 10 ? num = '0' + num : num = num;
+	}
+	function Time(){
+		var endDate = new Date('2018-12-7 20:00:00');
+			var allMinseconds = endDate.getTime() - Date.now();
+			var allseconds = parseInt(allMinseconds/1000);
+			var iHours = parseInt(allseconds/3600),iMinutes = parseInt((allseconds%3600)/60),iSeconds = parseInt((allseconds%3600)%60);
+			oBox.innerHTML = '距离活动结束还剩'+toStr(iHours)+'小时'+toStr(iMinutes)+'分钟'+toStr(iSeconds)+'秒';
+	}
+		setInterval(Time,1000);
+		Time()
+	</script>
+	</html>
