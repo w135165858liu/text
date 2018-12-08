@@ -12,12 +12,15 @@
 			list-style: none;
 		}
 		.top2-top2{
+			width: 100%;
+			height:500px;
 			position: relative;
 		}
 		.top2-top2 img{
 			position: absolute;
 			width: 100%;
 			height: 500px;
+			transition: all .5s;
 		}
 		.top2-top2 a i{
 			line-height: 30px;
@@ -54,7 +57,7 @@
 			position: absolute;
 			right: 0px;
 			bottom: 20px;
-
+			z-index: 999;
 		}
 		.top2-top2-box li{
 			float: left;
@@ -64,6 +67,11 @@
 			background: rgba(0,0,0,0.4);
 			border-radius: 50%;
 			margin-right: 10px;
+			cursor: pointer;
+		}
+		ul .active{
+			border: 3px solid rgba(200,0,200,0.6);
+			background: rgba(255,255,255,1);
 		}
 	</style>
 </head>
@@ -78,7 +86,7 @@
 		</a>
 		<div class="top2-top2-box">
 			<ul>
-				<li></li>
+				<li class="active"></li>
 				<li></li>
 				<li></li>
 			</ul>
@@ -88,12 +96,47 @@
 <script>
 	var oBox = document.querySelector('.top2-top2');
 	var aImg = document.getElementsByTagName('img');
-	var aBtn1 = document.getElementById('btn1');
-	var aBtn2 = document.getElementById('btn2');
-	aBtn1.onclick=function(){
-		for(var i = 0;i<img.length;i++){
-			img[i].style.zIndex='99'
+	var aBtnLeft = document.getElementById('btn1');
+	var aBtnRight = document.getElementById('btn2');
+	var aBtn = document.querySelectorAll('li');
+	var now = 0;
+	function tab(){
+		for(var i = 0;i<aImg.length;i++){
+			aImg[i].style.zIndex='';
+			aImg[i].style.opacity='0';
+			aBtn[i].className='';
 		}
+		aImg[now].style.zIndex='99';
+		aImg[now].style.opacity='1';
+		aBtn[now].className='active';
+	}
+	aBtnLeft.onclick=function(){
+		now --;
+		if(now<0){
+			now=aImg.length-1;
+		}
+		tab();
+	}
+	aBtnRight.onclick=function(){
+		now ++;
+		if(now>aImg.length-1){
+			now = 0;
+		}
+		tab();
+	}
+	for(var i = 0;i<aBtn.length;i++){
+		aBtn[i].index = i;
+		aBtn[i].onclick=function(){
+			now = this.index;
+			tab()
+		}
+	}
+	timer = setInterval(aBtnRight.onclick,1000);
+	oBox.onmouseover=function(){
+		clearInterval(timer)
+	}
+	oBox.onmouseout=function(){
+		timer = setInterval(aBtnRight.onclick,1000);
 	}
 </script>
 </html>
