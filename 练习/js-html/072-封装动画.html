@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变透明度</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 100px;
+			margin: 100px auto;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button id="btn">开始动画</button>
+		<div id="box"></div>
+	</div>
+</body>
+<script>
+	/*
+	*@param {object} obj [节点对象]；
+	*@param {string} attr [属性名称]；
+	*@param {number} taget [属性值]；
+	*/
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer = 0;
+	function animate(obj,attr,target){
+		clearInterval(obj.timer);
+		var iSpeed = 0;
+		obj.timer = setInterval(function(){
+			var abc = getComputedStyle(oBox,false)['opacity'];
+			abc = abc*100;
+			console.log(abc)
+			if (current>target) {
+				 iSpeed= -2;
+			}else{
+				iSpeed = 2;
+			}
+			if(Math.abs(100-abc)<Math.abs(iSpeed)){
+				clearInterval(timer);
+				oBox.style.opacity = '1';
+			}else{
+				oBox.style.opacity=(abc+iSpeed)/100;
+			}
+		},30)
+	}
+
+</script>
+</html>

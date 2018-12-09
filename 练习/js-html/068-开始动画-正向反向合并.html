@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开始动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 30px;
+			left: 0px;
+		
+		}
+		.abc{
+			width: 1px;
+			height: 600px;
+			background: #000;
+			position: absolute;
+			top: 30px;
+			left: 400px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">开始动画</button>
+	<div id="box"></div>
+	<div class="abc"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer = 0;
+	var ispeed = 0;
+	oBtn.onclick=function(){
+		clearInterval(timer)
+		timer = setInterval(function(){
+			if (oBox.offsetLeft>400) {
+				ispeed = -10;
+			}else{
+				ispeed = 10;
+			}
+			if(oBox.offsetLeft==400){
+				clearInterval(timer);
+			}else{
+			oBox.style.left=oBox.offsetLeft + ispeed + 'px';
+			}
+		},4)
+	}
+</script>
+</html>

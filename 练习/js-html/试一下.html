@@ -4,13 +4,16 @@
 	<meta charset="UTF-8">
 	<title>试一下</title>
 	<script>
-		var i=0;
-		setTimeout(function(){
-			i++;
-			console.log(i)
-		})
-		console.log(i);
-		i++;
+		var a=2;
+		function test(){
+			console.log(a);
+			var a=1;
+			function test2(){
+				console.log(a)
+			}
+			test2();
+		}
+		test()
 	</script>
 </head>
 <body>
