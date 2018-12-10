@@ -39,7 +39,7 @@
 		clearInterval(obj.timer);
 		var iSpeed = 0;
 		obj.timer = setInterval(function(){
-			var abc = getComputedStyle(oBox,false)['opacity'];
+			var abc = getComputedStyle(obj,false)['opacity'];
 			abc = abc*100;
 			console.log(abc)
 			if (current>target) {
@@ -48,10 +48,10 @@
 				iSpeed = 2;
 			}
 			if(Math.abs(100-abc)<Math.abs(iSpeed)){
-				clearInterval(timer);
-				oBox.style.opacity = '1';
+				clearInterval(obj.timer);
+				obj.style.opacity = 'target';
 			}else{
-				oBox.style.opacity=(abc+iSpeed)/100;
+				obj.style.opacity=(abc+iSpeed)/100;
 			}
 		},30)
 	}
