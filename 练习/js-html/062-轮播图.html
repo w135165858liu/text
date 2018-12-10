@@ -100,11 +100,12 @@
 	var aBtnRight = document.getElementById('btn2');
 	var aBtn = document.querySelectorAll('li');
 	var now = 0;
+	var timer;
 	function tab(){
 		for(var i = 0;i<aImg.length;i++){
 			aImg[i].style.zIndex='';
 			aImg[i].style.opacity='0';
-			aBtn[i].className='';
+			aBtn[i].className = '';
 		}
 		aImg[now].style.zIndex='99';
 		aImg[now].style.opacity='1';

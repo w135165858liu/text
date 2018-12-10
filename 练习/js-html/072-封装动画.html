@@ -21,40 +21,81 @@
 	</style>
 </head>
 <body>
-	<div class="container">
 		<button id="btn">开始动画</button>
 		<div id="box"></div>
-	</div>
 </body>
 <script>
 	/*
 	*@param {object} obj [节点对象]；
 	*@param {string} attr [属性名称]；
-	*@param {number} taget [属性值]；
+	*@param {number} target [属性值]；
 	*/
 	var oBtn = document.getElementById('btn');
 	var oBox = document.getElementById('box');
-	var timer = 0;
+	// var timer = 0;
 	function animate(obj,attr,target){
 		clearInterval(obj.timer);
 		var iSpeed = 0;
 		obj.timer = setInterval(function(){
-			var abc = getComputedStyle(obj,false)['opacity'];
-			abc = abc*100;
-			console.log(abc)
-			if (current>target) {
-				 iSpeed= -2;
-			}else{
-				iSpeed = 2;
+			var current = getComputedStyle(obj,false)[attr];
+			if(attr == 'opacity'){
+				current = Math.round(current*100);
 			}
-			if(Math.abs(100-abc)<Math.abs(iSpeed)){
-				clearInterval(obj.timer);
-				obj.style.opacity = 'target';
+			if(current > target) {
+				 iSpeed = -10;
 			}else{
-				obj.style.opacity=(abc+iSpeed)/100;
+				iSpeed = 10;
+			}
+			if(Math.abs(target - current) < Math.abs(iSpeed)){
+				if(attr == 'opacity'){
+					obj.style.opacity = target / 100;
+				}else{
+					obj.style[attr] = target + 'px';
+				}
+				clearInterval(obj.timer);
+			}else{
+				if(attr == 'opacity'){
+					obj.style.opacity = (current + iSpeed) / 100;
+				}else{
+					obj.style[attr] = (current + iSpeed) + 'px';
+				}
 			}
 		},30)
 	}
-
+	function animate(obj,attr,target){
+		clearInterval(obj.timer);
+		var iSpeed = 0;
+		obj.timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(obj,false)[attr]);
+			if(attr == 'opacity'){
+				current = Math.round(current * 100);
+			}
+			if(current > target){
+				iSpeed = -10;
+			}else{
+				iSpeed = 10;
+			}
+			if(Math.abs(target - current) < Math.abs(iSpeed)){
+				if(attr == 'opacity'){
+					obj.style.opacity = target / 100;
+				}else{
+					obj.style[attr] = target + 'px';
+				}
+				clearInterval(obj.timer);
+			}else{
+				if(attr == 'opacity'){
+					obj.style.opacity = (current + iSpeed)/100;	
+				}else{
+					obj.style[attr] = current + iSpeed + 'px';
+				}
+			}
+		},30)
+	}
+	oBtn.onclick = function(){
+		animate(oBox,'opacity',100);
+	}
+	oBox.onmouseover = function(){
+		animate(oBox,'width',500);
+	}
 </script>
 </html>

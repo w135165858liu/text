@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匀速动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100%;
+			height: 100px;
+			background: gray;
+		}
+		.box2{
+			width: 100%;
+			/*height: 100px;*/
+			background: #f60;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		.box3{
+			width: 100%;
+			height: 3000px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+<script>
+	var oBox1 = document.getElementsByClassName('box1')[0];
+	var oBox2 = document.getElementsByClassName('box2')[0];
+	var oBox3 = document.getElementsByClassName('box3')[0];
+	console.log(oBox1)
+
+</script>
+</html>
