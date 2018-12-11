@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件捕获</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			margin: 100px auto; 
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>	
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	oBox.addEventListener('click',function(){
+		console.log('oBox.click')
+	},true)
+	document.body.addEventListener('click',function(){
+		console.log('document.body.click')
+	},true)
+	document.addEventListener('click',function(){
+		console.log('document.click')
+	},true)
+	window.addEventListener('click',function(){
+		console.log('window.click')
+	},true)
+	document.documentElement.addEventListener('click',function(){
+		console.log('document.documentElement.click')
+	},true)
+	//
+	oBox.addEventListener('click',function(){
+		console.log('oBox.click')
+	},false)
+	document.body.addEventListener('click',function(){
+		console.log('document.body.click')
+	},false)
+	document.addEventListener('click',function(){
+		console.log('document.click')
+	},false)
+	window.addEventListener('click',function(){
+		console.log('window.click')
+	},false)
+	document.documentElement.addEventListener('click',function(){
+		console.log('document.documentElement.click')
+	},false)
+</script>
+</html>

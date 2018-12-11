@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>综合动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			opacity: 0.3;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	function animate(obj,options){
+		var iSpeed;
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			for(var attr in options){
+				var isStopAll = true;
+				var current = parseFloat(getComputedStyle(obj,false)[attr])
+				if(attr == 'opacity'){
+					current = Math.round(current * 100);
+				}
+				if(options[attr] > current){
+					iSpeed = 10;
+				}else{
+					iSpeed = -10;
+				}
+				if(Math.abs(options[attr] - current)<Math.abs(iSpeed)){
+					if(attr == 'opacity'){
+						obj.style.opacity = current/100;
+					}else{
+						obj.style[attr]=options[attr] +'px';	
+					}
+					clearInterval(obj.timer);
+				}else{
+					if(attr == 'opacity'){
+						obj.style.opacity = (current + iSpeed)/100;
+					}else{
+						obj.style[attr]=(current + iSpeed) +'px';
+					}
+				}
+			console.log(current)
+			}
+		},30);
+	}
+	oBox.onmouseover = function(){
+		animate(oBox,{height:400,width:400,opacity:100});
+	}
+</script>
+</html>

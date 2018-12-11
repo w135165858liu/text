@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>减速动画</title>
+	<title>减速动画封装</title>
 	<style>
 		*{
 			margin: 0;
@@ -14,7 +14,7 @@
 			background: red;
 			position: absolute;
 			top: 30px;
-			left: 0px;
+			left: 800px;
 
 		}
 		.abc{
@@ -37,23 +37,35 @@
 	var oBox = document.getElementById('box');
 	var timer;
 	var ispeed;
-	oBtn.onclick=function(){
-		clearInterval(timer);
-		timer = setInterval(function(){
-			ispeed = (400 - oBox.offsetLeft)/10;
+	function animate(obj,attr,target){
+		var timer;
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(obj,false)[attr]);
+			if(attr == 'opacity'){
+				current = Math.round(current * 100);
+			}
+			if(target>current){
+				ispeed = (target - current)/100;
+			}else{
+				ispeed = -(target - current)/100;
+			}
 			ispeed = ispeed > 0 ? Math.ceil(ispeed) : Math.floor(ispeed);
 			if(ispeed == 0){
 				clearInterval(timer);
 			}
-			if(Math.abs(400-oBox.offsetLeft)<Math.abs(ispeed)){
-				oBox.style.left=400 + 'px';
+			if(Math.abs(target-current)<Math.abs(ispeed)){
+				oBox.style[attr]=target + 'px';
 				clearInterval(timer);
 
 			}else{
-				oBox.style.left=oBox.offsetLeft + ispeed + 'px';
+				oBox.style[attr]=current + ispeed + 'px';
 			}
 			console.log(ispeed)
-		},30)
+		},30);
+	}
+	oBtn.onclick=function(){
+		animate(oBox,'left',400)
 	}
 </script>
 </html>

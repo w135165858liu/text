@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>底部固定</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			background:red;
+			position: absolute;
+			right: 0px;
+			top: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+</body>
+<script src="../js/YSFZ.js"></script>
+<script>
+	var oBox1 = document.getElementById('box1');
+	// console.log(oBox1)
+	window.onload = window.onresize = window.onscroll = function(){	
+		var iTop = (window.innerHeight - oBox1.offsetHeight)/2 + getScrollTop();
+		animate(oBox1,'top',iTop)
+	}
+</script>
+</html>

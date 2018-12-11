@@ -15,7 +15,7 @@
 		}
 		.box2{
 			width: 100%;
-			/*height: 100px;*/
+			height: 0px;
 			background: #f60;
 			position: fixed;
 			top: 0;
@@ -33,11 +33,27 @@
 	<div class="box2"></div>
 	<div class="box3"></div>
 </body>
+<script src="../js/YSFZ.js"></script>
 <script>
 	var oBox1 = document.getElementsByClassName('box1')[0];
 	var oBox2 = document.getElementsByClassName('box2')[0];
 	var oBox3 = document.getElementsByClassName('box3')[0];
-	console.log(oBox1)
-
+	var bcd;
+	window.onscroll = function(){
+		var abc = getScrollTop()
+		if(abc >= 100){
+			if(!bcd){
+				console.log('a')
+				animate(oBox2,'height',100)
+				bcd = true;
+			}
+		}else{
+			if(bcd){
+				console.log('b')
+				animate(oBox2,'height',0)
+				bcd = false;
+			}
+		}
+	}
 </script>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件</title>
+
+</head>
+<body>
+	<button id="btn1">点我haha</button>
+	<button id="btn2">点我清除函数</button>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	function sayHi(){
+		alert('haha')
+	}
+	//DOM2级事件处理程序
+	oBtn1.addEventListener('click',sayHi,true);
+	oBtn2.addEventListener('click',function(){
+		oBtn1.removeEventListener('click',sayHi,true)
+	})
+</script>
+</html>
