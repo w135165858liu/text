@@ -1,4 +1,31 @@
-function animate(obj,attr,target,isLinear){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>链式调用</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 100px;
+			margin: 100px auto;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+		<button id="btn">开始动画</button>
+		<div id="box"></div>
+</body>
+<script>
+	function animate(obj,attr,target,isLinear,fn){
 	var timer = 0;
 	var iSpeed = 0;
 	if(isLinear == undefined){
@@ -39,6 +66,10 @@ function animate(obj,attr,target,isLinear){
 		}
 		if(isStopcurrent){
 				clearInterval(obj.timer);
+				// if(typeof fn == 'function'){
+				// 	fn();
+				// }
+				typeof fn == 'function' && fn();
 			}else{
 				if(attr == 'opacity'){
 					obj.style.opacity = (current + iSpeed)/100;
@@ -49,3 +80,21 @@ function animate(obj,attr,target,isLinear){
 		console.log(iSpeed)
 	},30);
 }
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	oBtn.onclick = function(){
+		animate(oBox,'height',500,false,function(){
+			animate(oBox,'width',500,false,function(){
+				animate(oBox,'opacity',100,false);
+			});
+		})
+	}
+	
+	// oBox.onmouseover = function(){
+	// 	animate(oBox,'width',500,false);
+	// }
+	// oBox.onmouseout = function(){
+	// 	animate(oBox,'height',500,true);
+	// }
+</script>
+</html>

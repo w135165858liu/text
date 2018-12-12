@@ -9,19 +9,81 @@
 			padding: 0;
 		}
 		div{
-			width: 50px;
-			height: 50px;
-			background: red;
+			width: 25px;
+			height: 25px;
 			display: inline-block;
 			position: absolute;
 			top: 0px;
 			left: 0px;
-			border-radius: 25px;
-
+			background-image: url(images/bq1.png);
+			background-size:cover;
 		}
 	</style>
 </head>
 <body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
 	<div></div>
 	<div></div>
 	<div></div>
@@ -36,12 +98,12 @@
 <script>
 	var aBox = document.querySelectorAll('div');
 	document.onmousemove = function(event){
-		aBox[0].style.top = event.clientY + getScrollTop() + 'px';
-		aBox[0].style.left = event.clientX + getScrollLeft() + 'px';
-		for(var i = aBox.length - 1 ; i > 0 ; i--){
-			aBox[i].style.top = aBox[i - 1].offsetTop + 20 + 'px';
-			aBox[i].style.left = aBox[i - 1].offsetLeft + 20 + 'px';
-		}
+			aBox[0].style.top = event.clientY + getScrollTop() + 'px';
+			aBox[0].style.left = event.clientX + getScrollLeft() + 'px';
+			for(var i = aBox.length - 1 ; i > 0 ; i--){
+				aBox[i].style.top = aBox[i - 1].offsetTop + 'px';
+				aBox[i].style.left = aBox[i - 1].offsetLeft + 20 + 'px';
+			}
 	}
 </script>
 </html>

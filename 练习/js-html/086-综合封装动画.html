@@ -24,6 +24,7 @@
 		<button id="btn">开始动画</button>
 		<div id="box"></div>
 </body>
+<script src="../js/ZHFZ.js"></script>
 <script>
 	/*
 	*@param {object} obj [节点对象]；
@@ -32,54 +33,15 @@
 	*/
 	var oBtn = document.getElementById('btn');
 	var oBox = document.getElementById('box');
-	// var timer = 0;
-function animate(obj,attr,target,isLinear,fn){
-	var timer;
-	clearInterval(obj.timer);
-	obj.timer = setInterval(function(){
-		console.log(isLinear)
-		var current = parseFloat(getComputedStyle(obj,false)[attr]);
-		if(attr == 'opacity'){
-			current = Math.round(current * 100);
-		}
-		if(isLinear){
-			if(current>target){
-				iSpeed = -80;
-			}else{
-				iSpeed = 80;
-			}
-		}else{
-			iSpeed = (target - current)/10;
-			iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
-		}
-		if(!iSpeed){
-			clearInterval(obj.timer);
-			fn()
-		}
-		if(Math.abs(target-current)<Math.abs(iSpeed)){
-			if(attr == 'opacity'){
-				obj.style.opacity = target/100;
-			}else{
-				obj.style[attr]=target + 'px';
-			}
-			clearInterval(obj.timer);
-		}else{
-			if(attr == 'opacity'){
-				obj.style.opacity = current + iSpeed;
-			}else{
-				obj.style[attr]=current + iSpeed + 'px';
-			}
-		}
-		console.log(iSpeed)
-	},30);
-}
 	oBtn.onclick = function(){
-		animate(oBox,'opacity',100,false,function(){
-			animate(oBox,height,500,false)
-		});
+		animate(oBox,'opacity',100,false)
 	}
+	
 	oBox.onmouseover = function(){
 		animate(oBox,'width',500,false);
+	}
+	oBox.onmouseout = function(){
+		animate(oBox,'height',500,true);
 	}
 </script>
 </html>
