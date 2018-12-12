@@ -13,8 +13,9 @@
 			height: 500px;
 			border: 1px solid #000;
 			background: #f60;
-			margin-top:100px;
-			display:none;
+			position: absolute;
+			left: -50px;
+			top: 100px;
 		}
 	</style>
 </head>
@@ -22,4 +23,21 @@
 	<button id="btn">点我</button>
 	<div id="box"></div>
 </body>
+<script src="../js/YSFZ.js"></script>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	oBtn.onclick = function(event){
+		event.stopPropagation()
+		
+		animate(oBox,'left',0)
+	}
+	oBox.onclick = function(event){
+		event.stopPropagation()
+	}
+	document.onclick =function(){
+
+		animate(oBox,'left',-50)
+	}
+</script>
 </html>

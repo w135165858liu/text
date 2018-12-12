@@ -14,7 +14,7 @@
 			background: red;
 			position: absolute;
 			top: 30px;
-			left: 800px;
+			left: 0px;
 
 		}
 		.abc{
@@ -45,18 +45,15 @@
 			if(attr == 'opacity'){
 				current = Math.round(current * 100);
 			}
-			if(target>current){
-				ispeed = (target - current)/100;
-			}else{
-				ispeed = -(target - current)/100;
-			}
+			ispeed = (target - current)/10;
+			// ispeed = -(target - current)/100;
 			ispeed = ispeed > 0 ? Math.ceil(ispeed) : Math.floor(ispeed);
 			if(ispeed == 0){
-				clearInterval(timer);
+				clearInterval(obj.timer);
 			}
 			if(Math.abs(target-current)<Math.abs(ispeed)){
 				oBox.style[attr]=target + 'px';
-				clearInterval(timer);
+				clearInterval(obj.timer);
 
 			}else{
 				oBox.style[attr]=current + ispeed + 'px';
