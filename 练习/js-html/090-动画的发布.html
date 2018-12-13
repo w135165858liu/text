@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画的发布</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			text-align: center;
+			padding-top: 200px;
+		}
+		li{
+			border-bottom: 1px dashed #f60;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="text">
+		<button id="btn">发布</button>
+		<ul id="ul1"></ul>
+	</div>
+</body>
+<script src="../js/DZFZ.js"></script>
+<script>
+	var oTxt = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+	var aLi = oUl.children;
+	function fb(){
+		var newChild = document.createElement('li');
+		newChild.innerHTML = oTxt.value;
+		oUl.insertBefore(newChild,aLi[0]);
+			oTxt.value = '';
+			newChild.style.height = '0'
+			animate(aLi,{height:22},true)
+	}
+	oBtn.addEventListener('click',fb,true);
+</script>
+</html>

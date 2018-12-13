@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>091-事件流-相对父元素拖拽.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 500px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 100px auto;
+/*			background: #000;*/
+			position: relative;
+			/*background-image:radial-gradient(circle at center center,rgba(244,23,234,0.2),rgba(0,0,0,0));*/
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<div id="box2">
+		</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+
+	var disX = 0;
+	var disY = 0;
+	oBox2.onmousedown = function(ev){
+		 disX = ev.clientX - oBox2.offsetLeft;
+		 disY = ev.clientY - oBox2.offsetTop;
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX,h = ev.clientY - disY
+			if(l<20){
+				l=0;
+			}else if(l+10>oBox1.offsetWidth - oBox2.offsetWidth){
+				l=oBox1.offsetWidth - oBox2.offsetWidth
+			}
+			if(h<20){
+				h=0;
+			}else if(h+10>oBox1.offsetHeight - oBox2.offsetHeight){
+				h=oBox1.offsetHeight - oBox2.offsetHeight
+			}
+
+			oBox2.style.left = l + 'px';
+			oBox2.style.top = h + 'px';
+		}
+		
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>
