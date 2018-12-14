@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+			left: 100px;
+			top: 100px;
+		}
+		#bigimg img{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			
+		}
+		#bigimg{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			cursor: move;
+		}
+		#lageimg{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			overflow: hidden;
+			position: absolute;
+			left: 330px;
+			top: 0px;
+			display: none;
+		}
+		#lageimg img{
+			width: 900px;
+			height: 900px;
+			
+		}
+		#list{
+			position: absolute;
+			left: 0px;
+			top: 325px;
+		}
+		#list li{
+			list-style: none;
+			float: left;
+			margin-left: 30px;
+		}
+		#mask{
+			display: inline-block;
+			width: 150px;
+			height: 150px;
+			background: rgba(255,255,0,0.5);
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			display: none;
+		}
+		.active{
+			background:#f60; 
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="bigimg">
+			<img src="images/bq1.png" alt="">
+			<span id="mask"></span>
+		</div>
+		<div id="lageimg">
+			<img src="images/bq1.png" alt="">
+		</div>
+		<ul id="list">
+			<li><img src="images/1.png" alt=""></li>
+			<li><img src="images/2.png" alt=""></li>
+			<li><img src="images/3.png" alt=""></li>
+		</ul>
+	</div>
+</body>
+<script>
+	var aLi = document.querySelectorAll('#list li');
+	var oBigImg = document.getElementById('bigimg');
+	var oMask = document.getElementById('mask');
+	var oLageImg = document.getElementById('lageimg');
+	var oBox = document.getElementById('box');
+	
+	for(var i = 0;i<aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].onmouseover = function(){
+			for(var j = 0 ; j<aLi.length ;j++){
+				aLi[j].className = '';
+			}
+			this.className = 'active';
+		}
+		oBigImg.onmouseover = function(){
+			oMask.style.display = 'block';
+			oLageImg.style.display = 'block';
+			oBigImg.onmousemove = function(ev){
+				oMask.style.left = ev.clientX - oMask.offsetWidth/2 - oBox.offsetLeft;
+				oMask.style.top = ev.clientY - oMask.offsetHeight/2 - oBox.offsetTop;
+				console.log(ev.clientX,oMask.offsetWidth,oMask.offsetHeight)
+			}
+		}
+		
+	}
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			text-align: center;
+			padding-top: 200px;
+		}
+		li{
+			border-bottom: 1px dashed #f60;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="text">
+		<button id="btn">发布</button>
+		<ul id="ul1"></ul>
+	</div>
+</body>
+<script src="../js/DZFZ.js"></script>
+<script>
+	var oTxt = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+	var aLi = oUl.children;
+	document.onkeydown = function(ev){
+		console.log(ev.keyCode)
+		if(ev.keyCode == 13){
+			oBtn.onclick();
+		}
+	}
+	oBtn.onclick = function(){
+		var newChild = document.createElement('li');
+		newChild.innerHTML = oTxt.value;
+		oUl.insertBefore(newChild,aLi[0]);
+		oTxt.value = '';
+	}
+</script>
+</html>

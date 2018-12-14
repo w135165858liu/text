@@ -12,10 +12,11 @@
 			width: 400px;
 			height: 30px;
 			background: #555;
+			margin:200px auto;
 			position: relative;
-			top: 200px;
+			/*top: 200px;
 			left: 50%;
-			margin-left: -200px;
+			margin-left: -200px;*/
 		}
 		.btn1{
 			width: 30px;
@@ -23,7 +24,6 @@
 			background: #f60;
 			position: absolute;
 			left: 0px;
-			top: 0px;
 		}
 		.box2{
 			width: 100px;
@@ -45,22 +45,6 @@
 	var oBtn = document.getElementsByClassName('btn1')[0];
 	var oBox2 = document.getElementsByClassName('box2')[0];
 	var disX,disY;
-	window.onmousewheel = function(ev){
-		console.log(ev.wheelDelta)
-			if(ev.wheelDelta>0){
-				t = -10;
-			}else{
-				t = 10;
-			}
-			if(oBtn.offsetLeft<10){
-				oBtn.style.left=0
-			}else if(oBox1.offsteWidth-oBtn.offsetWidth>){
-
-				oBtn.style.left = oBox1.offsteWidth-oBtn.offsetWidth + 'px';
-			}
-			oBtn.style.left = oBtn.offsetLeft + t+'px'
-			console.log(oBtn.style.left,oBtn.offsetLeft)
-		}
 	oBtn.onmousedown = function(ev){
 		disX = ev.clientX - oBtn.offsetLeft;
 		document.onmousemove = function(ev){
@@ -70,7 +54,10 @@
 			}else if(l>oBox1.offsetWidth - oBtn.offsetWidth){
 				l=oBox1.offsetWidth - oBtn.offsetWidth
 			}
+			var scale = l/(oBox1.offsetWidth - oBtn.offsetWidth);
 			oBtn.style.left = l + 'px';
+			oBox2.style.width = 100 + scale * 500 + 'px';
+			oBox2.style.height = 100 + scale * 500 + 'px';
 		}
 		document.onmouseup = function(){
 			document.onmousemove = null;

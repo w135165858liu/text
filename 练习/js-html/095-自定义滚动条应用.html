@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义滚动条</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 430px;
+			margin: 100px auto;
+			text-align: center;
+			position: relative;
+
+		}
+		.box1{
+			width: 30px;
+			height: 400px;
+			background: #555;
+			position: relative;	
+		}
+		.btn1{
+			width: 30px;
+			height: 30px;
+			background: #f60;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+		.box2{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			box-sizing: border-box;
+			position: absolute;
+			top: 0px;
+			left: 30px;
+			overflow: hidden;
+		}
+		#txt{
+			position: absolute;
+			line-height: 20px;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="box1">
+			<div class="btn1"></div>
+		</div>
+		<div class="box2">
+			<div id="txt">
+				原标题：国家统计局回应中美经贸摩擦对经济影响：并不明显
+
+新京报快讯（记者 许雯）11月国民经济数据出炉。国家统计局新闻发言人毛盛勇今日（12月14日）在国新办发布会上回应说，从当前数据看中美经贸摩擦对中国经济影响并不明显。
+
+毛盛勇表示，由于全球贸易保护主义加剧，世界经济发展态势包括世界贸易增长的步伐有所放缓，这对包括中国和其他国家不可避免地都会带来一些影响。不过，从目前来看中国经济平稳运行态势没有发生大的变化。
+
+他举例说，价格总体在合理水平，特别是居民消费价格（CPI）保持温和上涨态势，受去年翘尾减弱的影响，工业生产者出厂价格指数（PPI）有所回落；就业方面目前看也较平稳。“从这些数据来看，中美经贸摩擦的影响并不明显。”
+
+他进一步指出，中美经贸摩擦对中国经济的直接影响可能是对进出口带来影响，现在影响并不大，但是11月份当月速度有所回落。据国家统计局数据，进出口方面，11月份进出口总额28337亿元，同比增长9.1%，增速比上月回落13.4个百分点。
+
+不过，毛盛勇分析认为，影响中国出口的因素很多，比如一个国家的资源禀赋、经济结构状况、汇率情况，还有出口地国家或者地区的经济增长情况等。
+
+“我们分析发现，和出口相关度最高或者影响最大的，实际是出口国和整个世界经济的增长情况。”毛盛勇表示，中国现在对外贸易越来越多元化，包括欧盟、美国、日本、东南亚、金砖国家，以及“一带一路”沿线国家，都是重要合作伙伴，实际上进出口形势越来越多取决于整个世界经济增长情况，包括中国自身对世界经济变化适应和调整的能力。
+原标题：国家统计局回应中美经贸摩擦对经济影响：并不明显
+
+新京报快讯（记者 许雯）11月国民经济数据出炉。国家统计局新闻发言人毛盛勇今日（12月14日）在国新办发布会上回应说，从当前数据看中美经贸摩擦对中国经济影响并不明显。
+
+毛盛勇表示，由于全球贸易保护主义加剧，世界经济发展态势包括世界贸易增长的步伐有所放缓，这对包括中国和其他国家不可避免地都会带来一些影响。不过，从目前来看中国经济平稳运行态势没有发生大的变化。
+
+他举例说，价格总体在合理水平，特别是居民消费价格（CPI）保持温和上涨态势，受去年翘尾减弱的影响，工业生产者出厂价格指数（PPI）有所回落；就业方面目前看也较平稳。“从这些数据来看，中美经贸摩擦的影响并不明显。”
+
+他进一步指出，中美经贸摩擦对中国经济的直接影响可能是对进出口带来影响，现在影响并不大，但是11月份当月速度有所回落。据国家统计局数据，进出口方面，11月份进出口总额28337亿元，同比增长9.1%，增速比上月回落13.4个百分点。
+
+不过，毛盛勇分析认为，影响中国出口的因素很多，比如一个国家的资源禀赋、经济结构状况、汇率情况，还有出口地国家或者地区的经济增长情况等。
+
+“我们分析发现，和出口相关度最高或者影响最大的，实际是出口国和整个世界经济的增长情况。”毛盛勇表示，中国现在对外贸易越来越多元化，包括欧盟、美国、日本、东南亚、金砖国家，以及“一带一路”沿线国家，都是重要合作伙伴，实际上进出口形势越来越多取决于整个世界经济增长情况，包括中国自身对世界经济变化适应和调整的能力。
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementsByClassName('box1')[0];
+	var oBtn = document.getElementsByClassName('btn1')[0];
+	var oBox2 = document.getElementsByClassName('box2')[0];
+	var oTxt = document.getElementById('txt');
+	var oBox = document.getElementById('box');
+	var disX,disY,t;
+	oBtn.onmousedown = function(ev){
+		disY = ev.clientY - oBtn.offsetTop;
+		document.onmousemove = function(ev){
+			t = ev.clientY - disY;
+			handleMove();
+			
+		}
+		oBox.onmousewheel = function(ev){
+			console.log(ev.wheelDelta)
+			if(ev.wheelDelta<0){
+				t += 10;
+			}else{
+				t -= 10;
+			}
+			handleMove();
+			console.log(disY,t,ev.clientY,oBtn.offsetTop)
+		}
+		function handleMove(){
+			if(t<0){
+				t = 0;
+			}else if(t > oBox1.offsetHeight - oBtn.offsetHeight){
+				t = oBox1.offsetHeight - oBtn.offsetHeight
+			}
+			var scale = t/(oBox1.offsetHeight - oBtn.offsetHeight);
+			oBtn.style.top = t + 'px';
+			oTxt.style.top = -scale*(oTxt.offsetHeight-oBox2.offsetHeight)+'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+
+	}
+</script>
+</html>

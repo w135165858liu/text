@@ -8,6 +8,11 @@
 			margin: 0;
 			padding: 0;
 		}
+		body{
+			position: relative;
+			left: 100px;
+			top: 100px;
+		}
 		div{
 			display: inline-block;
 			float: left;
@@ -48,7 +53,7 @@
 			display: none;
 		}
 	</style>
-</head>
+</head>                                                                                                               
 <body>
 	<div class="box1">
 		<div class="MB"></div>
@@ -62,15 +67,17 @@
 	var oBox2=document.querySelectorAll('.box2')[0];
 	var smallMb=document.querySelectorAll('.MB')[0];
 	var bigPic=document.querySelectorAll('.big-pic')[0];
+	var body=document.querySelectorAll('body')[0];
 	oBox1.onmouseout=function(){
 		smallMb.style.display='none';
 		oBox2.style.display='none';
 	}
 	oBox1.onmousemove=function(event){
+		console.log(body.offsetLeft)
 		smallMb.style.display='block';
 		oBox2.style.display='block';
-		var left=event.clientX-smallMb.offsetWidth/2;
-		var top=event.clientY-smallMb.offsetHeight/2;
+		var left=event.clientX-smallMb.offsetWidth/2-body.offsetLeft;
+		var top=event.clientY-smallMb.offsetHeight/2-100-body.offsetTop;
 		if(left<0){
 			left=0;
 		}else if(left>oBox1.offsetWidth-smallMb.offsetWidth){
