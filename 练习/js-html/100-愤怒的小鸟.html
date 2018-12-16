@@ -3,8 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<title>愤怒的小鸟</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 600px;
+			height: 500px;
+			border: 1px solid #000;
+			margin: 200px auto;
+			position: relative;
+		}
+		#bird{
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			left: 50%;
+			margin-left:-30px;
+			top: 0; 
+
+		}
+		#bird img{
+			width: 60px;
+			height: 60px;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="box">
+		<div id="bird">
+			<img src="../js-html/images/bq1.png" alt="">
+		</div>
+	</div>
 </body>
+<script>
+	var oBox = document.getElementById('box');
+	var oBird = document.getElementById('bird');
+	var iSpeed = 0,birdtimer;
+	clearInterval(birdtimer)
+	birdtimer = setInterval(function(){
+		iSpeed += 4;
+		oBird.style.top = iSpeed + 'px';
+	},30);
+</script>
 </html>

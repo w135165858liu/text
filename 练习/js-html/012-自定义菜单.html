@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 300px;
+			background: gray;
+			display: none;
+			position: absolute;
+			left: 0px;
+			top:0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box')
+	document.oncontextmenu = function(ev){
+		oBox.style.display = 'block';
+		oBox.style.left = ev.clientX + 'px';
+		oBox.style.top = ev.clientY + 'px';
+		
+		return false
+	}
+	oBox.onclick = function(ev){
+		oBox.style.display = 'block';
+		ev.stopPropagation()
+	}
+	document.onclick = function(){
+		oBox.style.display = 'none';
+
+	}
+</script>
+</html>
