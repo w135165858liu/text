@@ -17,8 +17,6 @@
 	}
 	//DOM2级事件处理程序
 	oBtn1.addEventListener('click',sayHi,true);
-	oBtn2.addEventListener('click',function(){
-		oBtn1.removeEventListener('click',sayHi,true)
-	})
+	oBtn2.addEventListener('click',function(){oBtn1.removeEventListener('click',sayHi,true)},false)；
 </script>
 </html>
