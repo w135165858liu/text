@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>new +工厂函数</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+			this.showName = function(){
+				console.log("I am "+this.name);
+			}
+			this.showAge = function(){
+				console.log("I am "+this.age + " years old");	
+			}
+		}
+		person = new person('Tom',18)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

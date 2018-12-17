@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成随机数</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			display: inline-block;
+			width: 30px;
+			position: absolute;
+			left: 50%;
+			top: 200px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+</body>
+<script>
+	function getRandom(min,max){
+		return Math.round(min+(max - min)*Math.random());
+	}
+	var body = document.querySelector('body');
+	var timer
+	var iSpeed = 50;
+		//for(var i = 0;i<aDiv.length;i++){
+		//}
+	timer = setInterval(function(){
+		var lin = document.createElement('div');
+		 iSpeed -= 3;
+		 for(var i = 0;i<lin.length ; i++){
+		 	var curron = lin[i].getAttribute('left')
+		 	if(curron<20){
+		 		body.removeChild(lin);
+		 	}
+		 }
+		body.appendChild(lin);
+		lin.className = 'active';
+		var h = getRandom(50,300);
+		lin.style.height = h + 'px';
+		lin.style.left = iSpeed + '%';
+	},80);
+	// moveLineTimer = setInterval(function(){
+
+	// },80);
+	// clearInterval(timer);
+</script>
+</html>
