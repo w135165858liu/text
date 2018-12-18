@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	function Carousel(options){
+		this.oBox = document.getElementById(options.id);
+		this.Img = options.Img;
+		this.init();
+		console.log(this.Img)
+	}
+	Carousel.prototype.init = function(){
+		this.oUlImg = document.createElement('ul');
+		this.oBox.appendChild(this.oUlImg)
+		for(var i = 0;i<this.Img.length;i++){
+			this.aLiImg = document.createElement('li');
+		}
+			// this.aLiImg[i].appendChild(this.Img[i]);
+		this.oUlImg.appendChild(this.aLiImg)
+		console.log(this.Img)
+	}
+	new Carousel({
+		id:'box',
+		Img:['images/b1.jpg','images/b2.jpg','images/b3.jpg']
+	})
+</script>
+</html>

@@ -8,13 +8,13 @@
 			margin: 0;
 			padding: 0;
 		}
-		#tab-box1{
+		.tab-box1{
 			list-style: none;
 			width: 400px;
 			height: 50px;
 			margin-bottom: 20px;
 		}
-		#tab-box1 li{
+		.tab-box1 li{
 			width: 100px;
 			height: 50px;
 			float: left;
@@ -25,7 +25,7 @@
 		.active1{
 			border-bottom: 2px solid #ff6700;
 		}
-		#tab-box2 li{
+		.tab-box2 li{
 			width: 400px;
 			height: 500px;
 			text-align: center;
@@ -34,19 +34,31 @@
 			display: none;
 			border: 1px solid #000;
 		}
-		#tab-box2 .active2{
+		.tab-box2 .active2{
 			display: block;
 		}
 	</style>
 </head>
 <body>
-	<ul id="tab-box1">
+	<ul id="tab-box1" class="tab-box1">
 		<li class="active1">热门</li>
 		<li>手机</li>
 		<li>家电</li>
 		<li>家具</li>
 	</ul>
-	<ul id="tab-box2">
+	<ul id="tab-box2" class="tab-box2">
+		<li class="active2">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<ul id="tab-box11" class="tab-box1">
+		<li class="active1">热门</li>
+		<li>手机</li>
+		<li>家电</li>
+		<li>家具</li>
+	</ul>
+	<ul id="tab-box22" class="tab-box2">
 		<li class="active2">1</li>
 		<li>2</li>
 		<li>3</li>
@@ -54,21 +66,47 @@
 	</ul>
 </body>
 <script>
-	var aBtn = document.querySelectorAll('#tab-box1 li');
-	var aBox = document.querySelectorAll('#tab-box2 li');
-	for(var i=0;i<aBtn.length;i++){
-		aBtn[i].index=i;
-		aBtn[i].onclick=function(){
-			for(var j=0;j<aBtn.length;j++){
-				aBtn[j].className='';
-				aBox[j].style.display='none';
+	// var aBtn = document.querySelectorAll('#tab-box1 li');
+	// var aBox = document.querySelectorAll('#tab-box2 li');
+	// for(var i=0;i<aBtn.length;i++){
+	// 	aBtn[i].index=i;
+	// 	aBtn[i].onclick=function(){
+	// 		for(var j=0;j<aBtn.length;j++){
+	// 			aBtn[j].className='';
+	// 			aBox[j].style.display='none';
+	// 		}
+	// 		console.log(j)
+	// 		this.className='active1';
+	// 		aBox[this.index].style.display='block';
+	// 		console.log(this);
+	// 		console.log(this.index);
+	// 	}
+	// }
+	function Tab(class1,class2){
+		this.aBtn = document.querySelectorAll(class1);
+		this.aBox = document.querySelectorAll(class2);
+		this.binEvent();
+		console.log(this.aBtn)
+	}
+
+	Tab.prototype.binEvent = function(){
+		var _this = this
+		for(var i = 0;i < this.aBtn.length;i++){
+			this.aBtn[i].index = i;
+			this.aBtn[i].onclick = function(){
+				_this.fnClick(this);
 			}
-			console.log(j)
-			this.className='active1';
-			aBox[this.index].style.display='block';
-			console.log(this);
-			console.log(this.index);
 		}
 	}
+	Tab.prototype.fnClick = function(oBtn){
+		for(var i = 0; i < this.aBtn.length;i++){
+			this.aBtn[i].className = '';
+			this.aBox[i].style.display = 'none';
+		}
+		oBtn.className = 'active1';
+		this.aBox[oBtn.index].style.display = 'block';
+	}
+	new Tab('#tab-box1 li','#tab-box2 li');
+	new Tab('#tab-box11 li','#tab-box22 li');
 </script>
 </html>
