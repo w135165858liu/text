@@ -13,8 +13,12 @@
 			user-select: none;
 		}
 		.bottombtn{
-			background: #111;
-			border-color: #f60;
+			background: #fff;
+			border: 3px solid #000;
+		}
+		.bottomLi{
+			background: #f60;
+			border: 3px solid #000;
 		}
 	</style>
 </head>
@@ -27,10 +31,10 @@
 		this.Img = options.Img;
 		this.now = 0;//当前显示的图片下标
 		this.init();
-		console.log(this.rightBtn());
+		this.Control();
 
 	}
-		{Carousel.prototype.init = function(){
+		Carousel.prototype.init = function(){
 				this.oUlImg = document.createElement('ul');
 				this.oBox.appendChild(this.oUlImg);
 				this.oBox.style.position = 'relative';
@@ -90,6 +94,8 @@
 		
 				//生成底部按钮ul
 				this.oUlBtn = document.createElement('ul');
+				this.oUlBtn.id = 'bottomUl';
+				this.aUlBtn = document.getElementById('bottomUl')
 				//把底部按钮ul添加到box
 				this.oBox.appendChild(this.oUlBtn);
 				//给底部按钮ul添加样式
@@ -116,26 +122,58 @@
 					//添加底部按钮到ul
 					this.oUlBtn.appendChild(this.oLiBtn);
 					//给底部按钮添加样式
+					this.oLiBtn.className = 'bottombtn'
 					this.oLiBtn.style.width = 10 + 'px';
 					this.oLiBtn.style.height = 10 + 'px';
-					this.oLiBtn.style.background = '#fff';
-					this.oLiBtn.style.border = 3 + 'px';
-					this.oLiBtn.style.border = 'solid';
 					this.oLiBtn.style.borderRadius = 50 + '%';
-					this.oLiBtn.style.borderColor = '#111';
 					this.oLiBtn.style.float = 'left';
 					this.oLiBtn.style.marginRight = 10 + 'px';
 				}
-			}}
+			}
 	//设置右按钮行为
-	Carousel.prototype.rightBtn = function(){
+	Carousel.prototype.Control = function(){
 		this.aImg = document.querySelectorAll('.aImg')
-		console.log(this)
 		var _this = this;
-		// this.rightBtn.onclick = function(){
-		// 	for(var i = 0 ; i <this.aImg.length;i++){
-		// 	}
-		// }
+		this.rightBtn.onclick = function(){
+			_this.now++;
+			if(_this.now>_this.aImg.length-1){
+				_this.now=0;
+			}
+			btnClick()
+		}
+		this.leftBtn.onclick = function(){
+			_this.now--;
+			if(_this.now<0){
+				_this.now=_this.aImg.length-1;
+			}
+			btnClick();
+		}
+		this.aLiBtn = document.querySelectorAll('#bottomUl li');
+		this.aLiBtn[0].className = 'bottomLi'
+		for(var j = 0 ; j<this.aLiBtn.length;j++){
+			this.aLiBtn[j].index = j;
+			this.aLiBtn[j].onclick = function(){
+				_this.now = this.index;
+				btnClick();
+			}
+		}
+		function btnClick(){
+			for(var i = 0 ; i < _this.aImg.length;i++){
+				_this.aImg[i].style.zIndex = 0;
+				_this.aImg[i].style.opacity = 0.5;
+				_this.aLiBtn[i].className = 'bottombtn';
+			}
+			_this.aImg[_this.now].style.opacity = 1;
+			_this.aImg[_this.now].style.zIndex = 50;
+			_this.aLiBtn[_this.now].className = 'bottomLi';
+		}
+		timer = setInterval(this.rightBtn.onclick,1000);
+		this.oBox.onmouseover = function(){
+			clearInterval(timer);
+		}
+		this.oBox.onmouseout = function(){
+			timer = setInterval(_this.rightBtn.onclick,1000);
+		}
 	}
 	//new一个新对象把参数传进轮播图函数里面
 	new Carousel({
