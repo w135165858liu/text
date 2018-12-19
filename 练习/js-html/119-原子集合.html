@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原子集合</title>
+	<script>
+		var str = 'dasdsadsada131351  sadasdasd335';
+		var reg1 = /\s/g
+		var reg2 = /\S/g
+		var reg3 = /./g
+		var reg4 = /[0-9]/g
+		var reg5 = /\d/g
+		var reg6 = /[^0-9]/g
+		var reg7 = /\D/g
+		var reg8 = /\w/g
+		var reg9 = /[0-9a-zA-Z_]/g
+		var reg10 = /\W/g
+		var reg11 = /[^0-9a-zA-Z_]/g
+		console.log(str.replace(reg1,'*'))
+		console.log(str.replace(reg2,'*'))
+		console.log(str.replace(reg3,'*'))
+		console.log(str.replace(reg4,'*'))
+		console.log(str.replace(reg5,'*'))
+		console.log(str.replace(reg6,'*'))
+		console.log(str.replace(reg7,'*'))
+		console.log(str.replace(reg8,'*'))
+		console.log(str.replace(reg9,'*'))
+		console.log(str.replace(reg10,'*'))
+		console.log(str.replace(reg11,'*'))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

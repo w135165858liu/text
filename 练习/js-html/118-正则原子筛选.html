@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原子筛选</title>
+	<script>
+		var str = 'asdasdas1212121sadsad212asd&*%';
+		var str1 = '你好hello世界'
+		var reg1 = /[0-z]/g
+		var reg2 = /[\u4e00-\u9fa5]/g
+		console.log(str.replace(reg1,'*'))
+		console.log(str1.replace(reg2,'aa'))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

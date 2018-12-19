@@ -4,14 +4,25 @@
 	<meta charset="UTF-8">
 	<title>正则</title>
 	<script>
-		var str = ['1 1 a ad a1'];
-		var result = {};
+		var str = '1 1 a ad a1 22 abc33 bcd 55';
+		var result = [];
 		var tmp = '';
-		for(var i = 0;i<str.length;i++)
-		if(!isNaN(parseInt(str.charAt(i)))){
-			result.push(str.charAt(i))
+		for(var i = 0;i<str.length;i++){
+			if(!isNaN(parseInt(str.charAt(i)))){
+				tmp += str.charAt(i)
+				console.log(tmp)
+			}else{
+				if(tmp){
+					result.push(tmp);
+					tmp = '';
+				}
+			}
 		}
-
+		if(tmp){
+			result.push(tmp)
+		}
+		console.log(result);
+		console.log(str.match(/\d+/g));
 	</script>
 </head>
 <body>

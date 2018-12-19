@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>量词</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="点击">
+</body>
+	<script>
+		var oTxt = document.getElementById('txt')
+		var oBtn = document.getElementById('btn')
+		var reg = /^[1-2]\d{3}$/
+		oBtn.onclick = function(){
+			if(reg.test(oTxt.value)){
+				alert('合法')
+			}else{
+				alert('不合法')
+			}
+		}
+
+	</script>
+</html>
