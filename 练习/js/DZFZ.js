@@ -34,11 +34,6 @@
 				iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
 				if(!iSpeed){
 					isStopcurrent = true;
-					// if(attr == 'opacity'){
-					// 	obj.style.opacity = options[attr]/100;
-					// }else{
-					// 	obj.style[attr]=options[attr] + 'px';
-					// }
 				}else{
 					isStopAll = false;
 				}

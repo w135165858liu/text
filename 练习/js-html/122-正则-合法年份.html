@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>量词</title>
+	<title>合法年份</title>
 </head>
 <body>
 	<input type="text" id="txt">
@@ -11,13 +11,14 @@
 	<script>
 		var oTxt = document.getElementById('txt')
 		var oBtn = document.getElementById('btn')
-		var reg1 = /^[1-2]\d{3}$/
+		var reg = /^[1-2]\d{3}$/
 		oBtn.onclick = function(){
 			if(reg.test(oTxt.value)){
 				alert('合法')
 			}else{
 				alert('不合法')
 			}
+			console.log(reg.test(oTxt.value))
 		}
 
 	</script>

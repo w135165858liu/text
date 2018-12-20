@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form脚本</title>
+</head>
+<body>
+	<form action="">
+		<div>
+			<select name="city" id="city">
+				<option value="bj">北京</option>
+				<option value="sh">上海</option>
+			</select>
+		</div>
+		<input type="button" value="测试" name="btn">
+	</form>
+</body>
+<script>
+	var oForm = document.forms[0];
+	var  oBtn = oForm.btn;
+	console.log(oBtn)
+</script>
+</html>

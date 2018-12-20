@@ -1,3 +1,6 @@
+
+//匀速减速动画综合封装
+
 function animate(obj,attr,target,isLinear){
 	var timer = 0;
 	var iSpeed = 0;
@@ -46,6 +49,5 @@ function animate(obj,attr,target,isLinear){
 					obj.style[attr]=current + iSpeed + 'px';
 				}
 			}
-		console.log(iSpeed)
 	},30);
 }

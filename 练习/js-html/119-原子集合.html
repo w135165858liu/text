@@ -4,18 +4,22 @@
 	<meta charset="UTF-8">
 	<title>原子集合</title>
 	<script>
-		var str = 'dasdsadsada131351  sadasdasd335';
-		var reg1 = /\s/g
-		var reg2 = /\S/g
-		var reg3 = /./g
+		var str = 'dasdsadsada131351 sadas ab			dasd335';
+		var reg1 = /\s/g // 空白符 等价于[\t\n\f\r]
+		var reg2 = /\S/g // 非空白符 等价于 [^\t\n\f\r]
+		var reg3 = /./g // 除了回车和换行以外的任意字符
 		var reg4 = /[0-9]/g
-		var reg5 = /\d/g
+		var reg5 = /\d/g // 任意数字 等价于[0-9]
 		var reg6 = /[^0-9]/g
-		var reg7 = /\D/g
-		var reg8 = /\w/g
+		var reg7 = /\D/g // 任意 非数字 等价于[^0-9]
+		var reg8 = /\w/g //任意数字，字母，下划线 等价[0-9a-zA-Z_]
 		var reg9 = /[0-9a-zA-Z_]/g
-		var reg10 = /\W/g
+		var reg10 = /\W/g //任意非数字，字母，下划线 等价[……0-9a-zA-Z_]
 		var reg11 = /[^0-9a-zA-Z_]/g
+		var reg12 = /ab\t/g //制表符
+		var reg13 = /\n/g // 换行键
+		var reg14 = /\r/g // 回车键
+		var reg15 = /\f/g //
 		console.log(str.replace(reg1,'*'))
 		console.log(str.replace(reg2,'*'))
 		console.log(str.replace(reg3,'*'))
@@ -27,6 +31,10 @@
 		console.log(str.replace(reg9,'*'))
 		console.log(str.replace(reg10,'*'))
 		console.log(str.replace(reg11,'*'))
+		console.log(str.replace(reg12,'*'))
+		console.log(str.replace(reg13,'*'))
+		console.log(str.replace(reg14,'*'))
+		console.log(str.replace(reg15,'*'))
 	</script>
 </head>
 <body>

@@ -25,22 +25,28 @@
 <body>
 	<div id="box"></div>
 </body>
+<script src="../js/DZFZ.js"></script>
 <script>
 	function Carousel(options){
+
 		this.oBox = document.getElementById(options.id);
 		this.Img = options.Img;
+		this.rightBtn = null;
+		this.leftBtn = null;
 		this.now = 0;//当前显示的图片下标
+		this.width = options.width;
+		this.height = options.height;
 		this.init();
 		this.Control();
 
 	}
 		Carousel.prototype.init = function(){
+				//创建存放图片ul
 				this.oUlImg = document.createElement('ul');
 				this.oBox.appendChild(this.oUlImg);
 				this.oBox.style.position = 'relative';
-		
-				this.oBox.style.width = 500 + 'px';
-				this.oBox.style.height = 300 + 'px';
+				this.oBox.style.width = this.width;
+				this.oBox.style.height = this.height;
 				//左右按钮的样式
 				this.leftBtn = document.createElement('span');
 				this.rightBtn = document.createElement('span');
@@ -110,6 +116,9 @@
 					//生成图片并添加进box
 					this.aLiImg = document.createElement('li');
 					this.oUlImg.appendChild(this.aLiImg)
+					this.oUlImg.children[i].style.width = 100 + '%';
+					this.oUlImg.children[i].style.height = 100 + '%';
+					this.oUlImg.children[i].style.position = 'absolute';
 					this.oImg = document.createElement('img');
 					this.oImg.className = 'aImg';
 					this.aLiImg.appendChild(this.oImg);
@@ -159,12 +168,12 @@
 		}
 		function btnClick(){
 			for(var i = 0 ; i < _this.aImg.length;i++){
-				_this.aImg[i].style.zIndex = 0;
-				_this.aImg[i].style.opacity = 0.5;
+				_this.oUlImg.children[i].style.zIndex = 0;
+				_this.oUlImg.children[i].style.opacity = 0.5;
 				_this.aLiBtn[i].className = 'bottombtn';
 			}
-			_this.aImg[_this.now].style.opacity = 1;
-			_this.aImg[_this.now].style.zIndex = 50;
+			animate(_this.oUlImg.children[_this.now],{opacity:100},false);
+			_this.oUlImg.children[_this.now].style.zIndex = 50;
 			_this.aLiBtn[_this.now].className = 'bottomLi';
 		}
 		timer = setInterval(this.rightBtn.onclick,1000);
@@ -178,7 +187,9 @@
 	//new一个新对象把参数传进轮播图函数里面
 	new Carousel({
 		id:'box',
-		Img:['images/b1.jpg','images/b2.jpg','images/b3.jpg']
+		Img:['images/b1.jpg','images/b2.jpg','images/b3.jpg'],
+		height:300 + 'px',
+		width: 500 + 'px'
 	})
 </script>
 </html>
