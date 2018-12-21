@@ -18,14 +18,13 @@
 		*/
 		var oTxt = document.getElementById('txt')
 		var oBtn = document.getElementById('btn')
-		var reg = /[]/
+		var reg = /^\w+@\w+\.[a-z]{2,5}$/
 		oBtn.onclick = function(){
 			if(reg.test(oTxt.value)){
 				alert('合法')
 			}else{
 				alert('不合法')
 			}
-			console.log(reg.test(oTxt.value))
 		}
 
 	</script>

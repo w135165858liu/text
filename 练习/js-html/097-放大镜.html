@@ -54,7 +54,7 @@
 			display: inline-block;
 			width: 150px;
 			height: 150px;
-			background: rgba(255,255,0,0.5);
+			background: rgba(0,0,0,1);
 			position: absolute;
 			left: 0px;
 			top: 0px;
@@ -81,6 +81,7 @@
 		</ul>
 	</div>
 </body>
+<script src="../js/YSFZ.js"></script>
 <script>
 	var aLi = document.querySelectorAll('#list li');
 	var oBigImg = document.getElementById('bigimg');
@@ -100,12 +101,20 @@
 			oMask.style.display = 'block';
 			oLageImg.style.display = 'block';
 			oBigImg.onmousemove = function(ev){
-				oMask.style.left = ev.clientX - oMask.offsetWidth/2 - oBox.offsetLeft;
-				oMask.style.top = ev.clientY - oMask.offsetHeight/2 - oBox.offsetTop;
-				console.log(ev.clientX,oMask.offsetWidth,oMask.offsetHeight)
+				oMask.style.top = ev.clientY - oMask.offsetHeight/2 + getScrollTop() - oBox.offsetTop + 'px';
+				oMask.style.left = ev.clientX - oMask.offsetWidth/2 + getScrollLeft() - oBox.offsetLeft + 'px';
+				if(oMask.offsetTop <0){
+					oMask.style.top = 0;
+				}else if(oMask.offsetTop>oBigImg.offsetHeight - oMask.offsetHeight){
+					oMask.style.top=oBigImg.offsetHeight  - oMask.offsetHeight + 'px';
+				}
+				if(oMask.offsetLeft<0){
+					oMask.style.left = 0;
+				}else if(oMask.offsetLeft>oBigImg.offsetWidth - oMask.offsetWidth){
+					oMask.style.left=oBigImg.offsetWidth -  oMask.offsetWidth + 'px';
+				}
 			}
 		}
-		
 	}
 </script>
 </html>
