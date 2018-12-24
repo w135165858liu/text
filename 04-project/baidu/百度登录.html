@@ -286,16 +286,16 @@
     var aUserInput = oForm.username;
     var aUserPhone = oForm.phone;
     var aCancel = document.querySelectorAll('.cancel');
-    var aMsg = document.querySelectorAll('.msg')
-    var aMsgOk = document.querySelectorAll('.ok')
+    var aMsg = document.querySelectorAll('.msg');
+    var aMsgOk = document.querySelectorAll('.ok');
     //通用函数
     //限制输入中文长度
     function oReg(sVal){
-        return sVal.replace(/[\u4e00-\u9fa5]/g,'aa').length
+        return sVal.replace(/[\u4e00-\u9fa5]/g,'aa').length;
     }
     //不合法
     function setErr(aMsg,sMsg,oInput){
-        oInput.className = 'input-err'
+        oInput.className = 'input-err';
         aMsg.className = 'err';
         aMsg.innerHTML = sMsg;
     }
@@ -304,6 +304,7 @@
         oInput.className = '';
         aMsg.innerHTML = '';
         aMsg.className = 'ok';
+        console.log('aaa');
     }
     //内容改动时
     function setInput(aCancel,oInput){
@@ -313,7 +314,7 @@
             aCancel.style.display = 'block';
         }
         aCancel.onclick = function(){
-            aUserInput.value = '';
+            oInput.value = '';
             aCancel.style.display = 'none';
             oInput.focus();
         }
@@ -322,22 +323,21 @@
     function setFocus(aMsg,sMsg){
         aMsg.className = 'tiptext';
         aMsg.innerHTML = sMsg;
-        console.log('aaa')
     }
     //当内容为空时
     function setEmpty(aMsg,oInput){
         aMsg.className = 'msg';    
         oInput.className = '';
     }
+    //用户名输入框
     //默认获取焦点
     aUserInput.onfocus = function(){
-        setFocus(aMsg[0],'设置后不可更改<br>中英文均可，最长14个英文或7个汉字')
+        setFocus(aMsg[0],'设置后不可更改<br>中英文均可，最长14个英文或7个汉字');
     }
     aUserInput.focus();
     aUserInput.oninput = function(){
-        setInput(aCancel[0],aUserInput)
+        setInput(aCancel[0],aUserInput);
     }
-    //用户名输入框
     aUserInput.onblur = function(){
         var reg1 = /^\s+$/;
         var reg2 = /[^a-z\u4e00-\u9fa5_\d]/i;
@@ -361,35 +361,66 @@
         }
     }
     //手机号输入框
-    aUserPhone.oninput = function(){
-        setInput(aCancel[1],aUserPhone)
+    //aUserPhone.oninput = function(){
+    //     setInput(aCancel[1],aUserPhone)
+    // }
+    // aUserPhone.onblur = function(ev){
+    //     var reg1 = /^\s+$/;
+    //     var reg2 = /^1[35678]{9}$/;
+    //     var sVal = aUserPhone.value;
+    //     if(sVal == ''){
+    //         setEmpty(aMsg[1],aUserPhone)
+    //     }
+    //     else if(oReg(sVal)>14){
+    //         setErr(aMsg[1],'用户不能超过7个汉字或14个字符',aUserPhone);
+    //     }
+    //     else if(reg1.test(sVal)){
+    //         aCancel[1].onclick();
+    //     }
+    //     else if(!reg2.test(sVal)){
+    //         setErr(aMsg[1],'手机号码格式不正确',aUserPhone);
+
+    //     }
+    //     else if(reg2.test(sVal)){
+    //         setOk(aMsg[1],aUserPhone);
+    //     }
+    //     aUserPhone.onfocus = function(){
+    //         setFocus(aMsg[1],'请输入中国大陆手机号，其他用户不可见')
+    //     }
+    // }
+
+
+
+    aUserPhone.onfocus = function(){
+        setFocus(aMsg[1],'请输入中国大陆手机号，其他用户不可见');
     }
-    aUserPhone.onblur = function(ev){
+    aUserPhone.oninput = function(){
+        setInput(aCancel[1],aUserPhone);
+    }
+    aUserPhone.onblur = function(){
         var reg1 = /^\s+$/;
-        var reg2 = /^1[35678]{9}$/;
-        var reg3 = /^\d+$/;
+        var reg2 = /^1[35678]\d{9}$/;
         var sVal = aUserPhone.value;
         if(sVal == ''){
-            setEmpty(aMsg[1],aUserPhone)
-        }
-        else if(oReg(sVal)>14){
-            setErr(aMsg[1],'用户不能超过7个汉字或14个字符',aUserPhone);
+            setEmpty(aMsg[1],aUserPhone);
         }
         else if(reg1.test(sVal)){
             aCancel[1].onclick();
         }
-        else if(reg2.test(sVal)){
+        else if(!reg2.test(sVal)){
             setErr(aMsg[1],'手机号码格式不正确',aUserPhone);
-
         }
         else{
-            setOk(aMsg[1],aUserPhone)
-        }
-        aUserPhone.onfocus = function(){
-            setFocus(aMsg[1],'请输入中国大陆手机号，其他用户不可见')
+            setOk(aMsg[1],aUserPhone);
+            console.log('bbb')
         }
     }
-
+    aUserPhone.onkeydown = function(ev){
+        var oEvent = ev || event;
+        if(oEvent.keyCode < 48 || oEvent.ketCode > 57 || aUserPhone.value.lenth>10){
+            return false;
+        }
+    }
 
 
 </script>
