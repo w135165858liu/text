@@ -8,9 +8,10 @@
 		.buffer{
 			width: 5px;
 			height: 25px;
-			background: gray;
-			margin: 200px auto;
+			background: #ff6700;
 			position: relative;
+			animation: bufferSport 0.5s linear 0.3s infinite alternate;
+
 		}
 		.buffer:before,.buffer:after{
 			position: absolute;
@@ -20,16 +21,27 @@
 			content: '';
 			width: 5px;
 			height: 25px;
-			background: gray;
+			background: #ff6700;
 		}
 		.buffer:before{
 			margin-left: 10px;
-			transform: scale(1,0.8);
+			animation: bufferSport 0.5s linear 0.2s infinite alternate;
+			transform: scale(1,0.2);
 		}
 		.buffer:after{
 			margin-left: -10px;
-			transform: scale(1,0.6);
-
+			transform: scale(1,0.5);
+			animation: bufferSport 0.5s linear 0.4s infinite alternate;
+		}
+		@keyframes bufferSport{
+			from{
+				transform: scale(1,0.5);
+				opacity: 0.3;
+			}
+			to{
+				transform: scale(1,1);
+				opacity: 1;
+			}
 		}
 	</style>
 </head>

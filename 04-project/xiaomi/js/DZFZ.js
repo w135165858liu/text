@@ -45,13 +45,12 @@
 					obj.style[attr]=current + iSpeed + 'px';
 				}
 			}
-			console.log(iSpeed)
 		}
 		if(isStopAll){
 			clearInterval(obj.timer);
-			// if(typeof fn == 'function'){
-			// 	fn();
-			// }
+			if(typeof fn == 'function'){
+				fn();
+			}
 			typeof fn == 'function' && fn();			
 		}
 	},30);

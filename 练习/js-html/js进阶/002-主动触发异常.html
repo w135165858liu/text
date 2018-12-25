@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主动触发异常</title>
+	<script defer>
+		var result = 0;
+		function sum(num){
+			try{
+				if(isNaN(parseInt(num))){
+					throw new Error('不是一个数字')
+				}
+			}
+			catch(e){
+				console.log(e)
+			}
+			finally{
+				console.log('有没有异常都执行bbb')
+			}
+			for(var i = 0;i<num;i++){
+				result += i;
+			}
+			return result;
+		}
+
+		console.log(sum(5))
+	</script>
+</head>
+<body>
+	<input type="text">
+	<input type="button" value="点我">
+</body>
+</html>
