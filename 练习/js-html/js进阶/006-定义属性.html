@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定义属性</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age ;
+		}
+		Person.prototype.showName = function(){
+			console.log("I am "+this.name)
+		}
+		Person.prototype.showAge = function(){
+			console.log("I am"+this.age+"years old")
+		}
+		Person.prototype.LECG = 4;
+
+		var p1 = new Person('tom',18);
+
+		Object.defineProperty(p1,"EYES",{
+			value:4;,
+			enumerable:true,
+			writable:true,
+			configurable:true
+		})
+		for(var attr in p1){
+			console.log(atte,p1[attr])
+		}
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

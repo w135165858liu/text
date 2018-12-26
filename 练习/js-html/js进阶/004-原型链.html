@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型链-删除属性</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age ;
+		}
+		Person.prototype.showName = function(){
+			console.log("I am "+this.name)
+		}
+		Person.prototype.showAge = function(){
+			console.log("I am"+this.age+"years old")
+		}
+		Person.prototype.LECG = 4;
+
+		var p1 = new Person('tom',18);
+
+		console.log('delete p1.LECG',delete p1.LECG);
+
+		console.log('p1.LECG',p1.LECG);
+
+		console.log('delete Person.prototype.LECG',delete Person.prototype.LECG);
+
+		console.log('p1.LECG',p1.LECG);
+
+		console.log('p1.name',p1.name);
+
+		console.log(p1);
+		
+		console.log('delete p1.name',delete p1.name);
+
+		console.log('p1.name',p1.name);
+
+		console.log(p1);
+
+		console.log('p1.showName()',p1.showName());
+
+		console.log(Person.prototype);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

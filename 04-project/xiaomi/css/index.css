@@ -616,7 +616,7 @@
 	height:460px;
 	margin-bottom: 14px;
 }
-.top2 .top2-top1{
+.top2 .side-menu-list{
 	width: 234px;
 	height: 460px;
 	background: #64615b;
@@ -626,7 +626,7 @@
 	position: absolute;
 	z-index: 99;
 }
-.top2 .top2-top1>li{
+.top2 .side-menu-list li{
 	float: none;
 	height: 42px;
 	line-height: 42px;
@@ -635,17 +635,16 @@
 	font-weight: bold;
 	padding:0px 24px 0px 31px;
 }
-.top2 .top2-top1>li:hover{
+.top2 .side-menu-list li:hover{
 	background: #ff6700;
 }
-.top2 .top2-top1 >li a{
+.top2 .side-menu-list  li a{
 	color: #fff;
 }
-.top2 .top2-top1>li a i{
+.top2 .side-menu-list i{
 	float: right;
-
 }
-.top2-top1 .side-menu{
+.side-menu{
 	position: absolute;
 	left: 234px;
 	min-width: 500px;
@@ -655,11 +654,11 @@
 	box-shadow: 0 8px 16px rgba(0,0,0,0.18);
 	display: none;
 }
-.top2-top1 .side-menu>li{
+.side-menu li{
 	width: 248px;
 	height: 76px;
 }
-.top2-top1 .side-menu>li a{
+.side-menu li a{
 	height: 100%;
 	width: 100%;
 	box-sizing: border-box;
@@ -668,10 +667,10 @@
     line-height: 40px;
     color: #333; 
 }
-.top2-top1 .side-menu>li a:hover{
+.side-menu li a:hover{
 	color: #ff6700;
 }
-.top2-top1 .side-menu>li a img{
+.side-menu li a img{
 	width: 40px;
 	height: 40px;
 	vertical-align: middle
@@ -763,14 +762,16 @@
  	height: 58px;
  	line-height: 58px;
  }
- .top4-top1-hd h3{
-	margin: 0;
+ .sgtitle{
+ 	display: inline-block;
+ 	width: 100px;
     font-size: 22px;
     font-weight: 200;
     line-height: 58px;
     color: #333;
 }
 .top4 .top4-top1-bt{
+	z-index: 99;
 	float: right;
 }
 .top4 .top4-top1-bt a{
@@ -782,6 +783,9 @@
 	margin-left: -6px;
 	border: 1px solid #a5a2a2;
 }
+
+
+
 
 .top4-top2{
 	margin-bottom: 42px;
