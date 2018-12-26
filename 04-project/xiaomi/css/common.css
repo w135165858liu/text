@@ -13,6 +13,7 @@ li{
 	float: left;
 }
 .container{
+	position: relative;
 	width: 1226px;
 	margin-left: auto;
 	margin-right: auto;

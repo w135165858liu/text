@@ -40,105 +40,105 @@
 		this.Control();
 
 	}
-		Carousel.prototype.init = function(){
-				//创建存放图片ul
-				this.oUlImg = document.createElement('ul');
-				this.oBox.appendChild(this.oUlImg);
-				this.oBox.style.position = 'relative';
-				this.oBox.style.width = this.width;
-				this.oBox.style.height = this.height;
-				//左右按钮的样式
-				this.leftBtn = document.createElement('span');
-				this.rightBtn = document.createElement('span');
-		
-				this.leftBtn.innerHTML = '&lt';
-				this.rightBtn.innerHTML = '&gt';
-		
-				this.rightBtn.style.background = '#333';
-				this.leftBtn.style.background = '#333';
-		
-				this.leftBtn.style.color = '#fff';
-				this.rightBtn.style.color = '#fff';
-		
-				this.rightBtn.style.fontSize = 30 + 'px';
-				this.leftBtn.style.fontSize = 30 + 'px';
-		
-				this.leftBtn.style.cursor = 'pointer';
-				this.rightBtn.style.cursor = 'pointer';
-		
-				this.rightBtn.style.display = 'inline-block';
-				this.leftBtn.style.display = 'inline-block';
-		
-				this.rightBtn.style.height = 60 + 'px';
-				this.leftBtn.style.height = 60 + 'px';
-		
-				this.rightBtn.style.width = 30 + 'px';
-				this.leftBtn.style.width = 30 + 'px';
-		
-				this.rightBtn.style.zIndex = 99;
-				this.leftBtn.style.zIndex = 99;
-		
-				this.rightBtn.style.position = 'absolute';
-				this.leftBtn.style.position = 'absolute';
-		
-				this.rightBtn.style.textAlign = 'center';
-				this.leftBtn.style.textAlign = 'center';
-		
-				this.leftBtn.style.lineHeight = 60+'px';
-				this.rightBtn.style.lineHeight = 60+'px';
-		
-				this.rightBtn.style.right = 0;
-				this.rightBtn.style.top = 50 + '%';
-				this.rightBtn.style.marginTop = -30 + 'px';
-		
-				this.leftBtn.style.left = 0;
-				this.leftBtn.style.top = 50 + '%';
-				this.leftBtn.style.marginTop = -30 + 'px';
-				//添加左右按钮到box
-				this.oBox.appendChild(this.leftBtn)
-				this.oBox.appendChild(this.rightBtn)
-		
-				//生成底部按钮ul
-				this.oUlBtn = document.createElement('ul');
-				this.oUlBtn.id = 'bottomUl';
-				this.aUlBtn = document.getElementById('bottomUl')
-				//把底部按钮ul添加到box
-				this.oBox.appendChild(this.oUlBtn);
-				//给底部按钮ul添加样式
-				this.oUlBtn.style.position = 'absolute';
-				this.oUlBtn.style.height = 16 + 'px';
-				this.oUlBtn.style.width = 78 + 'px';
-				this.oUlBtn.style.zIndex = '999';
-				this.oUlBtn.style.bottom = 10 + 'px';
-				this.oUlBtn.style.right = 10 + 'px';
-				//利用循环添加多个元素
-				for(var i = 0;i<this.Img.length;i++){
-					//生成图片并添加进box
-					this.aLiImg = document.createElement('li');
-					this.oUlImg.appendChild(this.aLiImg)
-					this.oUlImg.children[i].style.width = 100 + '%';
-					this.oUlImg.children[i].style.height = 100 + '%';
-					this.oUlImg.children[i].style.position = 'absolute';
-					this.oImg = document.createElement('img');
-					this.oImg.className = 'aImg';
-					this.aLiImg.appendChild(this.oImg);
-					this.oImg.src = this.Img[i];
-					this.oImg.style.width = 100 + '%';
-					this.oImg.style.height = 100 + '%';
-					this.oImg.style.position = 'absolute';
-					//生成底部按钮
-					this.oLiBtn = document.createElement('li');
-					//添加底部按钮到ul
-					this.oUlBtn.appendChild(this.oLiBtn);
-					//给底部按钮添加样式
-					this.oLiBtn.className = 'bottombtn'
-					this.oLiBtn.style.width = 10 + 'px';
-					this.oLiBtn.style.height = 10 + 'px';
-					this.oLiBtn.style.borderRadius = 50 + '%';
-					this.oLiBtn.style.float = 'left';
-					this.oLiBtn.style.marginRight = 10 + 'px';
-				}
+	Carousel.prototype.init = function(){
+			//创建存放图片ul
+			this.oUlImg = document.createElement('ul');
+			this.oBox.appendChild(this.oUlImg);
+			this.oBox.style.position = 'relative';
+			this.oBox.style.width = this.width;
+			this.oBox.style.height = this.height;
+			//左右按钮的样式
+			this.leftBtn = document.createElement('span');
+			this.rightBtn = document.createElement('span');
+	
+			this.leftBtn.innerHTML = '&lt';
+			this.rightBtn.innerHTML = '&gt';
+	
+			this.rightBtn.style.background = '#333';
+			this.leftBtn.style.background = '#333';
+	
+			this.leftBtn.style.color = '#fff';
+			this.rightBtn.style.color = '#fff';
+	
+			this.rightBtn.style.fontSize = 30 + 'px';
+			this.leftBtn.style.fontSize = 30 + 'px';
+	
+			this.leftBtn.style.cursor = 'pointer';
+			this.rightBtn.style.cursor = 'pointer';
+	
+			this.rightBtn.style.display = 'inline-block';
+			this.leftBtn.style.display = 'inline-block';
+	
+			this.rightBtn.style.height = 60 + 'px';
+			this.leftBtn.style.height = 60 + 'px';
+	
+			this.rightBtn.style.width = 30 + 'px';
+			this.leftBtn.style.width = 30 + 'px';
+	
+			this.rightBtn.style.zIndex = 99;
+			this.leftBtn.style.zIndex = 99;
+	
+			this.rightBtn.style.position = 'absolute';
+			this.leftBtn.style.position = 'absolute';
+	
+			this.rightBtn.style.textAlign = 'center';
+			this.leftBtn.style.textAlign = 'center';
+	
+			this.leftBtn.style.lineHeight = 60+'px';
+			this.rightBtn.style.lineHeight = 60+'px';
+	
+			this.rightBtn.style.right = 0;
+			this.rightBtn.style.top = 50 + '%';
+			this.rightBtn.style.marginTop = -30 + 'px';
+	
+			this.leftBtn.style.left = 0;
+			this.leftBtn.style.top = 50 + '%';
+			this.leftBtn.style.marginTop = -30 + 'px';
+			//添加左右按钮到box
+			this.oBox.appendChild(this.leftBtn)
+			this.oBox.appendChild(this.rightBtn)
+	
+			//生成底部按钮ul
+			this.oUlBtn = document.createElement('ul');
+			this.oUlBtn.id = 'bottomUl';
+			this.aUlBtn = document.getElementById('bottomUl')
+			//把底部按钮ul添加到box
+			this.oBox.appendChild(this.oUlBtn);
+			//给底部按钮ul添加样式
+			this.oUlBtn.style.position = 'absolute';
+			this.oUlBtn.style.height = 16 + 'px';
+			this.oUlBtn.style.width = 78 + 'px';
+			this.oUlBtn.style.zIndex = '999';
+			this.oUlBtn.style.bottom = 10 + 'px';
+			this.oUlBtn.style.right = 10 + 'px';
+			//利用循环添加多个元素
+			for(var i = 0;i<this.Img.length;i++){
+				//生成图片并添加进box
+				this.aLiImg = document.createElement('li');
+				this.oUlImg.appendChild(this.aLiImg)
+				this.oUlImg.children[i].style.width = 100 + '%';
+				this.oUlImg.children[i].style.height = 100 + '%';
+				this.oUlImg.children[i].style.position = 'absolute';
+				this.oImg = document.createElement('img');
+				this.oImg.className = 'aImg';
+				this.aLiImg.appendChild(this.oImg);
+				this.oImg.src = this.Img[i];
+				this.oImg.style.width = 100 + '%';
+				this.oImg.style.height = 100 + '%';
+				this.oImg.style.position = 'absolute';
+				//生成底部按钮
+				this.oLiBtn = document.createElement('li');
+				//添加底部按钮到ul
+				this.oUlBtn.appendChild(this.oLiBtn);
+				//给底部按钮添加样式
+				this.oLiBtn.className = 'bottombtn'
+				this.oLiBtn.style.width = 10 + 'px';
+				this.oLiBtn.style.height = 10 + 'px';
+				this.oLiBtn.style.borderRadius = 50 + '%';
+				this.oLiBtn.style.float = 'left';
+				this.oLiBtn.style.marginRight = 10 + 'px';
 			}
+		}
 	//设置右按钮行为
 	Carousel.prototype.Control = function(){
 		this.aImg = document.querySelectorAll('.aImg')
