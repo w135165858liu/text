@@ -751,6 +751,8 @@ cartList();//购物车
 pullDown();//下拉菜单
 carousels();//轮播图
 sideMenu();//侧边菜单
+countDown();//闪购倒计时
+// sgtabs();//闪购部分选项卡
 function cartList(){
 	var oCartList = document.querySelectorAll('.cart-list')[0];
 	var oCart = document.querySelectorAll('.top-top2')[0];
@@ -1012,4 +1014,36 @@ function sideMenu(){
 		html += '</ul>';
 		oSideContent.innerHTML = html;
 	}
+}
+function countDown(){
+	var CountDownDate = document.querySelectorAll('.countdown')[0];
+	var newDate = new Date('2019/1/ 00:00:00');
+	var countDownTimer = 0;
+	function toStr(num){
+		return num < 10 ? num = '0' + num : num = num;
+	}
+	function Time(){
+		var html = '<div>'
+		var allSecond = newDate.getTime();
+		var oSecond = (allSecond - Date.now())/1000;
+		if(oSecond <= 0){
+			oSecond = 0;
+			clearInterval(countDownTimer);
+		}
+		var iHour = parseInt(oSecond/3600);
+		var iMinute = parseInt((oSecond%3600)/60);
+		var iSecond = parseInt((oSecond%3600)%60);
+		html += '<p class="box">'+toStr(iHour)+'</p>'
+		html += '<p class="dosh">:</p>'
+		html += '<p class="box">'+toStr(iMinute)+'</p>'
+		html += '<p class="dosh">:</p>'
+		html += '<p class="box">'+toStr(iSecond)+'</p>'
+		html += '</div>'
+		CountDownDate.innerHTML = html;
+	}
+	countDownTimer = setInterval(Time,1000);
+	Time();
+}
+function sgTabs(){
+
 }

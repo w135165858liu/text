@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>定义属性</title>
+	<title>查看属性权限</title>
 	<script>
 		function Person(name,age){
 			this.name = name;
@@ -18,18 +18,8 @@
 
 		var p1 = new Person('tom',18);
 
-		Object.defineProperty(p1,"EYES",{
-			value:4,
-			enumerable:true, // 是否可以枚举，默认是 false
-			writable:true,// 是否可写(赋值)，默认是false
-			configurable:true //是否可以删除，是否可以修改修改属性的权限
-		})
-		console.log(p1);
-		for(var attr in p1){
-			console.log(attr,p1[attr])
-		} 
-
-
+		var a = Object.getOwnPropertyDescriptor(p1,'name')
+		console.log(a)
 	</script>
 </head>
 <body>

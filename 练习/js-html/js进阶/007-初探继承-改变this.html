@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变this</title>
+	<script>
+		function show(n1,n2){
+			console.log(this,n1,n2)
+		}
+		show();
+		show.call(1,3,4);
+		show.apply(1,[3,4]);
+		var fn = show.bind(1,3,4);
+		console.log(fn);
+		fn();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

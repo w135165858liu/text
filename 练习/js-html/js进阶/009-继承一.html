@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承一</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age ;
+		}
+		Person.prototype.showName = function(){
+			console.log("I am "+this.name)
+		}
+		Person.prototype.showAge = function(){
+			console.log("I am"+this.age+"years old")
+		}
+		Person.prototype.LECG = 4;
+		function Student(n1,n2,n3){
+    		this.n3 = n3; //Student的属性
+    		Person.call(this,n1,n2);//属性的继承
+    		this.n3 = n3; //子类的属性
+		}
+
+		Student.prototype = 父类.prototype; //方法的继承
+		Student.prototype.方法 = function(){} //子类的方法
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

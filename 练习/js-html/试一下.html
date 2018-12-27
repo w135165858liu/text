@@ -6,14 +6,31 @@
 	<style>
 	</style>
 <body>
-	<input type="password">
+	用户名：<input type="text" id="text">
+	<button id="btn1">测试1</button>
+	<button id="btn2">测试2</button>
+	密码：<input type="password" id="password">
 </body>
 <script>
-	var a = (function b(){
-		return 'b'
-	},function c(){
-		return 'c'
-	})() ;
-	console.log(a)
+	var oTxt = document.getElementById('text');
+	var oPassword = document.getElementById('password');
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var reg1 = /^[a-zA-Z_]\w{2,7}$/
+	var reg2 = /^[a-zA-Z\d]\w{7,10}$/
+	oBtn1.onclick = function(){	
+		if(reg1.test(oTxt.value)){
+			console.log('对了',oTxt.value)
+		}else{
+			console.log('错了',oTxt.value)
+		}
+	}	
+	oBtn2.onclick = function(){	
+		if(reg2.test(oPassword.value)){
+			console.log('对了',oTxt.value)
+		}else{
+			console.log('错了',oTxt.value)
+		}
+	} 
 </script>
 </html>
