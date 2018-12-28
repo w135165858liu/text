@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包-封闭空间的格式-小括号的语义</title>
+	<script>
+		//和一些语句联合使用以达到某些限定作用,如与if、while后的()
+		//提高运算的优先级
+		console.log('a'+1+2+'b');
+		console.log('a'+(1+2)+'b');
+		//函数声明时参数表
+		//函数调用和传参
+		function show(n1,n2){
+			console.log(n1,n2)
+		}
+		show('a','b')
+		//强制表达式运算
+		;(function(){
+			console.log('aaaa')
+		})()
+		+(function(){
+			console.log('bbbb')
+		})()
+		-(function(){
+			console.log('cccc')
+		})()
+		//;(function(参数){})(传参值)
+		//+(function(参数){})(传参值)
+		//-(function(参数){})(传参值)
+		//注意点:上述写法主要是为了和其他的封闭空间隔开
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
