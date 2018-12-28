@@ -752,7 +752,7 @@ pullDown();//下拉菜单
 carousels();//轮播图
 sideMenu();//侧边菜单
 countDown();//闪购倒计时
-// sgtabs();//闪购部分选项卡
+sgTabs();//闪购部分选项卡
 function cartList(){
 	var oCartList = document.querySelectorAll('.cart-list')[0];
 	var oCart = document.querySelectorAll('.top-top2')[0];
@@ -1001,7 +1001,6 @@ function sideMenu(){
 	}
 	function loadData(index){
 		var data = sideMenuData[index];
-		console.log(sideMenuData[index])
 		var html = '<ul>';
 		for(var j = 0;j<data.length;j++){
 			html +='<li>';
@@ -1045,5 +1044,13 @@ function countDown(){
 	Time();
 }
 function sgTabs(){
-
+	var oSgList = document.querySelector('.sg-tabs');
+	var aSgBtn1 = document.querySelector('.sg-btn1');
+	var aSgBtn2 = document.querySelector('.sg-btn2');
+	aSgBtn1.onclick = function(){
+		animate(oSgList,{marginLeft:0},true)
+	}
+	aSgBtn2.onclick = function(){
+		animate(oSgList,{marginLeft:-oSgList.offsetWidth/2},true)
+	}	
 }
