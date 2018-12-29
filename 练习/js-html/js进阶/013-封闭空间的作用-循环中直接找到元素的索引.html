@@ -3,12 +3,63 @@
 <head>
 	<meta charset="UTF-8">
 	<title>013-封闭空间的作用-循环中直接找到元素的索引</title>
-	
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		ul{
+			margin: 100px auto;
+		}
+		li{
+			float: left;
+			width: 100px;
+			height: 40px;
+			background:red;
+			margin-right:20px;
+			list-style: none;
+		}
+		.active{
+			background: yellow;
+		}
+	</style>
 </head>
 <body>
-	
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 </body>
 <script>
-	var aLi
+	var aLi = document.getElementsByTagName('li');
+	var lastIndex = 0;
+	for(var i = 0;i<aLi.length;i++){
+		
+		// aLi[i].index = i;
+		// aLi[i].onmouseover = function(){
+		// 	for(var j = 0;j<aLi.length;j++){
+		// 		aLi[j].className = '';
+		// 	}
+		// 	aLi[this.index].className = 'active';
+		// }
+		
+		(function(i){
+			aLi[i].onmouseover = function(){
+				console.log(i)
+				aLi[lastIndex].className = '';
+				this.className = 'active';
+				lastIndex = i;
+				console.log(this)
+			}
+		})(i);
+	}
 </script>
 </html>

@@ -6,9 +6,9 @@ function animate(obj,attr,target){
 				current = Math.round(current * 100);
 			}
 			if(current>target){
-				iSpeed = -80;
+				iSpeed = -10;
 			}else{
-				iSpeed = 80;
+				iSpeed = 10;
 			}
 			if(Math.abs(target-current)<Math.abs(iSpeed)){
 				clearInterval(obj.timer);

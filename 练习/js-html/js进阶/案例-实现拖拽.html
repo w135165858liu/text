@@ -8,29 +8,62 @@
 	
 </body>
 	<script>
-		function Drge(options){
+		function Drag(options){
 			//1.罗列
 			this.width = options.width;
 			this.height = options.height;
 			this.background = options.background;
+			this.disX = 0;
+			this.disY = 0;
 			//2.初始化
 			this.init();
 			//3.绑定事件
-			
+			this.bindEvent();
 		}
-		Drge.prototype.init = function(){
+		Drag.prototype.init = function(){
 			this.oBox = document.createElement('div');
 			this.oBox.style.height = this.height + 'px';
 			this.oBox.style.width = this.width + 'px';
 			this.oBox.style.background = this.background;
+			this.oBox.style.position = 'absolute';
+			this.oBox.style.left = 0;
+			this.oBox.style.top = 0;
 			document.body.appendChild(this.oBox);
-
-
-
+		}
+		Drag.prototype.bindEvent = function(){
+			this.oBox.onmousedown = function(ev){
+				var oEvent = ev || event;
+				this.disX = oEvent.clientX - this.oBox.offsetLeft;
+				this.disY = oEvent.clientY - this.oBox.offsetTop;
+				document.onmousemove = this.fnMove.bind(this)
+				document.onmouseup = this.fnUp.bind(this)
+			}.bind(this)
+		}
+		Drag.prototype.fnMove = function(ev){
+			var oEvent = ev || event;
+			this.oBox.style.left = oEvent.clientX - this.disX + 'px';
+			this.oBox.style.top = oEvent.clientY - this.disY + 'px';
+		}
+		Drag.prototype.fnUp = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
 		}
 
-
-		new Drge({
+		function LimitDrag(options){
+			Drag.call(this,options);
+			LimitDrag.prototype = Object.create(Drag.prototype);
+			LimitDrag.prototype.constructor = LimitDrag;
+			LimitDrag.prototype.onmousedown = function(){
+					this.oBox.onmousemove = function(ev){
+						var oEvent = ev || event;
+					this.disX = oEvent.clientX - this.oBox.offsetLeft;
+					this.disY = oEvent.clientY - this.oBox.offsetTop;
+					document.onmousemove = this.fnMove.bind(this)
+					document.onmouseup = this.fnUp.bind(this)
+				}.bind(this)
+			}
+		}
+		new LimitDrag({
 			width:100,
 			height:100,
 			background:'red'
