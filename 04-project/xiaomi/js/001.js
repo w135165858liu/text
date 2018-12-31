@@ -747,12 +747,203 @@ var sideMenuData = [
 		}
 	]
 ];
+var hotTabsData = [
+	[
+		{
+			img:'images/download2.jpg',
+			name:'小米小钢炮蓝牙音箱 2 白色',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/download2.jpg',
+			name:'小米小钢炮蓝牙音箱 2 白色',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/download2.jpg',
+			name:'小米小钢炮蓝牙音箱 2 白色',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/download2.jpg',
+			name:'小米小钢炮蓝牙音箱 2 白色',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/download2.jpg',
+			name:'小米小钢炮蓝牙音箱 2 白色',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/download2.jpg',
+			name:'小米小钢炮蓝牙音箱 2 白色',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/download2.jpg',
+			name:'小米小钢炮蓝牙音箱 2 白色',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			top:{
+				img:'images/004.jpg',
+				name:'小米净水器（厨下式',
+				price:'1899'
+			},
+			bottom:{
+				name:'电视影音'
+			}
+		}
+	],
+	[
+		{
+			img:'images/xiaomitv1.jpg',
+			name:'小米电视 A1',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv1.jpg',
+			name:'小米电视 A1',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv1.jpg',
+			name:'小米电视 A1',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv1.jpg',
+			name:'小米电视 A1',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv1.jpg',
+			name:'小米电视 A1',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv1.jpg',
+			name:'小米电视 A1',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv1.jpg',
+			name:'小米电视 A1',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			top:{
+				img:'images/004.jpg',
+				name:'小米净水器（厨下式',
+				price:'1899'
+			},
+			bottom:{
+				name:'电视影音'
+			}
+		}
+	],
+	[
+		{
+			img:'images/xiaomitv2.jpg',
+			name:'小米电视 A2',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv2.jpg',
+			name:'小米电视 A2',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv2.jpg',
+			name:'小米电视 A2',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv2.jpg',
+			name:'小米电视 A2',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv2.jpg',
+			name:'小米电视 A2',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv2.jpg',
+			name:'小米电视 A2',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv2.jpg',
+			name:'小米电视 A2',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			top:{
+				img:'images/004.jpg',
+				name:'小米净水器（厨下式',
+				price:'1899'
+			},
+			bottom:{
+				name:'电脑'
+			}
+		}
+	],
+	[
+		{
+			img:'images/xiaomitv3.jpg',
+			name:'小米电视 A3',
+			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv3.jpg',
+			name:'小米电视 A3',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv3.jpg',
+			name:'小米电视 A3',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv3.jpg',
+			name:'小米电视 A3',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv3.jpg',
+			name:'小米电视 A3',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv3.jpg',
+			name:'小米电视 A3',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			img:'images/xiaomitv3.jpg',
+			name:'小米电视 A3',
+			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
+		},
+		{
+			top:{
+				img:'images/004.jpg',
+				name:'小米净水器（厨下式',
+				price:'1899'
+			},
+			bottom:{
+				name:'家居'
+			}
+		}
+	]
+]
 cartList();//购物车
 pullDown();//下拉菜单
 carousels();//轮播图
 sideMenu();//侧边菜单
 countDown();//闪购倒计时
 sgTabs();//闪购部分选项卡
+hotTabs();//热门部分选项卡
 function cartList(){
 	var oCartList = document.querySelectorAll('.cart-list')[0];
 	var oCart = document.querySelectorAll('.top-top2')[0];
@@ -1053,4 +1244,68 @@ function sgTabs(){
 	aSgBtn2.onclick = function(){
 		animate(oSgList,{marginLeft:-oSgList.offsetWidth/2},true)
 	}	
+}
+function hotTabs(){
+	var oHotList = document.querySelector('.hot-tabs');
+	var oHotItem = oHotList.children;
+	var oHotContnet = document.querySelector('.hot-content');
+	var oHotContnetItem = oHotContnet.children;
+	var lastIndex = 0;
+	for(var i = 0;i < oHotItem.length;i++){
+		(function(i){
+			oHotItem[i].onmouseover = function(){
+				oHotItem[i].index = i;
+				oHotItem[lastIndex].className = 'tab-active';
+				this.className = 'tab-active hot-active';
+				lastIndex = i;
+				loadData(this.index);
+			}
+		})(i);
+	}
+	function loadData(index){
+		var data = hotTabsData[index];
+		var html = '<ul class="hot-content">';
+		for(var j = 0;j<data.length-1;j++){
+			html +='<li class="span-second-itme brick-item-active">';
+			html +='	<div class="span-second-itme-content">';
+			html +='		<a class="thumb exposure" href="javascript:;">'; 
+			html +='			<img src="'+data[i].img+'">';
+			html +='		</a>';
+			html +='		<h3 class="clearfix">';
+			html +='			<a href="javascript:;">'+data[i].name+'</a>';
+			html +='		</h3>';
+			html +='		<p class="desc clearfix">极简设计，专业喇叭</p>';
+			html +='		<p class="price">';
+			html +='		<span>9.9</span>&nbsp;';
+			html +='		<span>元</span>&nbsp;';
+			html +='		<del>129元</del>';
+			html +='		<div class="flag flag-saleoff"> 9.9元秒杀</div> ';
+			html +='	</div>';
+			html +='	<div class="review-wrapper">';
+			html +='		<a href="javascript:;">';
+			html +='			<span>'+data[i].msg+'</span>';
+			html +='			<span>“来自于 孔繁义 的评价”</span>';
+			html +='		</a>';
+			html +='	</div>';
+			html +='</li>';
+		}
+		var lastData = data[data.length-1]
+		html += '<li class="span-last-itme brick-item-active">';
+		html +='		<div class="figure figure-img"><a href="javascript:;"><img src="'+lastData.top.img+'" alt=""></a></div>';
+		html +='	<h3><a href="javascript:;">'+lastData.top.name+'</a></h3>';
+		html +='	<p class="price"><span class="num">'+lastData.top.price+'</span>元</p>';
+		html +='</li>';
+		html +='<li class="span-last-itme brick-item-active">';
+		html +='	<div class="figure-more">';
+		html +='		<a href="javascript:;"><i class="iconfont">&#xe615;</i></a>';
+		html +='	</div>';
+		html +='	<a href="javascript:;"  class="more">';
+		html +='		浏览更多';
+		html +='		<br>';
+		html +='		<small>'+lastData.bottom.name+'</small>';
+		html +='	</a>';
+		html +='</li>';
+		html += '</ul>';
+		oHotContnet.innerHTML = html;
+	}
 }
