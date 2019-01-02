@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>惰性登陆框</title>
+	<style>
+		.abc{
+			width: 100px;
+			height: 200px;
+			background: red;
+			margin: 200px auto;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="登陆">
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	function signle(){
+		var obj = null;
+		return function(fn){	
+			if(!obj){
+				obj = fn();
+			}
+		}
+		return obj;
+	}
+	function abc(){
+		var oBox = document.createElement('div');
+		oBox.className = 'abc';
+		document.body.appendChild(oBox);
+	}
+	oBtn.onclick = function(){	
+		signle(abc);
+	}
+</script>
+</html>

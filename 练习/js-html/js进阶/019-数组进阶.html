@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组进阶</title>
+	<script>
+		var arr = [1,2,4,5,10,20,30,50];
+		console.log('arr',arr)
+		//遍历
+		var arr1 = arr.forEach(function(value,index){
+			console.log('arr1',value)
+		})
+		console.log('arr1',arr1)
+		//映射
+		var arr2 = arr.map(function(value,index){
+			return value*10
+		})
+		console.log('arr2',arr2)
+		//过滤
+		var arr3 = arr.filter(function(value,index) {
+			return index>3;
+		});
+		console.log(arr3)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

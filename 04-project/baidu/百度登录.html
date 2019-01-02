@@ -251,7 +251,7 @@
                     <input type="password" autocomplete="off" name="password" placeholder="请设置登录密码"/>
                     <span class="cancel"  style="display: none;"></span>
                     <span class="msg"></span>
-                    <div id="pwdChecklist" class="pwd-checklist" style="display:block;">
+                    <div id="pwdChecklist" class="pwd-checklist" style="display:none;">
                         <ul>
                             <li class="pwd-checklist-item">长度为6~14个字符</li>
                             <li class="pwd-checklist-item">支持数字,大小写字母和标点符号</li>
@@ -283,12 +283,18 @@
 </body>
 <script>
     var oForm = document.forms[0];
-    var aUserInput = oForm.username;
+    var aUserName = oForm.username;
     var aUserPhone = oForm.phone;
+    var aUserPassword = oForm.password;
+    var oUserPwdChecklist = document.getElementById('pwdChecklist');
+    var aUserPwdItem = document.querySelectorAll('.pwd-checklist-item')
     var aCancel = document.querySelectorAll('.cancel');
     var aMsg = document.querySelectorAll('.msg');
     var aMsgOk = document.querySelectorAll('.ok');
-    //通用函数
+    checkName();//用户名验证
+    checkPhone();//手机号验证
+    checkPwd();//密码验证
+//通用函数
     //限制输入中文长度
     function oReg(sVal){
         return sVal.replace(/[\u4e00-\u9fa5]/g,'aa').length;
@@ -319,8 +325,6 @@
             oInput.focus();
         }
     }
-
-
     //获取焦点时
     function setFocus(aMsg,sMsg){
         aMsg.className = 'tiptext';
@@ -333,73 +337,93 @@
     }
     //用户名输入框
     //默认获取焦点
-    aUserInput.onfocus = function(){
-        setFocus(aMsg[0],'设置后不可更改<br>中英文均可，最长14个英文或7个汉字');
+    function checkName(){ 
+        aUserName.onfocus = function(){
+            setFocus(aMsg[0],'设置后不可更改<br>中英文均可，最长14个英文或7个汉字');
+        }
+        aUserName.focus();
+        aUserName.oninput = function(){
+            setInput(aCancel[0],aUserName);
+        }
+        aUserName.onblur = function(){
+            var reg1 = /^\s+$/;
+            var reg2 = /[^a-z\u4e00-\u9fa5_\d]/i;
+            var reg3 = /^\d+$/;
+            var sVal = aUserName.value;
+            if(sVal == ''){
+                setEmpty(aMsg[0],aUserName)
+            }
+            else if(oReg(sVal)>14){
+                setErr(aMsg[0],'用户不能超过7个汉字或14个字符',aUserName);
+            }
+            else if(reg1.test(sVal)){
+                aCancel[0].onclick();
+            }
+            else if(reg2.test(sVal) || reg3.test(sVal)){
+                setErr(aMsg[0],'用户名仅支持中英文、数字和下划线,且不能为纯数字',aUserName);
+            }
+            else{
+                setOk(aMsg[0],aUserName)
+            }
+        }
     }
-    aUserInput.focus();
-    aUserInput.oninput = function(){
-        setInput(aCancel[0],aUserInput);
-    }
-    aUserInput.onblur = function(){
-        var reg1 = /^\s+$/;
-        var reg2 = /[^a-z\u4e00-\u9fa5_\d]/i;
-        var reg3 = /^\d+$/;
-        var sVal = aUserInput.value;
-        if(sVal == ''){
-            setEmpty(aMsg[0],aUserInput)
-        }
-        else if(oReg(sVal)>14){
-            setErr(aMsg[0],'用户不能超过7个汉字或14个字符',aUserInput);
-        }
-        else if(reg1.test(sVal)){
-            aCancel[0].onclick();
-        }
-        else if(reg2.test(sVal) || reg3.test(sVal)){
-            setErr(aMsg[0],'用户名仅支持中英文、数字和下划线,且不能为纯数字',aUserInput);
-        }
-        else{
-            setOk(aMsg[0],aUserInput)
-        }
-    }
-
-
     //手机输入框
-    aUserPhone.onfocus = function(){
-        setFocus(aMsg[1],'请输入中国大陆手机号，其他用户不可见');
-    }
-    aUserPhone.oninput = function(){
-        setInput(aCancel[1],aUserPhone);
-    }
-    aUserPhone.onblur = function(){
-        var reg1 = /^\s+$/;
-        var reg2 = /^1[35678]\d{9}$/;
-        var sVal = aUserPhone.value;
-        if(sVal == ''){
-            setEmpty(aMsg[1],aUserPhone);
+    function checkPhone(){
+        aUserPhone.onfocus = function(){
+            setFocus(aMsg[1],'请输入中国大陆手机号，其他用户不可见');
         }
-        else if(reg1.test(sVal)){
-            aCancel[1].onclick();
+        aUserPhone.oninput = function(){
+            setInput(aCancel[1],aUserPhone);
         }
-        else if(!reg2.test(sVal)){
-            setErr(aMsg[1],'手机号码格式不正确',aUserPhone);
+        aUserPhone.onblur = function(){
+            var reg1 = /^\s+$/;
+            var reg2 = /^1[35678]\d{9}$/;
+            var sVal = aUserPhone.value;
+            if(sVal == ''){
+                setEmpty(aMsg[1],aUserPhone);
+            }
+            else if(reg1.test(sVal)){
+                aCancel[1].onclick();
+            }
+            else if(!reg2.test(sVal)){
+                setErr(aMsg[1],'手机号码格式不正确',aUserPhone);
+            }
+            else{
+                setOk(aMsg[1],aUserPhone);
+            }
         }
-        else{
-            setOk(aMsg[1],aUserPhone);
+        aUserPhone.onkeydown = function(ev){
+            var oEvent = ev || event;
+            if((oEvent.keyCode>57 || oEvent.keyCode<48 || aUserPhone.value.length>10) && oEvent.keyCode != 8 && oEvent.keyCode != 37 && oEvent.keyCode != 39){
+                return false;
+            }
         }
     }
-    aUserPhone.onkeydown = function(ev){
-        var oEvent = ev || event;
-        if(oEvent.keyCode>57 || oEvent.keyCode<48 || aUserPhone.value.length>10){
-            return false;
+    //密码输入框
+    function checkPwd(){  
+        aUserPassword.onfocus = function(){
+            oUserPwdChecklist.style.display = 'block';
+        }
+        aUserPassword.onblur = function(){
+            oUserPwdChecklist.style.display = 'none';
+        }
+        aUserPassword.oninput = function(ev){
+            var oEvent = ev || event;
+            var sVal = aUserPassword.value;
+            //. * + ? $ ^ |:! \ /() {} []
+            //长度为6~14个字符
+            var reg1 = /^.{6,14}$/g
+            //支持数字,大小写字母和标点符号
+            var reg2 = /[0-9a-z@#%,\.\*\+\?\$\^\|\:\!\\\/\(\)\{\}\[\]]/i
+            //不允许有空格
+            var reg3 = /\s/
+            if(!reg1.test(sVal)){
+                aUserPwdItem[0].className = 'pwd-checklist-item pwd-checklist-item-error';
+            }else{
+                aUserPwdItem[0].className = 'pwd-checklist-item pwd-checklist-item-success';
+            }
         }
     }
-    
-    document.onkeydown = function(ev){
-        var oEvent = ev || event;
-        console.log(oEvent.keyCode);
-    }
-
-
 
 </script>
 </html>
