@@ -287,7 +287,7 @@
     var aUserPhone = oForm.phone;
     var aUserPassword = oForm.password;
     var oUserPwdChecklist = document.getElementById('pwdChecklist');
-    var aUserPwdItem = document.querySelectorAll('.pwd-checklist-item')
+    var aUserPwdItem = document.querySelectorAll('.pwd-checklist-item');
     var aCancel = document.querySelectorAll('.cancel');
     var aMsg = document.querySelectorAll('.msg');
     var aMsgOk = document.querySelectorAll('.ok');
@@ -320,6 +320,12 @@
             aCancel.style.display = 'block';
         }
         aCancel.onclick = function(){
+            if(oInput == aUserPassword){
+                for(var i = 0;i<aUserPwdItem.length;i++){
+                aUserPwdItem[i].className = 'pwd-checklist-item';
+                console.log(aUserPwdItem[i])
+                }
+            }
             oInput.value = '';
             aCancel.style.display = 'none';
             oInput.focus();
@@ -332,7 +338,7 @@
     }
     //当内容为空时
     function setEmpty(aMsg,oInput){
-        aMsg.className = 'msg';    
+        aMsg.className = 'msg';
         oInput.className = '';
     }
     //用户名输入框
@@ -401,26 +407,44 @@
     }
     //密码输入框
     function checkPwd(){  
+        //. * + ? $ ^ |:! \ /() {} []
+        
+        var sVal,reg1,reg2,reg3
         aUserPassword.onfocus = function(){
             oUserPwdChecklist.style.display = 'block';
+            aMsg[2].className = 'msg';
         }
-        aUserPassword.onblur = function(){
-            oUserPwdChecklist.style.display = 'none';
-        }
-        aUserPassword.oninput = function(ev){
-            var oEvent = ev || event;
-            var sVal = aUserPassword.value;
-            //. * + ? $ ^ |:! \ /() {} []
+        aUserPassword.oninput = function(){
             //长度为6~14个字符
-            var reg1 = /^.{6,14}$/g
-            //支持数字,大小写字母和标点符号
-            var reg2 = /[0-9a-z@#%,\.\*\+\?\$\^\|\:\!\\\/\(\)\{\}\[\]]/i
-            //不允许有空格
-            var reg3 = /\s/
+            reg1 = /^.{6,14}$/g
+        //支持数字,大小写字母和标点符号
+            reg2 = /[^0-9a-zA-Z@#%,\.\*\+\?\$\^\|\:\!\\\/\(\)\{\}\[\]]/
+        //不允许有空格
+            reg3 = /\s/
+            sVal = aUserPassword.value;
             if(!reg1.test(sVal)){
                 aUserPwdItem[0].className = 'pwd-checklist-item pwd-checklist-item-error';
             }else{
                 aUserPwdItem[0].className = 'pwd-checklist-item pwd-checklist-item-success';
+            }
+            if(!reg2.test(sVal)){
+                console.log(reg2.test(sVal))
+                aUserPwdItem[1].className = 'pwd-checklist-item pwd-checklist-item-error';
+            }else{
+                aUserPwdItem[1].className = 'pwd-checklist-item pwd-checklist-item-success';
+            }
+            if(reg3.test(sVal)){
+                aUserPwdItem[2].className = 'pwd-checklist-item pwd-checklist-item-error';
+            }else{
+                aUserPwdItem[2].className = 'pwd-checklist-item pwd-checklist-item-success';
+            }
+            setInput(aCancel[2],aUserPassword);
+            console.log(sVal.length)
+            aUserPassword.onblur = function(){
+                if(reg1.test(sVal) && reg2.test(sVal) && !reg3.test(sVal)){
+                    setOk(aMsg[2],aUserPassword);
+                    oUserPwdChecklist.style.display = 'none';
+                }
             }
         }
     }

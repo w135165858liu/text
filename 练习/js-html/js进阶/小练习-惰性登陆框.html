@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>惰性登陆框</title>
+	<style>
+		.abc{
+			width: 100px;
+			height: 200px;
+			background: gray;
+			margin: 200px auto;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="登陆" id="btn">
+</body>
+	<script>
+		var oBtn = document.getElementById('btn');
+		function single(fn){
+			var obj = null
+			return function(){
+				if(!obj){	
+					obj = fn()
+				}
+				return obj
+			}
+		}
+		function createSingle(){
+			var oDiv = document.createElement('div');
+			oDiv.className = 'abc'
+			document.body.appendChild(oDiv);
+			return oDiv;
+		}
+		var bcd = single(createSingle)
+		oBtn.onclick = function(){
+			// single(createSingle)();
+			bcd()
+		}
+	</script>
+</html>
