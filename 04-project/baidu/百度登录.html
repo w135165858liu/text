@@ -286,14 +286,17 @@
     var aUserName = oForm.username;
     var aUserPhone = oForm.phone;
     var aUserPassword = oForm.password;
+    var aUserVerify = oForm.verify;
     var oUserPwdChecklist = document.getElementById('pwdChecklist');
     var aUserPwdItem = document.querySelectorAll('.pwd-checklist-item');
     var aCancel = document.querySelectorAll('.cancel');
     var aMsg = document.querySelectorAll('.msg');
     var aMsgOk = document.querySelectorAll('.ok');
+    var bPhone = false;
     checkName();//用户名验证
     checkPhone();//手机号验证
     checkPwd();//密码验证
+    checkVerify();//验证码
 //通用函数
     //限制输入中文长度
     function oReg(sVal){
@@ -322,8 +325,10 @@
         aCancel.onclick = function(){
             if(oInput == aUserPassword){
                 for(var i = 0;i<aUserPwdItem.length;i++){
-                aUserPwdItem[i].className = 'pwd-checklist-item';
-                console.log(aUserPwdItem[i])
+                    aUserPwdItem[i].className = 'pwd-checklist-item';
+                    bReg1 = false;
+                    bReg2 = false;
+                    bReg3 = false;
                 }
             }
             oInput.value = '';
@@ -387,15 +392,19 @@
             var sVal = aUserPhone.value;
             if(sVal == ''){
                 setEmpty(aMsg[1],aUserPhone);
+                bPhone = false;
             }
             else if(reg1.test(sVal)){
                 aCancel[1].onclick();
+                bPhone = false;
             }
             else if(!reg2.test(sVal)){
                 setErr(aMsg[1],'手机号码格式不正确',aUserPhone);
+                bPhone = false;
             }
             else{
                 setOk(aMsg[1],aUserPhone);
+                bPhone = true;
             }
         }
         aUserPhone.onkeydown = function(ev){
@@ -403,13 +412,12 @@
             if((oEvent.keyCode>57 || oEvent.keyCode<48 || aUserPhone.value.length>10) && oEvent.keyCode != 8 && oEvent.keyCode != 37 && oEvent.keyCode != 39){
                 return false;
             }
+            console.log(aUserPhone.value.length)
         }
     }
     //密码输入框
     function checkPwd(){  
-        //. * + ? $ ^ |:! \ /() {} []
-        
-        var sVal,reg1,reg2,reg3
+        var sVal,reg1,reg2,reg3,bReg1 = false,bReg2 = false,bReg3 = false;
         aUserPassword.onfocus = function(){
             oUserPwdChecklist.style.display = 'block';
             aMsg[2].className = 'msg';
@@ -418,36 +426,61 @@
             //长度为6~14个字符
             reg1 = /^.{6,14}$/g
         //支持数字,大小写字母和标点符号
-            reg2 = /[^0-9a-zA-Z@#%,\.\*\+\?\$\^\|\:\!\\\/\(\)\{\}\[\]]/
+            reg2 = /[^0-9a-zA-Z@#%,\.\*\+\?\$\^\|\:\!\\\/\(\)\{\}\[\]\s<>?:"";''=\-_&]/
         //不允许有空格
             reg3 = /\s/
             sVal = aUserPassword.value;
             if(!reg1.test(sVal)){
                 aUserPwdItem[0].className = 'pwd-checklist-item pwd-checklist-item-error';
+                bReg1 = false;
             }else{
                 aUserPwdItem[0].className = 'pwd-checklist-item pwd-checklist-item-success';
+                bReg1 = true;
             }
-            if(!reg2.test(sVal)){
-                console.log(reg2.test(sVal))
+            if(reg2.test(sVal)){
                 aUserPwdItem[1].className = 'pwd-checklist-item pwd-checklist-item-error';
+                bReg2 = false;
             }else{
                 aUserPwdItem[1].className = 'pwd-checklist-item pwd-checklist-item-success';
+                bReg2 = true;
             }
             if(reg3.test(sVal)){
                 aUserPwdItem[2].className = 'pwd-checklist-item pwd-checklist-item-error';
+                bReg3 = false;
             }else{
                 aUserPwdItem[2].className = 'pwd-checklist-item pwd-checklist-item-success';
+                bReg3 = true;
             }
             setInput(aCancel[2],aUserPassword);
             console.log(sVal.length)
-            aUserPassword.onblur = function(){
-                if(reg1.test(sVal) && reg2.test(sVal) && !reg3.test(sVal)){
-                    setOk(aMsg[2],aUserPassword);
-                    oUserPwdChecklist.style.display = 'none';
-                }
-            }
+        }
+        aUserPassword.onblur = function(){
+            if(sVal == undefined){
+                oUserPwdChecklist.style.display = 'none';
+            }else if(bReg1 && bReg2 && bReg3){
+                 setOk(aMsg[2],aUserPassword)
+                 oUserPwdChecklist.style.display = 'none';
+             } 
         }
     }
-
+    //验证码
+    function checkVerify(){
+        var smsBtn = document.getElementById('smsBtn');
+        var sVal = aUserVerify.value;
+        var reg = /^[0-9a-z]{6}$/i;
+        smsBtn.onclick = function(){
+            if(aUserPhone.value == ''){
+                setErr(aMsg[1],'请输入手机号',aUserPhone);
+            }else if(bPhone){
+                alert('正在发送短信。。。')
+            }
+        }
+        aUserVerify.onkeydown = function(){
+            // if(sVal.length>6){
+            //     return false;
+            // }
+            console.log(sVal)
+        }
+    }
 </script>
 </html>
