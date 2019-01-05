@@ -16,6 +16,6 @@ var server = http.createServer(function(req,res){
 		}
 	})
 });
-server.listen(3000,'10.196.18.174',function(){
-	console.log("Server is running at http://10.196.18.174:3000")
+server.listen(3000,'127.0.0.1',function(){
+	console.log("Server is running at http://127.0.0.1:3000")
 })

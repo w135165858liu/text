@@ -17,9 +17,9 @@
 </body>
 <script>
 	var oBtn = document.getElementById('btn')
-	function signle(){
+	function signle(fn){
 		var obj = null;
-		return function(fn){	
+		return function(){	
 			if(!obj){
 				obj = fn();
 			}
@@ -30,9 +30,11 @@
 		var oBox = document.createElement('div');
 		oBox.className = 'abc';
 		document.body.appendChild(oBox);
+		return oBox;
 	}
+	var bcd = signle(abc)
 	oBtn.onclick = function(){	
-		signle(abc);
+		bcd();
 	}
 </script>
 </html>
