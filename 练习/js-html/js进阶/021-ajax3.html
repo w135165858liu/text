@@ -5,10 +5,10 @@
 	<title>Document</title>
 </head>
 	<!--
-		发送基本ajsx请求
+		发送基本ajsx请求-POST
 	-->
 <body>
-	<button id="btn">获取数据</button>
+	<button id="btn">发送POST请求</button>
 </body>
 <script>
 	var oBtn = document.getElementById('btn');
@@ -17,7 +17,7 @@
 		var oAjax = new XMLHttpRequest();
 		console.log('after new',oAjax.readyState)//0 没有初始化，还没有调用open方法
 		//2.建立连接(拨号)
-		oAjax.open('GET','http://127.0.0.1:3000/getData?name=Tom',true);
+		oAjax.open('POST','http://127.0.0.1:3000/023-data.json',true);
 		console.log('after open',oAjax.readyState)//1启动，已调用open方法但是还没调用send方法
 
 
@@ -27,7 +27,7 @@
 
 
 		//3.发送信息(说话)
-		oAjax.send();
+		oAjax.send('{"name":"Tom","age":18}');
 		//4.监听事件接收数据(听)
 		oAjax.onreadystatechange = function(){
 			console.log('in onreadystatechange',oAjax.readyState);
