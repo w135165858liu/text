@@ -1,6 +1,7 @@
 /*
 通用样式
  */
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}
 *{
 	margin: 0;
 	padding: 0;
@@ -14,10 +15,26 @@
 a{
 	display: block;
 	box-sizing: border-box;
+	text-decoration: none;
 }
-
-
-
+div{
+	box-sizing: border-box;
+}
+#yl{
+	display: inline-block;
+	color: #666;
+	font-size: 12px;	
+	color: #f60;
+}
+.bs{
+	display: inline-block;
+	color: #666;
+	font-size: 12px;	
+}
+.bs:hover{
+	color: #f60;
+	cursor: pointer;
+}
 
 /*
 通用样式结束
@@ -86,18 +103,12 @@ a{
 	display: inline-block;
 	color: #666;
 	font-size: 12px;
-	text-decoration: none;
+	
 }
 .Dl{
 	margin-right: 10px;
 }
-#yl{
-	color: #f60;
-}
-.bs:hover{
-	color: #f60;
-	cursor: pointer;
-}
+
 /*顶部导航结束*/
 /*头部导航开始*/
 .top3{
@@ -105,10 +116,63 @@ a{
 	height: 110px;
 }
 .suninglogo{
+	display: inline-block;
+	width: 190px;
 	height: 90px;
 }
-
-
-
+.ng-search{
+	width: 600px;
+	height: 100px;
+	position: absolute;
+	left: 370px;
+	top: 0;
+	padding-top: 30px;
+}
+.search-keyword-box{
+	float: left;
+    width: 420px;
+    padding: 0 0 0 28px;
+    border: 2px solid #FA0;
+    border-right: none;
+    position: relative;
+}
+.search-keyword{
+	width: 380px;
+    padding: 9px 10px 9px 0;
+    height: 18px;
+    line-height: 18px;
+    margin-top: 0;
+    border: none;
+    background: #FFF;
+    color: #BBB;
+    font-size: 12px;
+    font-family: 'MicroSoft YaHei';
+}
+.sb-search{
+	width: 100px;
+    height: 40px;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'MicroSoft YaHei';
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-indent: 2px;
+    color: #FFF;
+    border: 0;
+    cursor: pointer;
+    background: #FA0;
+}
+.snKeywordNew-item{
+	float: left;
+}
+.searchbs{
+	margin: 3px 0 3px -11px;
+    padding: 0 20px 0 10px;
+    border-left: 1px solid #ddd;
+}
+.searchb{
+	margin: 3px 0 3px -11px;
+    padding: 0 20px 0 10px;
+}
 /*头部导航结束*/
 /*顶部样式结束*/
