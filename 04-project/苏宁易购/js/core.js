@@ -2,3 +2,10 @@ $('.ad1btn').on('click',function(){
 	$('#topad').toggleClass('topad');
 	$('#ad1btn').toggleClass('ad1btn1');
 });
+$(function(){
+	$('.ng-item').hover(function(){
+		$('.ng-sn-site-na').slideUp(100)
+	},function(){
+		$('.ng-sn-site-na').slideDown(100)
+	})
+})
