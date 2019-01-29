@@ -29,7 +29,7 @@ div{
 .bs{
 	display: inline-block;
 	color: #666;
-	font-size: 12px;	
+	font-size: 12px;
 }
 .bs:hover{
 	color: #f60;
@@ -85,19 +85,20 @@ div{
 }
 #ng div{
 	display: inline-block;
-	font-size: 12px;
-	color: #666;
 }
 .arrows{
 	display: inline-block;
-	transform: rotate(180deg);
+	transform: rotate(0deg);
 	color: #ccc;
+	font-size: 12px;
 	transition: all .2s ease-in;
 }
 .ng-item:hover .arrows{
-	transform: rotate(0deg);
+	transform: rotate(-180deg);
 }
 .ng-item{
+	font-size: 12px;
+	color: #666;
 	border: 1px solid #f5f5f5;
 	border-bottom: none;
 	position: relative;
@@ -110,7 +111,7 @@ div{
 	z-index:999;
 	border-bottom-color:#fff;
 }
-.ng-left .ng-sn-site-na{
+.ng-left .ng-item-div .ng-sn-site-na{
 	position: absolute;
 	left: 0px;
 	top: 36px;
@@ -120,6 +121,7 @@ div{
 	padding: 20px 0 20px 0;
 	border: 1px solid #eee;
 }
+
 .ng-sn-site-na dl{
 	float: left;
 	padding-left:20px;
@@ -127,6 +129,12 @@ div{
 	color: #000;
 	font-size: 14px;
 	border-right: 1px solid #eee;
+}
+.hot-re{
+    background: url('../images/re.png') 0 123px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
 }
 #last-dl{
 	border-right: none;
@@ -137,10 +145,50 @@ div{
     font-size: 14px;
     line-height: 17px;
 }
-.ng-sn-site-na p{
-	float: left;
-	width: 75px;
-	height: 25px;
+.ng-sn-site-na p {
+    float: left;
+    width: 75px;
+    height: 25px;
+}
+.chazi-Lj{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	display: inline-block;
+    width: 20px;
+    height: 20px;	
+}
+.chazi-box {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transform: rotate(0deg);
+    border-top-left-radius: 50%;
+    transition: all .2s;
+}
+
+.chazi-box:hover {
+    transform: rotate(-180deg);
+    color: #f60;
+}
+
+.chazi1 {
+    position: absolute;
+    left: 50%;
+    margin-left: -9px;
+    top: -1px;
+
+}
+
+.chazi2 {
+    box-sizing: border-box;
+    display: inline-block;
+    transform: rotate(180deg);
+    position: absolute;
+    left: 50%;
+    margin-left: -9px;
+    top: 4px;
 }
 .ng-right div{
 	line-height: 35px;
@@ -153,7 +201,6 @@ div{
 	display: inline-block;
 	color: #666;
 	font-size: 12px;
-	
 }
 .Dl{
 	margin-right: 10px;
