@@ -111,7 +111,16 @@ div{
 	z-index:999;
 	border-bottom-color:#fff;
 }
-.ng-left .ng-item-div .ng-sn-site-na{
+.ng-left-div{
+	position: relative;
+}
+.ng-left-div em{
+	display: inline-block;
+}
+.ng-left-div a{
+	display: inline-block;
+}
+.ng-left .ng-left-div .ng-sn-site-na{
 	position: absolute;
 	left: 0px;
 	top: 36px;
@@ -132,7 +141,6 @@ div{
 }
 .hot-re{
     background: url('../images/re.png') 0 123px;
-    display: inline-block;
     width: 14px;
     height: 14px;
 }
@@ -154,13 +162,11 @@ div{
 	position: absolute;
 	right: 5px;
 	top: 5px;
-	display: inline-block;
     width: 20px;
     height: 20px;	
 }
 .chazi-box {
     position: relative;
-    display: inline-block;
     width: 20px;
     height: 20px;
     transform: rotate(0deg);
@@ -183,22 +189,74 @@ div{
 
 .chazi2 {
     box-sizing: border-box;
-    display: inline-block;
     transform: rotate(180deg);
     position: absolute;
     left: 50%;
     margin-left: -9px;
     top: 4px;
 }
-.ng-right div{
-	line-height: 35px;
-	padding: 0 10px;	
+.ng-sn-site-re{
+	position: absolute;
+	left: 0px;
+	top: 36px;
+	width: 172px;
+	background: #fff;
+	z-index: 2;
+	border: 1px solid #eee;
+	padding: 5px 0 5px 0;
+}
+
+.ng-sn-site-re p{
+	float: left;
+    width: 75px;
+    height: 25px;
+    padding-left: 10px; 
+}
+.ng-sn-site-re .p-top1{
+	width: 60px;
+    height: 60px;
+    padding-left: 10px;	
+}
+.ng-sn-site-re .p-top2{
+    width: 60px;
+    height: 60px;
+    padding-left: 10px;
+    line-height: 60px;
+    padding-left: 20px;
+}
+.ng-sn-site-dd{
+	position: absolute;
+	left: 0px;
+	top: 36px;
+	width: 100%;
+	background: #fff;
+	z-index: 2;
+	border: 1px solid #eee;
+	padding: 5px 0 5px 0;
+}
+.ng-sn-site-dd p{
+	float: left;
+    width: 75px;
+    height: 25px;
+    padding-left: 10px; 
+}
+#ng .ng-left-div .ng-sn-site-Down{
+	display: none;
+}
+.zxzx{
+	background: url(../images/re.png) -140px 229px;
+    width: 23px;
+    height: 23px;
+}
+.snhy{
+    background: url('../images/jingling.png') -113px -1px;
+    width: 12px;
+    height: 12px;
 }
 .ng-right{
 	float: right;
 }
 .ng-bar-node a{
-	display: inline-block;
 	color: #666;
 	font-size: 12px;
 }
@@ -337,10 +395,34 @@ div{
     background: url('../images/jingling.png')!important;
     background-position: -345px -213px!important;
 }
+
+
+
+
+
+
+
+
 .ng-nav-rimg{
 	width: 170px;
 	height: 38px;
 	float: right;
+}
+.dingwei{
+	font-size: 12px;
+	color: #666;
+	border: 1px solid #f5f5f5;
+	border-bottom: none;
+	position: relative;
+	line-height: 35px;
+	padding: 0 10px;	
+}
+.dw-before-em{
+	display: inline-block;
+    background: url('../images/jingling.png') 463px 147px;
+    width: 12px;
+    height: 16px;
+    vertical-align: -4px;
 }
 /*头部导航结束*/
 /*顶部样式结束*/

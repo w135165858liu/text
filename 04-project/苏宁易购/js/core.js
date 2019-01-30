@@ -4,13 +4,19 @@ $('.ad1btn').on('click',function(){
 });
 /*下拉菜单*/
 $(function(){
-	$('.ng-item-div').hover(function(){
-		var $this = $(this)
-		var $site = $this.find('>.ng-sn-site-na')
-		$site.slideDown(100)
+	$('.ng-left-div').hover(function(){
+		var $this = $(this);
+		var $site = $this.find('>.ng-sn-site-Down');
+		$site.stop();
+		$site.slideDown(200);
 	},function(){
-		var $this = $(this)
-		var $site = $this.find('>.ng-sn-site-na')		
-		$site.slideUp(100)
+		var $this = $(this);
+		var $site = $this.find('>.ng-sn-site-Down');
+		$site.stop();	
+		$site.slideUp(200);
+	});
+	/*点击事件*/
+	$('.chazi-Lj').click(function(){
+		$('.ng-sn-site-na').slideUp(200);
 	})
 });
