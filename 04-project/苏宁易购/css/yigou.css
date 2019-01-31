@@ -196,28 +196,15 @@ div{
     top: 4px;
 }
 .ng-sn-site-re{
-	position: absolute;
-	left: 0px;
-	top: 36px;
 	width: 172px;
-	background: #fff;
-	z-index: 2;
-	border: 1px solid #eee;
-	padding: 5px 0 5px 0;
-}
 
-.ng-sn-site-re p{
-	float: left;
-    width: 75px;
-    height: 25px;
-    padding-left: 10px; 
 }
-.ng-sn-site-re .p-top1{
+#ng .ng-left-div .ng-sn-site-Down .p-top1{
 	width: 60px;
     height: 60px;
     padding-left: 10px;	
 }
-.ng-sn-site-re .p-top2{
+#ng .ng-left-div .ng-sn-site-Down .p-top2{
     width: 60px;
     height: 60px;
     padding-left: 10px;
@@ -225,23 +212,23 @@ div{
     padding-left: 20px;
 }
 .ng-sn-site-dd{
+	width: 100%;
+}
+#ng .ng-left-div .ng-sn-site-Down{
+	display: none;
 	position: absolute;
 	left: 0px;
 	top: 36px;
-	width: 100%;
-	background: #fff;
 	z-index: 2;
+	background: #fff;
 	border: 1px solid #eee;
 	padding: 5px 0 5px 0;
 }
-.ng-sn-site-dd p{
+#ng .ng-left-div .ng-sn-site-Down p{
 	float: left;
     width: 75px;
     height: 25px;
     padding-left: 10px; 
-}
-#ng .ng-left-div .ng-sn-site-Down{
-	display: none;
 }
 .zxzx{
 	background: url(../images/re.png) -140px 229px;
@@ -263,7 +250,19 @@ div{
 .Dl{
 	margin-right: 10px;
 }
-
+.shop-box{
+	width: 280px;
+    height: 400px;
+    background: #666;
+    overflow: hidden;
+    padding-bottom: 0;
+    font: 12px/1.5 arial,tahoma,\5b8b\4f53; 
+}
+.shop{
+	font-size: 14px;
+	color: #f60;
+	font-weight: bold;
+}
 /*顶部导航结束*/
 /*头部导航开始*/
 .top3{
