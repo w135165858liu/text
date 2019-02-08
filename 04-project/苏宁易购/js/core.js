@@ -7,13 +7,23 @@ $(function(){
 	$('.ng-left-div').hover(function(){
 		var $this = $(this);
 		var $site = $this.find('>.ng-sn-site-Down');
+		var $shop = $site.find('.shop-load')
 		$site.stop();
-		$site.slideDown(200);
+		$site.slideDown(200,function(){
+			$shop.css({
+				display:'none'
+			})
+		});
 	},function(){
 		var $this = $(this);
 		var $site = $this.find('>.ng-sn-site-Down');
+		var $shop = $site.find('.shop-load')
 		$site.stop();	
-		$site.slideUp(200);
+		$site.slideUp(200,function(){
+			$shop.css({
+				display:''
+			})			
+		});
 	});
 	/*点击事件*/
 	$('.chazi-Lj').click(function(){
