@@ -35,7 +35,19 @@ div{
 	color: #f60;
 	cursor: pointer;
 }
-
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+}
 /*
 通用样式结束
  */
@@ -355,11 +367,10 @@ div{
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -2px;
     width: 25px;
     height: 40px;
     line-height: 40px;
-    line-height: 42px\0;
     text-align: right;
     font-size: 14px;
     color: #ccc;	
@@ -381,8 +392,13 @@ div{
     background: #FFF;
     color: #BBB;
     font-size: 12px;
-    font-family: 'MicroSoft YaHei';
+    outline: none;
 }
+
+
+
+
+
 .sb-search{
 	width: 100px;
     height: 40px;
@@ -395,6 +411,23 @@ div{
     cursor: pointer;
     background: #FA0;
 }
+.g-ac-results {
+    position: absolute;
+    left: 0;
+    top: 41px;
+    width: 548px;
+    border: 1px solid #E4E4E4;
+    background: #FFF;
+    z-index: 7000;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
 .snKeywordNew-item{
 	float: left;
 }
@@ -407,6 +440,14 @@ div{
 	margin: 3px 0 3px -11px;
     padding: 0 20px 0 10px;
 }
+
+
+
+
+
+
+
+
 .top4{
 	height: 38px;
 	line-height: 38px;
