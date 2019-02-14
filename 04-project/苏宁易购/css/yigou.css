@@ -35,6 +35,9 @@ div{
 	color: #f60;
 	cursor: pointer;
 }
+.bbgs:hover{
+	background: #f60;
+}
 input, textarea, select, button {
     text-rendering: auto;
     color: initial;
@@ -410,6 +413,7 @@ input, textarea, select, button {
     border: 0;
     cursor: pointer;
     background: #FA0;
+    outline: none;
 }
 .g-ac-results {
     position: absolute;
@@ -456,6 +460,7 @@ input, textarea, select, button {
 .fltitle{
 	width: 190px;
 	float: left;
+	position: relative;
 }
 .FLtitle{
 	padding-left: 10px;
@@ -546,5 +551,153 @@ input, textarea, select, button {
     height: 16px;
     vertical-align: -4px;
 }
+.sn-FL-box{
+	position: absolute;
+	width: 100%;
+	height: 482px;
+	background: pink;
+}
+.sn-FL-list{
+    position: absolute;
+    left: 0;
+    top: 1px;
+    height: 480px;
+    width: 190px;
+    z-index: 7677;
+}
+.sn-FL-item{
+	position: relative;
+    width: 175px;
+    height: 32px;
+    padding: 0 8px 0 10px;
+    line-height: 32px;
+    background: #000;
+}
+.sn-FL-item a{
+	display: inline-block;
+    vertical-align: middle;
+    color: #FFF;
+    font-size: 13px;
+    text-decoration: none;
+}
+.FLfgx{
+	display: inline-block;
+    vertical-align: middle;
+    height: 12px;
+    width: 1px;
+    opacity: .4;
+    background: #d8d8d8;
+    margin: 0 5px;
+}
 /*头部导航结束*/
+
 /*顶部样式结束*/
+/*轮播部分*/
+.top5{
+    position: relative;
+    width: 100%;
+    height: 482px;
+    min-width: 990px;
+    overflow: hidden;
+    min-width: 1190px;
+}
+.top5-bg img{
+	position: absolute;
+    width: 545px;
+    height: 482px;
+    left: 50%;
+    top: 0;
+}
+.fw-bg-left{
+    margin-left: -973px;
+}
+.fw-bg-right{
+	margin-left: 425px;
+}
+.four-hc .title{
+	display: none;
+    position: relative;
+    z-index: 1;
+    width: 95px;
+    height: 22px;
+    line-height: 22px;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 1px 0 0 12px;
+    overflow: hidden;
+    word-break: break-all;	
+}
+.four-hc{
+ 	position: absolute;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -399px;
+    width: 816px;
+    height: 122px;
+    overflow: hidden;	
+}
+.four-hc li{
+    width: 202px;
+    float: left;
+    position: relative;
+    /* width: 152px; */
+    height: 122px;
+    background: #FFF;
+    margin-left: 2px;
+    opacity: .96;
+    cursor: default;
+}
+.four-hc .desc{
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 95px;
+    height: 19px;
+    line-height: 19px;
+    font-size: 14px;
+    margin: 1px 0 0 12px;
+    overflow: hidden;
+    word-break: break-all;
+    color: #666;
+    text-align: left;
+}
+.four-hc .pro{
+    display: inline;
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    width: 80px;
+    height: 80px;
+}
+
+.first-right{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: 325px;
+    width: 170px;
+    height: 482px;
+    background: #FFF;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.user-infor{
+	position: relative;
+    width: 170px;
+    height: 155px;
+    padding: 11px 0 2px;
+    border-bottom: 1px solid #f2f2f2;
+}
+.user-img{
+
+}
+.infor{
+
+}
+.user-infor .btn{
+
+}
+.user-infor .enter{
+	
+}
+/*轮播部分结束*/
