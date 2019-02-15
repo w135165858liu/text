@@ -16,6 +16,7 @@ a{
 	display: block;
 	box-sizing: border-box;
 	text-decoration: none;
+	color: #000;
 }
 div{
 	box-sizing: border-box;
@@ -50,6 +51,9 @@ input, textarea, select, button {
     text-align: start;
     margin: 0em;
     font: 400 13.3333px Arial;
+}
+.iconfont, em, i {
+    font-style: normal;
 }
 /*
 通用样式结束
@@ -562,12 +566,13 @@ input, textarea, select, button {
     left: 0;
     top: 1px;
     height: 480px;
-    width: 190px;
+    width: 100%;
     z-index: 7677;
 }
 .sn-FL-item{
 	position: relative;
-    width: 175px;
+    box-sizing: border-box;
+    width: 100%;
     height: 32px;
     padding: 0 8px 0 10px;
     line-height: 32px;
@@ -674,7 +679,7 @@ input, textarea, select, button {
     position: absolute;
     top: 0;
     left: 50%;
-    margin-left: 325px;
+    margin-left: 425px;
     width: 170px;
     height: 482px;
     background: #FFF;
@@ -689,15 +694,128 @@ input, textarea, select, button {
     border-bottom: 1px solid #f2f2f2;
 }
 .user-img{
-
+    position: relative;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto;
+        background:url('../images/jingling.png') -93px -23px;
+}
+.user-img .hover{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 52px;
+    background:url('../images/jingling.png') -310px -135px;
 }
 .infor{
-
+	width: 150px;
+    height: 24px;
+    margin: 8px auto 0;
+    text-align: center;
+    font: 12px/24px "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
-.user-infor .btn{
-
+.user-infor .user-btn{
+    width: 100%;
+    margin: 6px auto 15px;
+    height: 22px;
+    *height: 24px;
+    overflow: hidden;
+    text-align: center;
+}
+.user-infor .user-btn a{
+    display: inline-block;
+    width: 70px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    margin: 0 3px;	
+}
+.user-infor .user-btn .register{
+	width: 68px;
+    height: 20px;
+    border: 1px solid #F90;
+    color: #ffa114;
+    line-height: 20px;
+}
+.user-infor .user-btn .superhy{
+    background:url('../images/jingling.png') -295px -251px;
 }
 .user-infor .enter{
-	
+	height: 18px;
+}
+.user-infor .enter .yunzuan{
+    float: left;
+    width: 70px;
+    height: 18px;
+    margin: 0 11px 0 9px;
+    background: #ffe4db;
+    border-radius: 9px;
+    background:url('../images/jingling.png') -670px -256px;
+}
+.user-infor .enter .quan{
+    float: left;
+    width: 70px;
+    height: 18px;
+    margin: 0;
+    background: #ffe4db;
+    border-radius: 9px;
+	background:url('../images/jingling.png') -670px -288px;
+}
+.first-right .toutiao {
+    width: 150px;
+    height: 145px;
+    overflow: hidden;
+    margin: 11px 10px 11px;
+    font: 12px/20px "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+}
+.first-right .toutiao ul {
+    width: 150px;
+}
+.first-right .toutiao ul li {
+    width: 150px;
+    height: 48px;
+}
+.first-right .toutiao p {
+    width: 150px;
+    height: 40px;
+    overflow: hidden;
+}
+.first-right .toutiao i {
+    margin-right: 5px;
+    color: #F60;
+}
+.first-right .kuaijie {
+    width: 170px;
+    height: 145px;
+    overflow: hidden;
+    border-top: 1px solid #f2f2f2;
+}
+.first-right .kuaijie ul {
+    width: 171px;
+    height: 146px;
+}
+.first-right .kuaijie ul li {
+    float: left;
+    width: 56px;
+    height: 72px;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #f2f2f2;
+}
+.first-right .kuaijie ul li a {
+    display: block;
+    width: 100%;
+    height: 62px;
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.first-right .kuaijie ul li a i {
+    font-size: 24px;
+    color: #f90;
 }
 /*轮播部分结束*/
