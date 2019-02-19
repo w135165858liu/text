@@ -32,11 +32,19 @@ $(function(){
 });
 $(function(){	
 	/*轮播图右侧评论*/
-	timer = setInterval(function(){
-		var $pinglun =  $('.toutiao').find('ul').eq(0),$pinglunJl = $pinglun.css('marginTop');
+	var $pinglun =  $('.toutiao').find('ul').eq(0);
+	function move(){
+		var $pinglunJl = $pinglun.css('marginTop');
 		if($pinglunJl === '-288px'){
 			$pinglun.css({marginTop:'0px'})
 		}
 		$pinglun.animate({marginTop:'+=-144px'})
-	},2000)
+	}
+	timer = setInterval(move,2000)
+	$pinglun.hover(function(){
+		clearInterval(timer)
+	},function(){
+		setInterval(move,2000)
+	})
+
 })
