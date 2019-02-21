@@ -1,256 +1,256 @@
 var pullDownMenuData = [
 	[
 		{
-			img:'images/pc-320-220-mi8.png',
+			img:'images1/pc-320-220-mi8.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		}
 	],
 	[
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/pc-320-220-mi8.png',
+			img:'images1/pc-320-220-mi8.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		}
 	],
 	[
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/pc-320-220-mi8.png',
+			img:'images1/pc-320-220-mi8.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		}
 	],
 	[
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/pc-320-220-mi8.png',
+			img:'images1/pc-320-220-mi8.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		}
 	],
 	[
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/pc-320-220-mi8.png',
+			img:'images1/pc-320-220-mi8.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		}
 	],
 	[
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/pc-320-220-mi8.png',
+			img:'images1/pc-320-220-mi8.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		}
 	],
 	[
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/pc-320-220-mi8.png',
+			img:'images1/pc-320-220-mi8.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		}
 	],
 	[
 		{
-			img:'images/pc-320-220-mi8.png',
+			img:'images1/pc-320-220-mi8.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		},
 		{
-			img:'images/mix3-320.png',
+			img:'images1/mix3-320.png',
 			title:'小米MIX3',
 			flag:'pull-down-flag'
 		}
@@ -259,490 +259,490 @@ var pullDownMenuData = [
 var sideMenuData = [
 	[
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		}
 	],
 	[
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		}
 	],
 	[
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		}
-	],
-	[
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
-			name:'小米MIX 3'
-		},
-		{
-			img:'images/qingchun-80.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		}
 	],
 	[
 		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		},
-		{
-			img:'images/6AAAA.png',
-			name:'红米 6A'
-		}
-	],
-	[
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		},
-		{
-			img:'images/max3-80-80.png',
-			name:'小米MAX 3'
-		}
-	],
-	[
-		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/80808080808080.jpg',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		}
 	],
 	[
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'红米 6A'
+		}
+	],
+	[
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		},
+		{
+			img:'images1/max3-80-80.png',
+			name:'小米MAX 3'
+		}
+	],
+	[
+		{
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/note5-80-80.png',
+			img:'images1/80808080808080.jpg',
 			name:'小米MIX 3'
 		}
 	],
 	[
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/qingchun-80.png',
+			img:'images1/note5-80-80.png',
 			name:'小米MIX 3'
 		}
 	],
 	[
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
 			name:'小米MIX 3'
 		},
 		{
-			img:'images/6AAAA.png',
+			img:'images1/qingchun-80.png',
+			name:'小米MIX 3'
+		}
+	],
+	[
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
+			name:'小米MIX 3'
+		},
+		{
+			img:'images1/6AAAA.png',
 			name:'小米MIX 3'
 		}
 	]
@@ -750,43 +750,43 @@ var sideMenuData = [
 var hotTabsData = [
 	[
 		{
-			img:'images/download2.jpg',
+			img:'images1/download2.jpg',
 			name:'小米小钢炮蓝牙音箱 2 白色',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/download2.jpg',
+			img:'images1/download2.jpg',
 			name:'小米小钢炮蓝牙音箱 2 白色',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/download2.jpg',
+			img:'images1/download2.jpg',
 			name:'小米小钢炮蓝牙音箱 2 白色',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/download2.jpg',
+			img:'images1/download2.jpg',
 			name:'小米小钢炮蓝牙音箱 2 白色',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/download2.jpg',
+			img:'images1/download2.jpg',
 			name:'小米小钢炮蓝牙音箱 2 白色',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/download2.jpg',
+			img:'images1/download2.jpg',
 			name:'小米小钢炮蓝牙音箱 2 白色',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/download2.jpg',
+			img:'images1/download2.jpg',
 			name:'小米小钢炮蓝牙音箱 2 白色',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
 			top:{
-				img:'images/004.jpg',
+				img:'images1/004.jpg',
 				name:'小米净水器（厨下式',
 				price:'1899'
 			},
@@ -797,43 +797,43 @@ var hotTabsData = [
 	],
 	[
 		{
-			img:'images/xiaomitv1.jpg',
+			img:'images1/xiaomitv1.jpg',
 			name:'小米电视 A1',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv1.jpg',
+			img:'images1/xiaomitv1.jpg',
 			name:'小米电视 A1',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv1.jpg',
+			img:'images1/xiaomitv1.jpg',
 			name:'小米电视 A1',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv1.jpg',
+			img:'images1/xiaomitv1.jpg',
 			name:'小米电视 A1',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv1.jpg',
+			img:'images1/xiaomitv1.jpg',
 			name:'小米电视 A1',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv1.jpg',
+			img:'images1/xiaomitv1.jpg',
 			name:'小米电视 A1',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv1.jpg',
+			img:'images1/xiaomitv1.jpg',
 			name:'小米电视 A1',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
 			top:{
-				img:'images/004.jpg',
+				img:'images1/004.jpg',
 				name:'小米净水器（厨下式',
 				price:'1899'
 			},
@@ -844,43 +844,43 @@ var hotTabsData = [
 	],
 	[
 		{
-			img:'images/xiaomitv2.jpg',
+			img:'images1/xiaomitv2.jpg',
 			name:'小米电视 A2',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv2.jpg',
+			img:'images1/xiaomitv2.jpg',
 			name:'小米电视 A2',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv2.jpg',
+			img:'images1/xiaomitv2.jpg',
 			name:'小米电视 A2',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv2.jpg',
+			img:'images1/xiaomitv2.jpg',
 			name:'小米电视 A2',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv2.jpg',
+			img:'images1/xiaomitv2.jpg',
 			name:'小米电视 A2',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv2.jpg',
+			img:'images1/xiaomitv2.jpg',
 			name:'小米电视 A2',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv2.jpg',
+			img:'images1/xiaomitv2.jpg',
 			name:'小米电视 A2',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
 			top:{
-				img:'images/004.jpg',
+				img:'images1/004.jpg',
 				name:'小米净水器（厨下式',
 				price:'1899'
 			},
@@ -891,43 +891,43 @@ var hotTabsData = [
 	],
 	[
 		{
-			img:'images/xiaomitv3.jpg',
+			img:'images1/xiaomitv3.jpg',
 			name:'小米电视 A3',
 			msg:'小钢炮很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv3.jpg',
+			img:'images1/xiaomitv3.jpg',
 			name:'小米电视 A3',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv3.jpg',
+			img:'images1/xiaomitv3.jpg',
 			name:'小米电视 A3',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv3.jpg',
+			img:'images1/xiaomitv3.jpg',
 			name:'小米电视 A3',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv3.jpg',
+			img:'images1/xiaomitv3.jpg',
 			name:'小米电视 A3',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv3.jpg',
+			img:'images1/xiaomitv3.jpg',
 			name:'小米电视 A3',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
-			img:'images/xiaomitv3.jpg',
+			img:'images1/xiaomitv3.jpg',
 			name:'小米电视 A3',
 			msg:'电视很棒，这次买个大的放到客厅里，我米加油'
 		},
 		{
 			top:{
-				img:'images/004.jpg',
+				img:'images1/004.jpg',
 				name:'小米净水器（厨下式',
 				price:'1899'
 			},
@@ -1171,7 +1171,7 @@ function carousels(){
 	//new一个新对象把参数传进轮播图函数里面
 	new Carousel({
 		id:'carousels',
-		Img:['images/b1.jpg','images/b2.jpg','images/b3.jpg'],
+		Img:['images1/b1.jpg','images1/b2.jpg','images1/b3.jpg'],
 		height:460 + 'px',
 		width: 100 + '%'
 	})
@@ -1207,7 +1207,7 @@ function sideMenu(){
 }
 function countDown(){
 	var CountDownDate = document.querySelectorAll('.countdown')[0];
-	var newDate = new Date('2019/1/ 00:00:00');
+	var newDate = new Date('2019/2/4 00:00:00');
 	var countDownTimer = 0;
 	function toStr(num){
 		return num < 10 ? num = '0' + num : num = num;

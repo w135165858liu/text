@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>解决冲突</title>
+</head>
+<body>
+	
+</body>
+<script>
+	window.$ = function(){
+		console.log('test::!')
+	}
+</script>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	var kz = jQuery.noConflict();
+	kz(function(){
+		console.log('hello')
+	});
+	console.log(kz == jQuery)
+	$()
+</script>
+
+</html>

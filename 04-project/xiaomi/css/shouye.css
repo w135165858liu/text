@@ -1,5 +1,51 @@
-/*通用样式*/
 
+
+
+/*通用样式*/
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+	float: left;
+}
+.container{
+	position: relative;
+	width: 1226px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.clearfix:after{
+	display: block;
+	content: '';
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	list-style-type: none;
+}
+.clearfix{
+	*zoom:1;
+}
+a{
+	font-size: 12px;
+	text-decoration: none;
+	color: #b0b0b0;
+}
+a:hover{
+	color: #fff;
+}
+div{
+	box-sizing: border-box;
+}
+.exposure{
+	display:block;
+	height: 100%;
+	width: 100%;
+}
+p{
+	display: block;
+}
 
 
 .col1{
