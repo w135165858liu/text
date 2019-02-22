@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托</title>
+</head>
+<body>
+	<button>生成</button>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+		<li>li5</li>
+		<li>li6</li>
+	</ul>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		var cl = console.log;
+		// $('ul').delegate('li','click',function(){
+		// 	console.log(this)
+		// })
+		$('ul').on('click','li',function(){
+			cl(this)
+		})
+		$('button').click(function(){
+			var oLi = document.createElement('li')
+			oLi.innerHTML = '我是生成的'
+			$('ul')[0].appendChild(oLi)
+		})
+	})
+</script>
+</html>

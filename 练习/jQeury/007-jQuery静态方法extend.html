@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>jQuery对象和DOM对象转换</title>
+	<title>007-jQuery静态方法extend.html</title>
 </head>
 <body>
 	<div class="div1">div1</div>
@@ -21,12 +21,17 @@
     window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
 </script>
 <script>
-	$(function(){
-		console.log($('div'))
-		console.log($(document.querySelectorAll('div')))
-		console.log($('div').index())
-		console.log($('div')[2]);
-		console.log($('div').get(2))
-	})
+	var str = '  12  a  '
+	var obj1 = {name:"tom",age:18}
+	var obj2 = {name:"Amy"}
+	var res2 = $.extend({},obj1,obj2);
+	console.log('1::',obj1)
+	var res1 = $.extend(obj1,obj2);
+	console.log('2::',obj1)
+	console.log('3::',res1)
+	console.log('4::',res2)
+	console.log(obj1 == res1)
+	console.log(res2 == res1)
+	console.log($.trim(str));
 </script>
 </html>

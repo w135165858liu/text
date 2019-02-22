@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>attr prop</title>
+</head>
+<body>
+	<input type="text">
+	<input type="checkbox" checked>
+	<a href="#"></a>
+	<select name="" id=""></select>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		$('a').attr("action","aa1")
+		$('input').attr("action","aa1")
+		$('input').eq(0).prop("type","button")
+		$('input').eq(1).prop("checked","true")
+		console.log($('input').eq(1).attr("checked"))
+	})
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>卷入卷出切换</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background:red;
+		}
+	</style>
+</head>
+<body>
+	<button>卷入</button>
+	<button>卷出</button>
+	<button>切换</button>
+	<div></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		var cl = console.log;
+		$('button').eq(0).click(function(){
+			$('div').slideUp()
+		})
+		$('button').eq(1).click(function(){
+			$('div').slideDown()
+		})
+		$('button').eq(2).click(function(){
+			$('div').slideToggle()
+		})
+		cl($('button')[0])
+	})
+</script>
+</html>

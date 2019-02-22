@@ -15,7 +15,7 @@
 	<div></div>
 	<div>你是</div>
 	<div>我是DIV</div>
-	<div><p>我是段落</p></div>
+	<div><p class="a">我是段落</p></div>
 	<div><span>我是sapn</span></div>
 </body>
 	<script src="../js/jquery-1.12.4.js"></script>
@@ -24,7 +24,8 @@
 			console.log($('div:empty'))//选择的元素中没有文本内容和子元素的
 			console.log($('div:parent'))//选择的元素中有文本内容或者子元素的
 			console.log($('div:contains(我是)'))//选择的元素中包含有指定内容的
-			console.log($('div:has(p)'))
+			console.log($('div:has(.a)'));
+			console.log($('div').eq(2).siblings());
 		})
 	</script>
 </html>

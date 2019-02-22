@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画淡入淡出切换</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background:red;
+		}
+	</style>
+</head>
+<body>
+	<button>淡入</button>
+	<button>淡出</button>
+	<button>切换</button>
+	<button>切换到</button>
+	<div></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		var cl = console.log;
+		$('button').eq(0).click(function(){
+			$('div').fadeIn()
+		})
+		$('button').eq(1).click(function(){
+			$('div').fadeOut();
+		})
+		$('button').eq(2).click(function(){
+			$('div').fadeToggle()
+		})
+		$('button').eq(3).click(function(){
+			$('div').fadeTo(0,0.5)
+		})
+		cl($('button')[0])
+	})
+</script>
+</html>

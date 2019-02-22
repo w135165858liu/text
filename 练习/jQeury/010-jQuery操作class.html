@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作class</title>
+	<style>
+		.box1{
+			height: 100px;
+		}
+		.box2{
+			color: red;
+		}
+		.box3{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<button>点击</button>
+	<div class="box1 box2">我是div</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		$('button').click(function(){
+			$('div').addClass('box4')
+			$('div').removeClass('box2')
+			$('div').toggleClass('box3')
+		})
+	})
+</script>
+</html>

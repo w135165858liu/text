@@ -46,5 +46,4 @@ $(function(){
 	},function(){
 		setInterval(move,2000)
 	})
-
 })

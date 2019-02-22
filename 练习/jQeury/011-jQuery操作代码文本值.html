@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作代码文本值</title>
+</head>
+<body>
+	<div>
+		我是div
+		<p>我是段落</p>
+	</div>
+	<input type="text" value="1000">
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		console.log($('div').html());
+		console.log($('div').text());
+		$('div').html('<h1>我是h1</h1>');
+		console.log($('input').val());
+
+		$('input').change(function(event) {
+			/* Act on the event */
+			$('h1').text($('input').val());
+		});
+	})
+</script>
+</html>
