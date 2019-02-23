@@ -699,10 +699,22 @@ input, textarea, select, button {
     width: 816px;
     height: 122px;
 }
+.animate-hc li.item {
+    float: left;
+    width: 53px;
+    height: 122px;
+    transition: all .5s;
+}
+.animate-hc li.cur {
+    height: 122px;
+}
+.animate-hc li.cur .label {
+    display: none;
+}
 .animate-hc li.item .label {
     width: 53px;
     height: 122px;
-    background: #FFF url('../images/jingling.png') -497px -165px no-repeat;
+    background: #FFF url('../images/jingling.png') -443px -165px no-repeat;
 }
 .animate-hc li.item .label p {
     padding-top: 6px;
