@@ -47,36 +47,36 @@ $(function(){
 		setInterval(move,2000)
 	})
 })
-// $(function(){
-// 	var $item = $('.animate-hc').find('.item');
-// 	var $li = $('.four-hc').find('li');
-// 	var $four = $('.four-hc');
-// 	var $animate = $('.animate-hc')
-// 	var $firstHc = $('.first-hc')
-// 	$li.on("mouseover",function(){
-// 		$firstHc.hover(function(){
-// 			$four.fadeOut()
-// 			$animate.fadeIn()
-// 		},function(){
-// 			$four.fadeIn()
-// 			$animate.css({
-// 				display:'none'
-// 			})
-// 		})
-// 		var $thisIndex = $(this).index();
-// 		$item.eq($thisIndex).addClass("cur").css({
-// 				width:'655px'
-// 			});
-// 		$item.hover(function(){
-// 			var $this = $(this);
-// 			$this.addClass("cur").css({
-// 				width:'655px'
-// 			});
-// 		},function(){
-// 			var $this = $(this)
-// 			$this.removeClass("cur").css({
-// 				width:'53px'
-// 			});
-// 		})
-// 	})
-// })
+$(function(){
+	var $item = $('.animate-hc').find('.item');
+	var $li = $('.four-hc').find('li');
+	var $four = $('.four-hc');
+	var $animate = $('.animate-hc')
+	var $firstHc = $('.first-hc')
+	$li.on("mouseover",function(){
+		$firstHc.hover(function(){
+			$four.fadeOut()
+			$animate.fadeIn()
+		},function(){
+			$four.fadeIn()
+			$animate.css({
+				display:'none'
+			})
+		})
+		var $thisIndex = $(this).index();
+		$item.eq($thisIndex).addClass("cur").css({
+				width:'655px'
+			});
+		$item.hover(function(){
+			var $this = $(this);
+			$this.addClass("cur").css({
+				width:'655px'
+			});
+		},function(){
+			var $this = $(this)
+			$this.removeClass("cur").css({
+				width:'53px'
+			});
+		})
+	})
+})

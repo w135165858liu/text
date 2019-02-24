@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM操作</title>
+</head>
+<body>
+	<button>插入1</button>
+	<button>插入2</button>
+	<button>插入3</button>
+	<button>插入4</button>
+	<button>插入5</button>
+	<button>插入6</button>
+	<ul>
+		<li>插入1</li>
+		<li>插入2</li>
+		<li>插入3</li>
+		<li>插入4</li>
+		<li>插入5</li>
+		<li>插入6</li>
+	</ul>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		var $li = $("<li>我是插入的</li>")
+		$('button').eq(0).on("click",function(){
+			$('ul').append($li);
+			console.log('a');
+		})
+		$('button').eq(1).on("click",function(){
+			$li.appendTo($('ul'));
+			console.log('a');
+		})
+		$('button').eq(2).on("click",function(){
+			$('ul').prepend($li);
+			console.log('a');
+		})
+		$('button').eq(3).on("click",function(){
+			$li.prependTo($('ul'));
+			console.log('a');
+		})
+	})
+</script>
+</html>

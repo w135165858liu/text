@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列队动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button>列队</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		var cl = console.log;
+		$('button').click(function(){
+			/*$('div').animate({width:"+=50"},1000,function(){
+				console.log('done')
+				$('div').animate({width:"+=50"},1000,function(){
+					console.log('done')
+					$('div').animate({width:"+=50"},1000,function(){
+						console.log('done')
+						$('div').animate({width:"+=50"},1000,function(){
+							console.log('done')
+						})
+					})
+				})
+			})*/
+			$('div').animate({width:"+=50"},1000,function(){
+				$('div').animate({height:"+=50"},1000,function(){
+					$('div').animate({marginTop:"+=5"},1000,function(){
+						console.log("done")
+					})
+				})
+			}).animate({width:"+=50"},1000,function(){
+				$('div').animate({height:"+=50"},1000,function(){
+					$('div').animate({marginTop:"+=5"},1000,function(){
+						console.log("done")
+					})
+				})
+			}).animate({width:"+=50"},1000,function(){
+				$('div').animate({height:"+=50"},1000,function(){
+					$('div').animate({marginTop:"+=5"},1000,function(){
+						console.log("done")
+					})
+				})
+			}).animate({width:"+=50"},1000,function(){
+				$('div').animate({height:"+=50"},1000,function(){
+					$('div').animate({marginTop:"+=5"},1000,function(){
+						console.log("done")
+					})
+				})
+			})
+		})
+	})
+</script>
+</html>

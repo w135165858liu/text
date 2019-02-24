@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>停止动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button>开始动画</button>
+	<button>停止动画</button>
+	<div></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		var cl = console.log;
+		$('button').eq(0).on("click",function(){
+			$('div').animate({width:"+=20"},1000,function(){
+				console.log('done')			
+			}).animate({opacity:"-=0.5"},1000,function(){
+				console.log('done')
+			}).animate({height:"+=20"},1000,function(){
+				console.log('done')
+			})	
+		})
+		$('button').eq(1).on("click",function(){
+			// $('div').stop()
+			// $('div').stop(false,true)
+			// $('div').stop(false,false)
+			// $('div').stop(true,false)
+			$('div').stop(true,true)
+		})
+	})	
+</script>
+</html>
