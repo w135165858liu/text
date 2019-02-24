@@ -64,19 +64,13 @@ $(function(){
 			})
 		})
 		var $thisIndex = $(this).index();
-		$item.eq($thisIndex).addClass("cur").css({
-				width:'655px'
-			});
+		$item.eq($thisIndex).addClass("cur");
 		$item.hover(function(){
 			var $this = $(this);
-			$this.addClass("cur").css({
-				width:'655px'
-			});
+			$this.addClass("cur");
 		},function(){
 			var $this = $(this)
-			$this.removeClass("cur").css({
-				width:'53px'
-			});
+			$this.removeClass("cur");
 		})
 	})
 })

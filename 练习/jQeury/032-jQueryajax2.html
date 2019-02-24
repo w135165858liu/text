@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>节点替换</title>
+	<title>ajax封装接口</title>
 </head>
 <body>
-	<button>替换1</button>
-	<button>替换2</button>
-	<div>我是div</div>
-	<div>我是div</div>
-	<div>我是div</div>
-	<div>我是div</div>
+	<button>GET请求</button>
+	<button>POST请求</button>
+	<button>请求JSON</button>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
@@ -20,10 +17,19 @@
 	$(function(){
 		var cl = console.log;
 		$('button').eq(0).click(function(){
-			$('div').replaceWith('<h1>我是h1</h1>');		
+			$.get("./data.json",{name:"Amy",age:18},function(data){
+				cl(data)
+			},"json")
 		})
 		$('button').eq(1).click(function(){
-			$('<h1>我是h1</h1>').replaceAll($('div'));		
+			$.post("./data.json",{name:"Amy",age:18},function(data){
+				cl(data)
+			},"text")
+		})
+		$('button').eq(2).click(function(){
+			$.getJSON("./data.json",function(data){
+				cl(data)
+			})
 		})
 	})
 </script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+</head>
+<body>
+	<button>请求</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		var cl = console.log;
+		$('button').click(function(){
+			$.ajax({
+			    url:'./data.json', //请求的地址
+			    type:'GET',//指定请求的方法,默认是GET
+			    data:{name:'Amy',age:18},//发送到服务器的数据，字符串键值对或者对象
+			    dataType:'json',//返回数据的类型,可以是xml json script text html,默认是text
+			    success:function(data,msg,jqXHR){
+			    	cl('success',data,msg,jqXHR)
+			    },//请求成功后的回调函数
+			    error:function(jqXHR,msg){
+			    	cl('error',jqXHR,msg)
+			    },//请求失败后的回调函数
+			    complete:function(jqXHR,msg){
+			    	cl('complete',jqXHR,msg)
+			    },//请求完成后的回调函数
+			    timeout:3000, //设置请求超时的时间,单位为毫秒
+			    statusCode:{304:function(){
+			    	cl('303')
+			    },503:function(){
+			    	cl('503')
+			    }},//设置不同状态码的回调函数
+			    headers:{test:'test'}//设置请求头
+			})
+		})
+	})
+</script>
+</html>

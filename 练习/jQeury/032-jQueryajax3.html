@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax封装接口</title>
+</head>
+<body>
+	<button>GET请求</button>
+	<button>POST请求</button>
+	<button>请求JSON</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		var cl = console.log;
+		$('button').eq(0).click(function(){
+			var jqXHR = $.get("./data.json",{name:"Amy",age:18},function(data){
+				cl(data)
+			},"json");
+
+			jqXHR.done(function(data,statusMsg,jqXHR){
+				cl(data,statusMsg,jqXHR)
+			})
+		})
+		$('button').eq(1).click(function(){
+			$.post("./data1.json",{name:"Amy",age:18},function(data){
+				cl(data)
+			},"text");
+		})
+		$('button').eq(2).click(function(){
+			var jqXHR = $.getJSON("./data.json",function(data){
+				cl(data)
+			})
+			jqXHR.done(function(data,statusMsg,jqXHR){
+				cl(data,statusMsg,jqXHR)
+			})
+			jqXHR.fail(function(jqXHR,statusMsg){
+				cl(jqXHR,statusMsg)
+			})
+			jqXHR.abort();
+			jqXHR.always(function(data,statusMsg,jqXHR){
+				cl(data,statusMsg,jqXHR)
+			})
+		})
+	})
+</script>
+</html>

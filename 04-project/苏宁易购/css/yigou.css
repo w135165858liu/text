@@ -707,6 +707,7 @@ input, textarea, select, button {
 }
 .animate-hc li.cur {
     height: 122px;
+    width: 653px;
 }
 .animate-hc li.cur .label {
     display: none;
