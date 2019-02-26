@@ -18,9 +18,9 @@
 </head>
 <body>
 	<div>div1</div>
-	<div>div2</div>
+	<div class="div2">div2</div>
 	<div>div3</div>
-	<div>div4</div>
+	<div style="display: none">div4</div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
@@ -33,10 +33,17 @@
 		}
 		fn()
 		var cl = console.log;
-		var fn1 = $.proxy(fn,this);
-		$('div').click(function(){
-			fn1()
-		})
+		// var fn1 = $.proxy(fn,{name:'tom'});
+		// $('div').click(function(){
+		// 	fn1();
+		// });
+		// var fn1 = fn.bind({name:"tom"})
+		// fn1()
+		// console.log($('div').is('.div2'))
+		console.log($('div:visible'))
+		// console.log($('div:hidden').css({
+		// 	display:'block'
+		// }))
 	})
 </script>
 </html>

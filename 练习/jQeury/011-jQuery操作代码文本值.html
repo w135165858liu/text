@@ -22,7 +22,7 @@
 		$('div').html('<h1>我是h1</h1>');
 		console.log($('input').val());
 
-		$('input').change(function(event) {
+		$('input').on('input',function(event) {
 			/* Act on the event */
 			$('h1').text($('input').val());
 		});
