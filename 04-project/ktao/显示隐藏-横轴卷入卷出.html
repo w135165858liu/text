@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>横轴卷入卷出</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+			border: 10px solid #000;
+			padding:10px;
+		}
+		.transition{
+			transition: all .5s;			
+		}
+		button{
+			width: 50px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div id="box" class="transition"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	function init($elem){
+		$elem.removeClass('transition')
+		if($elem.is(":hidden")){
+			$elem.data('status','hidden');
+		}else{
+			$elem.data('status','shown');
+		}
+	}
+	function show($elem,cb){
+		if($elem.data('status') == 'shown') return;
+		if($elem.data('status') == 'show') return;
+		$elem.data('status','show').trigger('show');
+		cb();
+	}
+	function hide($elem,cb){
+		if($elem.data('status') == 'hidden') return;
+		if($elem.data('status') == 'hide') return;
+		$elem.data('status','hide').trigger('hide');
+		cb();
+	}
+	var $elem = $('#box');
+	$elem.on('show shown hide hidden',function(ev){
+		if(ev.type == 'show'){
+			console.log('show...')
+		}else if(ev.type == 'shown'){
+			console.log('shown')
+		}else if(ev.type == 'hide'){
+			console.log('hide..')
+		}else if(ev.type == 'hidden'){
+			console.log('hidden')
+		}
+	});
+
+	var js = {
+		showHide:{
+			init:function($elem){
+				js._init($elem);
+			},
+			show:function($elem){
+				js._show($elem,'slideDown');
+			},
+			hide:function($elem){
+				js._hide($elem,'slideUp');
+			}	
+		},
+		fade:{
+			init:function($elem){
+				js._init($elem);
+			},
+			show:function($elem){
+				js._show($elem,'slideDown');
+			},
+			hide:function($elem){
+				js._hide($elem,'slideUp');
+			}	
+		},
+		slideUpDown:{
+			init:function($elem){
+				js._init($elem);
+			},
+			show:function($elem){
+				js._show($elem,'slideDown');
+			},
+			hide:function($elem){
+				js._hide($elem,'slideUp');
+			}			
+		},
+		crossslideUpDown:{
+			init:function(elem){
+				$elem.removeClass('transition');
+				var styles = {
+					width:$elem.css('width'),
+					paddingLeft:$elem.css('paddingLeft'),
+					paddingRight:$elem.css('paddingRight'),
+					borderLeftWidth:$elem.css('borderLeftWidth'),
+					borderRightWidth:$elem.css('borderRightWidth')
+				}
+				$elem.data('styles',styles)
+			},
+			show:function($elem){
+				
+			},
+			hide:function($elem){
+
+			}
+		}
+
+	};	
+	js._init = function($elem){
+		$elem.removeClass('transition');
+		init($elem);	
+	}
+	js._show = function($elem,mode){
+		show($elem,function(){
+			$elem.stop()
+			[mode](function(){
+				$elem.trigger('shown').data('status','shown');
+			});				
+		})	
+	}
+	js._hide = function($elem,mode){
+		hide($elem,function(){
+			$elem.stop()
+			[mode](function(){
+				$elem.trigger('hidden').data('status','hidden');
+			});				
+		})		
+	}
+
+/*	js.showHide.init($elem);
+	$('button').eq(0).on('click',function(){
+		js.showHide.show($elem);
+	})
+	$('button').eq(1).on('click',function(){
+		js.showHide.hide($elem);
+	})*/
+/*	js.fade.init($elem);
+	$('button').eq(0).on('click',function(){
+		js.fade.show($elem);
+	})
+	$('button').eq(1).on('click',function(){
+		js.fade.hide($elem);
+	});*/
+/*	js.slideUpDown.init($elem);
+	$('button').eq(0).on('click',function(){
+		js.slideUpDown.show($elem);
+	})
+	$('button').eq(1).on('click',function(){
+		js.slideUpDown.hide($elem);
+	})*/
+	js.crossslideUpDown.init($elem);
+	$('button').eq(0).on('click',function(){
+		js.crossslideUpDown.show($elem);
+	})
+	$('button').eq(1).on('click',function(){
+		js.crossslideUpDown.hide($elem);
+	})
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
