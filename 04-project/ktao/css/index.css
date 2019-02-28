@@ -26,6 +26,11 @@
 	.nav-side .item1{
 		margin-right: 10px;
 	}
+	.menu-active .dropdown-toggle{
+		background: #fff;
+		border-left: 1px solid #f3f5f7;
+		border-right: 1px solid #f3f5f7;
+	}
 /*顶部导航结束*/
 
 /*头部开始*/

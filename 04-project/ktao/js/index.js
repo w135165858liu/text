@@ -1,13 +1,11 @@
 ;(function($){
-	$('.dropdown')
-	.hover(function(){
-		//$(this).addClass('menu-active');
-		var $this = $(this);
-		var activeClass = $this.data('active')+'-active';
-		$this.addClass(activeClass)
-	},function(){
-		var $this = $(this);
-		var activeClass = $this.data('active')+'-active';		
-		$this.removeClass(activeClass);
-	})
+	$('.dropdown').dropdown({
+		js:false,
+		mode:'slideUpDown',
+		delay:200,
+		eventName:'click'		
+	});
+	$('.dropdown').on('dropdown-show dropdown-shown dropdown-hide dropdown-hidden',function(ev){
+		console.log("!:::",ev.type);
+	});
 })(jQuery);

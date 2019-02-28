@@ -1,5 +1,6 @@
 ;(function($){
 	function init($elem,hiddenCb){
+		$elem.removeClass('transition')
 		if($elem.is(":hidden")){
 			$elem.data('status','hidden');
 			typeof hiddenCb == 'function' && hiddenCb();
@@ -19,26 +20,33 @@
 		$elem.data('status','hide').trigger('hide');
 		cb();
 	}
-
-
 	var slient = {
 		init:init,
 		show:function($elem){
 			show($elem,function(){
 				$elem.show();
-				$elem.trigger('shown').data('status','shown');
+				$elem.trigger('shown').data('status','shown')
 			})
 		},
-
 		hide:function($elem){
 			hide($elem,function(){
 				$elem.hide();
-				$elem.trigger('hidden').data('status','hidden');			
+				$elem.trigger('hidden').data('status','hidden')
 			})
 		}
-
 	}
 	var js = {
+		showHide:{
+			init:function($elem){
+				js._init($elem);
+			},
+			show:function($elem){
+				js._show($elem,'show');
+			},
+			hide:function($elem){
+				js._hide($elem,'hide');
+			}	
+		},
 		fade:{
 			init:function($elem){
 				js._init($elem);
@@ -48,9 +56,9 @@
 			},
 			hide:function($elem){
 				js._hide($elem,'fadeOut');
-			}		
+			}	
 		},
-		slideDownUp:{
+		slideUpDown:{
 			init:function($elem){
 				js._init($elem);
 			},
@@ -62,54 +70,54 @@
 			}			
 		},
 		slideLeftRight:{
-			init:function($elem){
+			init:function(elem){
 				js._customInit($elem,{
 					width:0,
 					paddingLeft:0,
 					paddingRight:0,
 					borderLeftWidth:0,
-					borderRightWidth:0				
-				});		
+					borderRightWidth:0
+				});
 			},
 			show:function($elem){
-				js._customShow($elem)
+				js._customShow($elem)					
 			},
 			hide:function($elem){
-				js._customHide($elem,{
+				js_cunstomHide($elem,{
 					width:0,
 					paddingLeft:0,
 					paddingRight:0,
 					borderLeftWidth:0,
-					borderRightWidth:0				
+					borderRightWidth:0
 				});
 			}
 		},
 		fadeSlideLeftRight:{
-			init:function($elem){
+			init:function(elem){
 				js._customInit($elem,{
 					width:0,
 					paddingLeft:0,
 					paddingRight:0,
 					borderLeftWidth:0,
 					borderRightWidth:0,
-					opacity:0				
-				});		
+					opacity:0
+				});
 			},
 			show:function($elem){
-				js._customShow($elem)
+				js._customShow($elem)				
 			},
 			hide:function($elem){
-				js._customHide($elem,{
+				js_cunstomHide($elem,{
 					width:0,
 					paddingLeft:0,
 					paddingRight:0,
 					borderLeftWidth:0,
 					borderRightWidth:0,
-					opacity:0				
-				});
+					opacity:0
+				})	
 			}
-		},	
-	}
+		}
+	};	
 	js._init = function($elem){
 		$elem.removeClass('transition');
 		init($elem);	
@@ -132,53 +140,47 @@
 	}
 	js._customInit = function($elem,options){
 		$elem.removeClass('transition');
+		init($elem);
 		//1.保存原始值
 		var styles = {};
-
 		for(var key in options){
-			styles[key] = $elem.css(key)
+			styles[key] = $elem.css(key);
 		}
-
-		$elem.data('styles',styles);
-
-		//2.如果是原本是隐藏的话,把水平方向上的值改为0	
+		$elem.data('styles',styles)
+		//2.如果是原本隐藏的话，把水平方向上的值改为0
 		init($elem,function(){
 			$elem.css(options)
-		});		
+		})
 	}
 	js._customShow = function($elem){
 		show($elem,function(){
-			$elem.show();//display=block
+			$elem.show();
 			$elem.stop()
 			.animate($elem.data('styles'),function(){
 				$elem.trigger('shown').data('status','shown');
-			});		
-		})	
-	}
-	js._customHide = function($elem,options){
+			});				
+		})			
+	};
+	js_cunstomHide = function($elem,options){
 		hide($elem,function(){
 			$elem.stop()
 			.animate(options,function(){
-				$elem.hide();//display=none
+				$elem.hide();
 				$elem.trigger('hidden').data('status','hidden');
 			});			
 		})	
 	}
-
 	function getShowHide($elem,options){
 		var showHideFn = slient;
 		if(options.js){
 			showHideFn = js[options.mode];
 		}
-
 		showHideFn.init($elem);
-
 		return {
 			show:showHideFn.show,
 			hide:showHideFn.hide
 		}
 	}
-
 	var DEFAULTS = {
 		js:true,
 		mode:'fade'
@@ -186,24 +188,19 @@
 	//注册插件
 	$.fn.extend({
 		showHide:function(options){
-			//console.log(this);
 			//1.隐式迭代
 			return this.each(function(){
-				// console.log(this) DOM对象
 				var $elem = $(this);
-				
 				var showHideObj = $elem.data('showHideObj');
-
 				if(!showHideObj){//单例模式
 					options = $.extend({},DEFAULTS,options)
-					showHideObj = getShowHide($elem,options);
-					$elem.data('showHideObj',showHideObj);					
+					var showHideObj = getShowHide($elem,options);
+					$elem.data('showHideObj',showHideObj);
 				}
-
 				if(typeof showHideObj[options] == 'function'){
 					showHideObj[options]($elem);
 				}
 			});
 		}
-	});
+	})
 })(jQuery);

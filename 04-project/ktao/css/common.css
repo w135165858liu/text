@@ -19,6 +19,9 @@ a{
 a:hover{
 	color: #f10215;
 }
+p{
+	display: block;
+}
 div{
 	box-sizing: border-box;
 }
@@ -56,5 +59,12 @@ div{
 	position: relative;
 }
 .pab{
+	position: absolute;
+}
+.dropdown{
+	position: relative;
+}
+.dropdown-layer{
+	display: none;
 	position: absolute;
 }

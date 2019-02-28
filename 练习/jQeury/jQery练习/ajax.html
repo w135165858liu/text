@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+</head>
+<body>
+	<button>发送请求</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			$.ajax({
+				url:'./025-data.json',
+				type:'GET',
+				dataType:'json',
+				success:function(data,statusMsg,jqXHR){
+					console.log(data,statusMsg,jqXHR)
+				},
+				error:function(jqXHR,statusMsg){
+					console.log(jqXHR,statusMsg)
+				},
+				complete:function(jqXHR,statusMsg){
+					console.log(jqXHR,statusMsg)
+				},
+				timeout:1000,
+				statusCode:{
+					200:function(){
+						console.log(200)
+					},
+					404:function(){
+						console.log(404)
+					}
+				}
+			})
+			/*$.getJSON('./025-data.json', function(json, textStatus) {
+					optional stuff to do after success 
+					console.log(json, textStatus);
+			});*/
+		})
+	})
+</script>
+</html>

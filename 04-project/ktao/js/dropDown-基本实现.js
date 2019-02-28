@@ -5,7 +5,6 @@
 		this.$layer = $elem.find('.dropdown-layer');
 		this.activeClass = $elem.data('active')+'-active';
 		this.options = options;
-		this.timer
 		//初始化
 		this.init();
 
@@ -20,36 +19,20 @@
 				this.$elem.trigger('dropdown-'+ev.type);
 			}.bind(this));
 			//3.绑定事件
-			if(this.options.eventName == 'click'){
-				this.$elem.on('click',function(ev){
-					$.proxy(this.show,this)
-					ev.stopPropagation();
-				}.bind(this))
-			}
-			// this.$elem.hover($.proxy(this.show,this),$.proxy(this.hide,this));
+			this.$elem.hover($.proxy(this.show,this),$.proxy(this.hide,this));
 		},
 		show:function(){
-			if(this.options.delay){
-				this.timer = setTimeout(function(){
-					this.$layer.showHide('show');
-					this.$elem.addClass(this.activeClass);
-				}.bind(this),this.options.delay);
-			}else{
-				this.$layer.showHide('show');
-				this.$elem.addClass(this.activeClass);
-			}
+			this.$layer.showHide('show');
+			this.$elem.addClass(this.activeClass);
 		},
 		hide:function(){
-			clearTimeout(this.timer);
 			this.$layer.showHide('hide');
 			this.$elem.removeClass(this.activeClass);
 		}
 	}
 	DropDown.DEFAULTS = {
 		js:false,
-		mode:'slideUpDown',
-		delay:200,
-		eventName:''
+		mode:'slideUpDown'
 	}
 	$.fn.extend({
 		dropdown:function(options){
