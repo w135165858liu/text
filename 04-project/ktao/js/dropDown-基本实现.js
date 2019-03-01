@@ -32,7 +32,8 @@
 	}
 	DropDown.DEFAULTS = {
 		js:false,
-		mode:'slideUpDown'
+		mode:'slideUpDown',
+		eventName:''
 	}
 	$.fn.extend({
 		dropdown:function(options){

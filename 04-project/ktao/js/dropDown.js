@@ -5,7 +5,7 @@
 		this.$layer = $elem.find('.dropdown-layer');
 		this.activeClass = $elem.data('active')+'-active';
 		this.options = options;
-		this.timer
+		this.timer = 0
 		//初始化
 		this.init();
 
@@ -20,13 +20,17 @@
 				this.$elem.trigger('dropdown-'+ev.type);
 			}.bind(this));
 			//3.绑定事件
+			console.log(this.options.eventName == 'click')
 			if(this.options.eventName == 'click'){
 				this.$elem.on('click',function(ev){
-					$.proxy(this.show,this)
 					ev.stopPropagation();
-				}.bind(this))
+					this.show();
+				}.bind(this));
+				//点击document页面隐藏
+				$(document).on('click',$.proxy(this.hide,this));
+			}else{
+				this.$elem.hover($.proxy(this.show,this),$.proxy(this.hide,this));
 			}
-			// this.$elem.hover($.proxy(this.show,this),$.proxy(this.hide,this));
 		},
 		show:function(){
 			if(this.options.delay){
@@ -55,8 +59,15 @@
 		dropdown:function(options){
 			return this.each(function(){
 				var $elem = $(this);
-				options = $.extend({},DropDown.DEFAULTS,options)
-				new DropDown($elem,options);
+				var dropdown = $elem.data('dropdown',dropdown);
+				if(!dropdown){
+					options = $.extend({},DropDown.DEFAULTS,options)
+					dropdown = new DropDown($elem,options);
+					$elem.data('dropdown',dropdown)
+				}
+				if(typeof dropdown[options] == 'function'){
+					dropdown[options]();
+				}
 			})
 		}
 	})

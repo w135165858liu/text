@@ -20,22 +20,104 @@
 		line-height: 31px;
 	}
 	.nav-side div{
-		height: 100%;
 		line-height: 31px; 
 	}
 	.nav-side .item1{
 		margin-right: 10px;
+	}
+	.nav-left{
+		margin-left: 210px;
 	}
 	.menu-active .dropdown-toggle{
 		background: #fff;
 		border-left: 1px solid #f3f5f7;
 		border-right: 1px solid #f3f5f7;
 	}
+	.nav-side .dt {
+	    padding-left: 7px;
+	    padding-right: 7px;
+	}
+	.dropdown-layer>div{
+		float: left;
+	}
+	.dorpdown-layer, .dropdown-layer {
+		z-index: 3;
+	    display: none;
+	    position: absolute;
+	    border: 1px solid #ccc;
+	    background-color: #fff;
+	    -webkit-box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+	    -moz-box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+	    box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+	}
+	.ttbar-myjd .myjdlist {
+	    padding: 10px 0 10px 15px;
+	    overflow: hidden;
+	}
+	.ttbar-myjd .myjdlist .fore1, .ttbar-myjd .myjdlist .fore2 {
+	    float: left;
+	    width: 126px;
+	}
+	.ttbar-myjd .dorpdown-layer, .ttbar-myjd .dropdown-layer {
+	    left: 0;
+	    width: 280px;
+	}
 /*顶部导航结束*/
 
 /*头部开始*/
 	.header{
-
+		background: #f0f3ef;
+		height: 140px;
+	}
+	.logo {
+		position: absolute;
+	    z-index: 2;
+	    left: 0;
+	    top: -31px;
+	    width: 190px;
+	    height: 170px;
+	    box-shadow: 0 -12px 10px rgba(0,0,0,.2);
+	    background-color: #fff;
+	    border-bottom: 1px solid #ededed;
+	}
+	.logo_scene_img {
+	    display: block;
+	    width: 100%;
+	    height: 100%;
+	    background-color: #fff;
+	    opacity: 0;
+	    filter: alpha(opacity=0);
+	    clear: both;
+	}
+	.form {
+	    position: absolute;
+	    left: 320px;
+	    top: 25px;
+	    width: 550px;
+	    height: 35px;
+	}
+	.text {
+		float: left;
+	    left: 0;
+	    padding: 4px 44px 4px 4px;
+	    width: 450px;
+	    height: 25px;
+	    border: 1px solid transparent;
+	    line-height: 25px;
+	    font-size: 14px;
+	}
+	.button {
+		float: left;
+	    border-radius: 0;
+	    right: 0;
+	    width: 50px;
+	    height: 35px;
+	    line-height: 35px;
+	    border: none;
+	    background-color: #f10215;
+	    font-size: 20px;
+	    font-weight: 700;
+	    color: #fff;
 	}
 /*头部结束*/
 /*焦点开始*/

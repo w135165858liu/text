@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery原理</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>点击</button>
+		<div></div>
+		<div></div>
+		<div></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	(function($){
+		$.fn.extend({
+			getcss:function(key,val){
+				return this.each(function(){
+					var $this = $(this)
+					if(!val){
+						console.log($this.css(key))
+					}else{
+						console.log($this.css(key,val))
+					}
+				})
+			}
+		})
+	})(jQuery)
+</script>
+<script>
+	$('button').on('click',function(){
+		$('div').getcss('width',200)
+	})
+</script>
+</html>
