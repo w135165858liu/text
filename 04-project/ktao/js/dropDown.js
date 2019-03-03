@@ -9,10 +9,11 @@
 		//初始化
 		this.init();
 
+
 	}
 	DropDown.prototype = {
 		constructor:DropDown,
-		init:function(){
+		init:function(){											
 			//1.初始化显示隐藏插件
 			this.$layer.showHide(this.options);
 			//2.监听显示隐藏事件
@@ -50,13 +51,12 @@
 		}
 	}
 	DropDown.DEFAULTS = {
-		js:false,
-		mode:'slideUpDown',
 		delay:200,
 		eventName:''
 	}
 	$.fn.extend({
 		dropdown:function(options){
+
 			return this.each(function(){
 				var $elem = $(this);
 				var dropdown = $elem.data('dropdown',dropdown);
@@ -67,6 +67,7 @@
 				}
 				if(typeof dropdown[options] == 'function'){
 					dropdown[options]();
+
 				}
 			})
 		}

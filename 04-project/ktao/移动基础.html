@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动基础</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 100px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<button>复原</button>
+	<button>移动</button>
+	<div></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="../js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	(function($){
+		function Slient($elem){
+			this.$elem = $elem;
+			this.currentX = parseFloat($elem.css('left'));
+			this.currentY = parseFloat($elem.css('top'));
+		};
+		Slient.prototype = {
+			constructor:Slient,
+			to:function(x,y){
+				this.$elem.animate({
+					left:x,
+					top:y
+				},function(){
+					this.$elem.trigger('moved');
+				}.bind(this))
+			},
+			x:function(){
+				this.to(x)
+			},
+			y:function(){
+				this.to(null,y)
+			}
+
+		}
+		move = new Slient($elem);
+		$elem.on('move moved',function(ev){
+			console.log(ev.type)
+		})
+		$('button').eq(0).on('click',function(){
+			
+		})
+		$('button').eq(1).on('click',function(){
+
+		})
+	})(jQuery);
+		
+</script>
+</html>
