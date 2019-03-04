@@ -8,8 +8,6 @@
 		this.timer = 0
 		//初始化
 		this.init();
-
-
 	}
 	DropDown.prototype = {
 		constructor:DropDown,
@@ -21,8 +19,8 @@
 				this.$elem.trigger('dropdown-'+ev.type);
 			}.bind(this));
 			//3.绑定事件
-			console.log(this.options.eventName == 'click')
 			if(this.options.eventName == 'click'){
+				console.log(this.options.eventName == 'click')
 				this.$elem.on('click',function(ev){
 					ev.stopPropagation();
 					this.show();
@@ -56,10 +54,9 @@
 	}
 	$.fn.extend({
 		dropdown:function(options){
-
 			return this.each(function(){
 				var $elem = $(this);
-				var dropdown = $elem.data('dropdown',dropdown);
+				var dropdown = $elem.data('dropdown');
 				if(!dropdown){
 					options = $.extend({},DropDown.DEFAULTS,options)
 					dropdown = new DropDown($elem,options);
@@ -67,7 +64,6 @@
 				}
 				if(typeof dropdown[options] == 'function'){
 					dropdown[options]();
-
 				}
 			})
 		}
