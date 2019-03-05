@@ -3,46 +3,58 @@ function Search($elem,options){
 	//1.罗列属性
 	this.$elem = $elem;
 	this.options = options;
-	this.$layer = $elem.find('.search-layer');
-	this.activeClass = $elem.data('active')+'-active';
-	this.timer = 0;
+	this.$searchBtn = $elem.find('.search-button');
+	this.$searchInput = $elem.find('.search-text');
+	this.$searchForm = $elem.find('search-form');
 	//2.初始化
 	this.init();
+	if(this.options.autocompelete){
+		this.autocompelete();
+	}
 }
 Search.prototype = {
 	constructor:Search,
 	init:function(){
-		
-	}，
-	show:function(){
-		if(this.options.delay){
-			this.timer = setTimeout(function(){
-				this.$layer.showHide('show');
-				this.$elem.addClass(this.activeClass);
-			}.bind(this),this.options.delay);
-		}else{
-			this.$layer.showHide('show');
-			this.$elem.addClass(this.activeClass);
-		}
+		//1.绑定事件
+		this.$searchBtn.on('click',$.proxy(this.submit,this));
 	},
-	hide:function(){
-		clearTimer(this.timer);
-		this.$layer.showHide('hide');
-		this.$elem.removeClass(this.activeClass);
+	submit:function(){
+		if(this.getInputVal() == ''){
+			return false;
+		}
+		this.$searchForm.trigger('submit')
+	},
+	getInputVal:function(){
+		return $.trim(this.$searchInput.val());
+	},
+	autocompelete:function(){
+		//1.监听输入框input事件
+		this.$searchInput.on('input',$.proxy(this.getData,this));
+	},
+	getData:function(){
+		console.log('will get data..');
+		$.ajax({
+			url:this.options.url+getInputVal(),
+			dataType:"jsonp",
+			jsonp:"callback"
+		})
 	}
+	https://suggest.taobao.com/sug?code=utf-8&q=xx&_ksTS=1551777113147_2321&callback=jsonp2322&k=1&area=c2c&bucketid=16
 }
 Search.DEFAULTS = {
-	delay:200
+	autocompelete:true,
+	url:"https://suggest.taobao.com/sug?&q=",
+
 }
 $.fn.extend({
 	search:function(options){
 		return this.each(function(){
 			var $elem = $(this);
-			var search = $elem.data('search',search);
+			var search = $elem.data('search');
 			if(!search){
-				options = $.extend({},search.DEFAULTS,options);
+				options = $.extend({},Search.DEFAULTS,options);
 				search = new Search($elem,options);
-				$elem.data('search',search)
+				$elem.data('search',search);
 			}
 			if(typeof search[options] == 'function'){
 				search[options]();

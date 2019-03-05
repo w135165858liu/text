@@ -19,10 +19,12 @@
 	 		var data21 = data2[0];
 	 		var data22 = data2[1];
 		 	var html = '';
+		 	if(!html){
 		 		html += '<div class="myjdlist">';
 		 		html += '<div class="fore1">';
 		 		for(var i=0;i<data1.length;i++){
 			 		html += '<div class="item"><a href="#" class="bs">'+data11[i].name+'</a></div>';
+			 		console.log('aa')
 		 		};
 		 		html += '</div>';
 		 		html += '<div class="fore2">';
@@ -46,8 +48,11 @@
 		 		setTimeout(function(){
 			 		$layer.html(html)
 		 		},1500);
+		 	}
 		 })
 	});
+	var $search = $('.header .search');
+	$search.search();
 })(jQuery);
 // <div class="myjdlist">
 // 	<div class="fore1">
