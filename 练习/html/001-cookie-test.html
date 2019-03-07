@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie-test</title>
+</head>
+<body>
+	
+</body>
+<script>
+function setCookie(key,value,iDate){
+	var oDate = new Date();
+	oDate.setDate(oDate.getDate() + iDate);
+	document.cookie = key+"="+value+";expires="+oDate;
+}
+setCookie('aa','bb',10)
+</script>
+</html>

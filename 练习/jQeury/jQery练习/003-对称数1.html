@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对称数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function symmetryNum(minnum,maxnum){
+		var strs = [];
+		for(var i = minnum;i<maxnum;i++){
+			var str = i.toString()
+			 str = str.split('')
+			 str = str.reverse()
+			 str = str.join('')
+			if(str == i){
+				strs.push(str);
+			}
+		}
+		return strs
+	}
+	console.log(symmetryNum(1,10000))
+</script>
+</html>

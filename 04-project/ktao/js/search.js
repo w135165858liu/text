@@ -36,26 +36,32 @@ Search.prototype = {
 		//3.点击页面其他地方隐藏下拉层
 		$(document).on('click',$.proxy(this.hideLayer,this));
 		//4.inputh获取焦点时显示下拉层
-		this.$searchInput.on('focus',$.proxy(this.sjhowLayer,this));
+		this.$searchInput.on('focus',function(ev){
+			ev.stopPropagation();
+			this.showLayer();
+		}.bind(this));
+		this.$searchInput.on('click',function(ev){
+			ev.stopPropagation();
+		}.bind(this));
 		//5.阻止input上click事件冒泡到document上触发
 		this.$searchLayer.on('click',function(ev){
 			ev.stopPropagation();
 		});
 	},
 	getData:function(){
-		console.log('will get data..');
 		var inputVal = this.getInputVal();
 		if(inputVal == ''){
 			return
 		}
+		this.showLayer();
+		console.log('will get data ...')
 		$.ajax({
 			url:this.options.url+inputVal,
 			dataType:"jsonp",
 			jsonp:"callback"
 		}).done(function(data){
-			//1.根据数据生成html
 			console.log(data)
-			console.log(this.$searchLayer)
+			//1.根据数据生成html
 			var html = '';
 			for(var i=0;i<data.result.length;i++){
 				html += '<li class="search-item">'+data.result[i][0]+'</li>'
@@ -81,8 +87,6 @@ Search.prototype = {
 Search.DEFAULTS = {
 	autocompelete:true,
 	url:"https://suggest.taobao.com/sug?&q=",
-	js:true,
-	mode:"slideUpDown"
 }
 $.fn.extend({
 	search:function(options){
