@@ -182,7 +182,7 @@
 		}
 	}
 	var DEFAULTS = {
-		js:true,
+		js:false,
 		mode:'fade'
 	}
 	//注册插件

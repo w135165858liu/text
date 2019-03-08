@@ -38,7 +38,7 @@ Search.prototype = {
 		//4.inputh获取焦点时显示下拉层
 		this.$searchInput.on('focus',function(ev){
 			ev.stopPropagation();
-			this.showLayer();
+			this.getData();
 		}.bind(this));
 		this.$searchInput.on('click',function(ev){
 			ev.stopPropagation();
@@ -51,27 +51,38 @@ Search.prototype = {
 	getData:function(){
 		var inputVal = this.getInputVal();
 		if(inputVal == ''){
+			this.hideLayer();
 			return
 		}
-		this.showLayer();
+		// this.showLayer();
+
 		console.log('will get data ...')
 		$.ajax({
 			url:this.options.url+inputVal,
 			dataType:"jsonp",
 			jsonp:"callback"
-		}).done(function(data){
-			console.log(data)
+		})
+		.done(function(data){
+			/*console.log(data)
 			//1.根据数据生成html
 			var html = '';
 			for(var i=0;i<data.result.length;i++){
 				html += '<li class="search-item">'+data.result[i][0]+'</li>'
 			}
 			//2.加载html到下拉层
-			this.appendHtml(html)
+			if(html == ''){
+				this.hideLayer();
+			}else{
+				this.appendHtml(html);
+			}
 			//3.显示下拉层
-			this.showLayer()
-		}.bind(this)).fail(function(err){
-			console.log(err)
+			this.showLayer()*/
+			this.$elem.trigger('getData',[data])
+		}.bind(this))
+		.fail(function(err){
+			this.$elem.trigger('getNoData')
+		/*	this.appendHtml('');
+			this.hideLayer()*/
 		})
 		},
 		showLayer:function(){
@@ -89,7 +100,7 @@ Search.DEFAULTS = {
 	url:"https://suggest.taobao.com/sug?&q=",
 }
 $.fn.extend({
-	search:function(options){
+	search:function(options,val){
 		return this.each(function(){
 			var $elem = $(this);
 			var search = $elem.data('search');
@@ -99,7 +110,7 @@ $.fn.extend({
 				$elem.data('search',search);
 			}
 			if(typeof search[options] == 'function'){
-				search[options]();
+				search[options](val);
 			}
 		})
 	}

@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div class="box2"></div>
-	<div class="box1" draggable="true"></div>
+	<div class="box1" draggable=true></div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
@@ -27,10 +27,28 @@
 </script>
 <script>
 	$(function(){
-		$('.box1').on('dragend',function(ev){
-			$(this).appendTo($('.box2'))
-			ev.originalEvent.dataTransfer.setData('name','tom');
-			 console.log(dataTransfer.getData(key))
+
+
+
+		$('.box1')
+		.on('dragstart',function(){
+			console.log('container :dragstart..');
+		})//ondragstart 当元素开始拖动时触发
+		.on('drag',function(){
+			console.log('container :drag..');
+		})//ondrag 被拖动元素拖动时触发
+		.on('dragend',function(){
+			console.log('container :dragend..');
+		})//ondragend 拖拽时松开鼠标时触发
+
+		$('.box2')
+		.on('drop',function(){
+			console.log('container :drop..');
+			$(this).append($('.box1'));
+		})
+		.on('dragover',function(ev){
+			console.log('container:dropover .. ');
+			ev.preventDefault();
 		})
 	})
 </script>

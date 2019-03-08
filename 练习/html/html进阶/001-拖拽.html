@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style>
+		#container{
+			width: 500px;
+			height: 300px;
+			background: #eee;
+			margin:200px auto;
+		}
+		#target{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	<div id="target" draggable=true></div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+</script>
+<script>
+	$(function(){
+		var cl = console.log;
+		$('#target')
+		.on('dragend',function(){
+			$('#target').appendTo($('#container'))
+			alert('已完成拖拽')
+		})
+		// $('#container')
+		// .on('dragover',function(ev){
+		// 	ev.preventDefault();
+		// })
+		// .on('dragend',function(){
+		// 	alert('已完成拖拽')
+		// })
+	})
+</script>
+</html>

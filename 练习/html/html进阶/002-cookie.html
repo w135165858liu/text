@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie过期时间</title>
+</head>
+<body>
+	
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+</script>
+<script>
+	    function setCookie(key,value,iDate){
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate() + iDate);
+            document.cookie = key+"="+value+";expires="+oDate;
+        }
+        function getCookie(name){
+            var str = document.cookie;
+            var arr1 = str.split(";");
+            var result = "";
+            for(var i=0;i<arr1.length;i++){
+                var arr2 = arr1[i].split("=");
+                if(arr2[0].trim() == name.trim()){
+                    result = arr2[1];
+                    break;
+                }
+            }
+            return result;
+        }
+        function removeCookie(name){
+            setCookie(name,false,-1);
+        }
+        setCookie('name','gouzi',4);
+        removeCookie('name')
+        console.log(getCookie('name'))
+        console.log(document.cookie)
+</script>
+</html>

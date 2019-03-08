@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	margin-bottom: 20px;
+}
+@color:#f0f;
+@width:300px;
+@height:100px;
+@back:#f9f;
+/*我是注释*/
+.border-radius(@r){
+	border-radius:@r;
+	width: @r;
+	height: @r;
+}
+.triangle(top,@w,@c){
+	border-style: solid;
+	border-width: @w;
+	border-color: @c transparent transparent transparent;
+}
+.triangle(left,@w,@c){
+	border-style: solid;
+	border-width: @w;
+	border-color: transparent transparent transparent @c;
+}
+.triangle(bottom,@w,@c){
+	border-style: solid;
+	border-width: @w;
+	border-color: transparent transparent @c transparent;
+}
+.triangle(right,@w,@c){
+	border-style: solid;
+	border-width: @w;
+	border-color: transparent @c transparent transparent;
+}
+.box1{
+	color: @color;
+	width: @width;
+	height:@height;
+	background-color: @back;
+	
+}
+.box2{
+	.box1;
+	.border-radius(100px);
+}
+.box3{
+	.triangle(left,100px,pink);
+	.border-radius(100px);
+}

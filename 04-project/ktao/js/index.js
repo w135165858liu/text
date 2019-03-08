@@ -52,6 +52,30 @@
 		 })
 	});
 	var $search = $('.header .search');
+	$search.on('getData',function(ev,data){
+		//1.根据数据生成html
+		var html = getSearchLayerHtml(data,10)
+		//2.加载html到下拉层
+		if(html == ''){
+			$search.search('hideLayer');
+		}else{
+			$search.search('appendHtml',html);
+			$search.search('showLayer');
+
+		}
+	});
+	$search.on('getNoData',function(ev,data){
+		$search.search('appendHtml','');
+		$search.search('hideLayer');
+	});
+	function getSearchLayerHtml(data,maxNum){
+		var html = '';
+		for(var i=0;i<data.result.length;i++){
+			if(i>=maxNum) break;
+			html += '<li class="search-item">'+data.result[i][0]+'</li>'
+		}
+		return html
+	}
 	$search.search();
 })(jQuery);
 // <div class="myjdlist">
