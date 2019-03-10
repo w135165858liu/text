@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<!-- <script>
+function Foo(){
+    var i = 0;
+    return function(){
+        document.write(i++);
+    }
+}
+var f1 = Foo(),
+f2 = Foo();
+f1();
+f1();
+f2();
+</script> -->
+
+	<script src="../js/jquery-1.12.4.js"></script>
+	</script>
+	<script>
+		$(function(){
+			var cl = console.log;
+			var arr1 = ['a','b','c'];
+			var arr2 = ['d','e','f'];
+			var arr3 = $.extend({},arr1,arr2)
+			console.log(arr3)
+		})
+	</script>
+</html>

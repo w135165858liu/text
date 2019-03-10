@@ -47,6 +47,36 @@ div{
 	.border-radius(100px);
 }
 .box3{
-	.triangle(left,100px,pink);
+	.triangle(right,100px,pink);
 	.border-radius(100px);
+}
+@val:20;
+.list{
+	li{
+		width: 300px;
+		height: 30px;
+		line-height: 30px;
+		span{
+			color: #666;
+			// font-size: @val * 20px;
+			font-size: @val /  20px + 20px * 20px / 20 - 100 + 50px + 50 + 50 !important;
+
+		}
+		a{
+			color: #aaa;
+			text-decoration: none;
+			float: right;
+		}
+		&:hover{
+			background: @color;
+		}
+
+	}
+}
+.set(@attr,@val){
+    @{attr}:unit(@val/10,px);
+}
+.box4{
+	// .set(width,100)
+	.set(font-size,100)
 }
