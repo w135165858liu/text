@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" media="screen" href="css/screen.css">
+	<link rel="stylesheet" media="print" href="css/print.css">
+	<title>媒体类型</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		@media screen{
+			p{
+				color: red;
+				font-size: 16px;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+
+		}
+		@media print{
+			p{
+				color: blue;
+				font-size: 32px;
+				background: blue;
+
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				background: url(images/lj.png);
+			}
+		}
+/* 		@media all{
+	p{
+		color: blue;
+		font-size: 32px;
+	}
+	div{
+		width: 200px;
+		height: 200px;
+		background: blue;
+	}
+} */
+	</style>
+</head>
+<body>
+	<h1>我是大标题</h1>
+	<p>
+		我是段落
+	</p>
+	<div>
+		我是DIV
+	</div>
+</body>
+</html>
