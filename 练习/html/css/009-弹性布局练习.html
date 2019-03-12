@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009-弹性布局练习.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.gf{
+			width: 800px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 200px auto;
+			display: flex;
+			flex-wrap:wrap;
+		}
+		.ff{
+			display: flex;
+			width: 100%;
+		}
+		.fa{
+			width: 320px;
+			display: flex;
+			justify-content:space-between;
+			flex-direction: row-reverse;
+
+		}
+		.ff1{
+			flex-direction: row-reverse;
+		}
+		.ff2{
+		    align-items: center;
+			justify-content: center;
+		}
+
+		.ff3{
+		    align-items: flex-end;
+		}
+		.son{
+			width:100px;
+			height: 100px;
+			background: pink;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="gf">
+		<div class="ff ff1">
+			<div class="fa">
+				<div class="son son1">son1</div>
+				<div class="son son2">son2</div>
+				<div class="son son3">son3</div>
+			</div>
+		</div>
+		<div class="ff ff2">
+			<div class="fa">
+				<div class="son son4">son4</div>
+				<div class="son son5">son5</div>
+				<div class="son son6">son6</div>
+			</div>
+		</div>
+		<div class="ff ff3">
+			<div class="fa">
+				<div class="son son7">son7</div>
+				<div class="son son8">son8</div>
+				<div class="son son9">son9</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
