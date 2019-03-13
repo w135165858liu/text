@@ -9,14 +9,24 @@
 			padding: 0;
 		}
 		body{
-			width: 100vw;
+			height: 100vh;
 			display: flex;
-			 flex-direction: column;
+			flex-direction: column;
 		}
 		header,footer{
-			width: 100vw;
-			height: 12vh;
+			flex: 0 0 12vh;
 			background-color: pink
+		}
+		section{
+			flex-grow: 1;
+			display: flex;
+		}
+		nav,aside{
+			flex: 0 0 12vw;
+			background: blue;
+		}
+		main{
+			flex-grow: 1;
 		}
 	</style>
 
