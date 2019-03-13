@@ -1,0 +1,12 @@
+body{
+background: #efefef;
+}
+.kz-navbar .navbar-nav li a:hover{
+	color: #f507b5;
+}
+.container{
+	padding: 0;
+}
+.slide{
+	width: 60vw;
+}
