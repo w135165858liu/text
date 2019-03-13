@@ -47,6 +47,13 @@ Search.prototype = {
 		this.$searchLayer.on('click',function(ev){
 			ev.stopPropagation();
 		});
+		//6.用事件代理处理下拉层中每一项的点击时间
+		this.$searchLayer.on('click','search-item',function(){
+			//1.获取下拉层中每一项的值
+			var val = $(this).html();
+			//2设置input
+			//3.提交
+		})
 	},
 	getData:function(){
 		var inputVal = this.getInputVal();
@@ -93,6 +100,9 @@ Search.prototype = {
 		},
 		hideLayer:function(){
 			this.$searchLayer.showHide('hide');
+		}，
+		setInputVal:function(val){
+			this.searchInput.val(val)
 		}
 }
 Search.DEFAULTS = {
