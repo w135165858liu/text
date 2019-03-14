@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001-数组各项转函数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [1,2,3,4,5,6];
+
+	var index = arr.length;
+	for(var i=0;i<index;i++){
+		var val = arr[i]
+		change = function(val){
+			return val
+		}
+		arr.splice(i,index)
+		arr.push(change(val))
+	}
+	console.log(arr)
+</script>
+</html>

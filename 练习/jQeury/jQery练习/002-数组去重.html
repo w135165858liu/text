@@ -15,7 +15,7 @@ var arr1 = [];
 arr.forEach(function(value,index){
 	if(arr1.indexOf(arr[index]) == -1){
 		arr1.push(value);
-		return arr1.sort()
+		arr1.sort()
 	}
 })
 console.log(arr1)
