@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = [1,2,3,4,5,6];
+	var len = a.length;
+	for(var i = 0 ; i<len;i++){
+		var num = a[i];
+		(function(num){
+			var f = function(){
+				console.log(num);
+			}
+		a[i] = f;
+		})(num)
+	};
+	for(var i = 0;i<len;i++){
+		a[i]()
+	}
+
+</script>
+</html>

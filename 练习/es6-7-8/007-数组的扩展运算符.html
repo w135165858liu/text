@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组的扩展运算符</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*	console.log(...arr)
+	function add(n1,n2){
+		return n1+n2;
+	}
+	let arr = [11,22];
+	add(...arr);//函数调用时使用把数组转换为参数列表
+	function add(...arr){//函数定义时使用把参数列表转换为数组
+		let result = 0;
+		for(let i = 0;i<arr.length;i++){
+			result += arr[i]
+		}
+		return result;
+	}
+	add(11,22);*/
+/*	let arr = [11,22,44,88,77];
+		//ES5
+	console.log(Math.max.apply(null,arr))//88//调用函数时,函数名.apply(参数1,[]),apply 第一个参数是被调用函数里面的this,如果第一个参数是null函数里面的this不改变,第二个是参数接受一个数组做为参数列表
+		//ES6 用扩展运算
+	console.log(Math.max(...arr))//88*/
+	let arr1 = [11,22,44,88,77];
+	//ES5
+	let arr2 = arr1.concat();
+	console.log(arr2)
+	let arr3 = arr1.slice();
+	console.log(arr3)
+	//ES6 用扩展运算
+	// let arr2 = [...arr1];
+</script>
+</html>

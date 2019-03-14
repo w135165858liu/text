@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象结构解析</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let obj = {
+		username:"tom",
+		age:18,
+		friend:{
+			username:"lay"
+		}
+	}
+
+	/*let {username:username1,age:age1,friend} = obj;
+	console.log(username1,age1,friend)*///tom 18 undefined
+	let {username:username1,age:age1,friend={username:"leo",age:18}} = obj;
+	console.log(username1,age1,friend);
+
+</script>
+</html>
