@@ -48,11 +48,14 @@ Search.prototype = {
 			ev.stopPropagation();
 		});
 		//6.用事件代理处理下拉层中每一项的点击时间
-		this.$searchLayer.on('click','search-item',function(){
+		var _this = this;
+		this.$searchLayer.on('click','.search-item',function(){
 			//1.获取下拉层中每一项的值
 			var val = $(this).html();
 			//2设置input
+			_this.setInputVal(val)
 			//3.提交
+			_this.submit();
 		})
 	},
 	getData:function(){
@@ -89,21 +92,21 @@ Search.prototype = {
 		.fail(function(err){
 			this.$elem.trigger('getNoData')
 		/*	this.appendHtml('');
-			this.hideLayer()*/
-		})
-		},
-		showLayer:function(){
-			this.$searchLayer.showHide('show');
-		},
-		appendHtml:function(html){
-			this.$searchLayer.html(html);
-		},
-		hideLayer:function(){
-			this.$searchLayer.showHide('hide');
-		}，
-		setInputVal:function(val){
-			this.searchInput.val(val)
-		}
+		this.hideLayer()*/
+	})
+	},
+	showLayer:function(){
+		this.$searchLayer.showHide('show');
+	},
+	appendHtml:function(html){
+		this.$searchLayer.html(html);
+	},
+	hideLayer:function(){
+		this.$searchLayer.showHide('hide');
+	},
+	setInputVal:function(val){
+		this.$searchInput.val(val)
+	}
 }
 Search.DEFAULTS = {
 	autocompelete:true,

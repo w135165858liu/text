@@ -25,6 +25,9 @@ p{
 div{
 	box-sizing: border-box;
 }
+a.link:hover{
+	color: #ea675a;
+}
 .container{
 	width: 1220px;
 	margin-left: auto;

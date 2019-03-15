@@ -78,25 +78,3 @@
 	}
 	$search.search();
 })(jQuery);
-// <div class="myjdlist">
-// 	<div class="fore1">
-// 		<div class="item"><a href="#" class="bs">待处理订单</a></div>
-// 		<div class="item"><a href="#" class="bs">返修退换货</a></div>
-// 		<div class="item"><a href="#" class="bs">降价商品</a></div>
-// 	</div>
-// 	<div class="fore2">
-// 		<div class="item"><a href="#" class="bs">消息</a></div>
-// 		<div class="item"><a href="#" class="bs">我的问答</a></div>
-// 		<div class="item"><a href="#" class="bs">我的关注</a></div>
-// 	</div>
-// </div>
-// <div class="myjdlist myjdlist_2">
-// 	<div class="fore1">
-// 		<div class="item"><a href="#" class="bs">我的京豆</a></div>
-// 		<div class="item"><a href="#" class="bs">我的白条</a></div>
-// 	</div>
-// 	<div class="fore2">
-// 		<div class="item"><a href="#" class="bs">我的优惠券</a></div>
-// 		<div class="item"><a href="#" class="bs">我的理财</a></div>
-// 	</div>
-// </div>
