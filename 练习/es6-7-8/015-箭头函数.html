@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*function Timer(id){
+			this.id = id;
+			setTimeout(function(){
+				console.log(this,this.id);
+			},200);
+		}
+		var id = 200;*/
+		function Timer(id){
+			this.id = id;
+			setTimeout(()=>{
+				console.log(this,this.id);
+			},200);
+		}
+		var id = 200;
+		new Timer(100);
+	</script>
+</body>
+</html>

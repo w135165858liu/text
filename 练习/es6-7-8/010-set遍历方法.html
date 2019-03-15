@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>set遍历方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [11,22,33,44];
+	var s = new Set(arr);
+	console.log(s)
+	console.log('aa::',s.keys())
+	console.log('bb::',s.values())
+	console.log('cc::',s.entries())
+	for(let key of s.keys()){
+		console.log('dd::',key)
+	}
+	for(let value of s.values()){
+		console.log('ee::',value)
+	}
+	for(let value of s){
+		console.log('ee1::',value)
+	}
+	for(let entries of s.entries()){
+		console.log('ff::',entries)
+	}
+	s.forEach(function(val,index){
+		console.log('gg::',val,index)
+	})
+</script>
+</html>

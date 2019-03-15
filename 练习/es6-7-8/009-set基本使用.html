@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>set基本使用操作方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [11,22,33,44,22,44];
+	/*let s = new Set();
+	s.add(11);
+	s.add(22);
+	s.add(33);
+	console.log(s)
+	console.log(s.size);*/
+/*	let s = new Set(arr);
+	console.log(s.has(22));
+	console.log(s.delete(22));
+	console.log(s.has(22));
+	console.log(s)
+	console.log(s.size);*/
+/*	let s = new Set(arr);
+	console.log(s.has(22));
+	console.log(s.delete(22));
+	console.log(s.has(22));
+	s.clear(22);
+	console.log(s)
+	console.log(s.size);*/
+	let s = new Set(arr);
+	let arr1 = [...s]
+	console.log(arr1)
+	console.log(s)
+	console.log(s.size);
+</script>
+</html>

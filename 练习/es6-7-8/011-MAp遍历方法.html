@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Map遍历方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj1 = {id:100};
+	var obj2 = {id:100};
+	let m = new Map();
+	m.set('age',18)
+	m.set(obj1,"student");
+	m.set(obj2,"teacher");
+	console.log(m)
+	console.log('aa::',m.keys())
+	console.log('bb::',m.values())
+	console.log('cc::',m.entries())
+	for(let key of m.keys()){
+		console.log('dd::',key)
+	}
+	for(let value of m.values()){
+		console.log('ee::',value)
+	}
+	for(let entry of m){
+		console.log('ff1::',entry)
+	}
+	for(let entries of m.entries()){
+		console.log('ff::',entries)
+	}
+	m.forEach(function(val,index){
+		console.log('gg::',val,index)
+	})
+</script>
+</html>

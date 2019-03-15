@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数参数设置</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//直接在参数定义的时候赋值来为为函数的参数设置默认值
+	function show2(x,y="world"){
+		console.log(x,y);
+	}
+    show2("hello");//hello world
+    //参数默认值不是传值的,而是每次都重新计算默认值表达式的值
+    let x = 1;
+    function show(i=x+1){
+        console.log(i);
+    }
+    show();//2
+    x = 2;
+    show();//3
+    //结构解析和默认参数结合
+    function show2(url,{method="GET",body="name=Tom"} = {}){
+        console.log(method,body);
+    }
+    show2();//GET name=Tom
+    show2('http://kuazhu.com');//GET name=Tom
+</script>
+</html>
