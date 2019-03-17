@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise加载图片</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let getLoadImgPromise = (url)=>{
+		return new Promise((resolve,reject)=>{
+			let img = new Image();
+			img.onload = function(){
+				resolve(url)
+			}
+			img.onerror = function(){
+				reject(url)
+			}
+			img.src = url
+		})
+	}
+	getLoadImgPromise('../html/css/images/lj.png')
+	.then(url=>{
+		console.log('loadimg',url)
+	},url=>{
+		console.log('errorimg',url)
+	})
+</script>
+</html>

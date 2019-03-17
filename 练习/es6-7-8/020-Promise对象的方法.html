@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+		//1.new Promise时传入的函数立即执行
+	let promise = new Promise((resolve,reject)=>{
+		console.log('new Promise');
+		//2.执行异步请求
+		//模拟异步请求成功
+		// resolve('hello');
+		//模拟异步请求失败
+		reject('world');
+	})
+	console.log(promise)
+	//通过promise实例接收执行结果
+	promise
+	.then((data)=>{
+		console.log('success',data);
+	})
+	.catch(err=>{
+		console.log('error'err)
+	})
+	.finally(()=>{
+		console.log('finally')
+	})
+</script>
+</html>

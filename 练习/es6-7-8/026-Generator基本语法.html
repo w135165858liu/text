@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Generator基本语法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * gen(){
+		console.log('in gen...')
+		yield 'get Data1'
+		console.log('get data1...')
+		yield 'get Data2'
+		console.log('get data2...')
+		yield 'get Data3'
+		console.log('get data3...')
+		return 'Data3'
+	}
+	var g = gen();
+	console.log(g)
+</script>
+</html>
