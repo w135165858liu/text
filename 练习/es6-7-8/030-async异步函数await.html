@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var p = new Promise((resolve,reject)=>{
+		setTimeout((data)=>{
+			resolve('data')
+		},100);
+	})
+
+	async function fn(){
+		try{
+			await Promise.reject('出错了')
+		}
+		catch(err){
+			console.log(err)
+		}
+		try{
+			await console.log('data')
+		}
+		catch(err){
+			console.log(err)
+		}
+	}
+	fn()
+</script>
+</html>
