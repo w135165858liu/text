@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</body>
+<script>
+	var likeArr = {
+		0:'0',
+		1:'1',
+		2:'2',
+		3:'3',
+		length:4
+	}
+	console.log(likeArr)
+	console.log(Array.from(likeArr));
+	let oBox = document.getElementsByTagName('div');
+	console.log(oBox)
+	console.log(Array.from(oBox))//转换成真数组
+	let arr = [11,2,3,34,5,5];
+	console.log(arr.find(n=>n>101));
+</script>
+</html>

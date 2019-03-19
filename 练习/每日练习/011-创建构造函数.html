@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建构造函数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		sayName(){
+			console.log(this.name)
+		}
+		static sayHi(){
+			console.log('Hi')
+		}
+	}
+	var p = new Person('tom',18);
+	p.sayName();
+	Person.sayHi();
+</script>
+</html>
