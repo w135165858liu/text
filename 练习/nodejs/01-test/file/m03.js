@@ -1,3 +1,3 @@
 
 const str='hello';
-global.str = str;
+module.exports.str = str;
