@@ -8,13 +8,26 @@
 			margin: 0;
 			padding: 0;
 		}
+		body{
+			background: #eee;
+		}
 		.around{
 			width: 300px;
 			height: 300px;
 			border: 1px solid #000;
 			border-radius: 50%;
 			position: relative;
-			animation:sport 2s linear infinite;
+			animation:sport 5s linear infinite;
+			overflow: hidden;
+			box-shadow:0 0 50px black;
+			margin: 200px auto;
+			background: white;
+		}
+		.bg1{
+			width: 150px;
+			height: 300px;
+			position: absolute;
+			background: black;
 		}
 		@keyframes sport{
 			0%{
@@ -36,46 +49,39 @@
 		.center{
 			width: 150px;
 			height: 150px;
-			border: 1px solid #000;
 			border-radius: 50%;
 			position: absolute;
-			left: 50px; 
+			left: 50%;
+		    margin-left: -75px;
+		    display: flex;
+		    align-items: center;
+		    justify-content:center;
 		}
 		.center1{
-		    left: 63px;
-		    top: 0px;
-		    transform: rotateZ(40deg);
-		    border-left-color: transparent;
-		    border-bottom-color: transparent;
+			top:0;
+		    background: black;
 		}
 		.center2{
-			left: 90px;
-		    bottom: 0px;
-		    transform: rotateZ(-54deg);
-		    border-right-color: transparent;
-		    border-bottom-color: transparent;
+			bottom: 0;
+		    background: white;
 		}
 		.sBox{
-			width: 100px;
-			height: 100px;
+			width: 80px;
+			height: 80px;
 			border-radius: 50%;
 			position: absolute;
-			
 		}
 		.sBox1{
-			left: 20px;
-			top:30px;
-			background: black;
+			background: white;
 		}
 		.sBox2{
-			right: 18px;
-			bottom:20px;
-			background: yellow;
+			background: black;
 		}
 	</style>
 </head>
 <body>
 	<div class="around">
+		<div class="bg1"></div>
 		<div class="center center1">
 			<div class="sBox sBox1"></div>
 		</div>
