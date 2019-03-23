@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>太极</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.around{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			border-radius: 50%;
+			position: relative;
+			animation:sport 2s linear infinite;
+		}
+		@keyframes sport{
+			0%{
+				transform: rotateZ(0deg);
+			}
+			25%{
+				transform: rotateZ(80deg);
+			}
+			50%{
+				transform: rotateZ(160deg);
+			}
+			75%{
+				transform: rotateZ(240deg);
+			}
+			100%{
+				transform: rotateZ(360deg);
+			}
+		}
+		.center{
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			border-radius: 50%;
+			position: absolute;
+			left: 50px; 
+		}
+		.center1{
+		    left: 63px;
+		    top: 0px;
+		    transform: rotateZ(40deg);
+		    border-left-color: transparent;
+		    border-bottom-color: transparent;
+		}
+		.center2{
+			left: 90px;
+		    bottom: 0px;
+		    transform: rotateZ(-54deg);
+		    border-right-color: transparent;
+		    border-bottom-color: transparent;
+		}
+		.sBox{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			position: absolute;
+			
+		}
+		.sBox1{
+			left: 20px;
+			top:30px;
+			background: black;
+		}
+		.sBox2{
+			right: 18px;
+			bottom:20px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="around">
+		<div class="center center1">
+			<div class="sBox sBox1"></div>
+		</div>
+		<div class="center center2">
+			<div class="sBox sBox2"></div>
+		</div>
+		
+	</div>
+</body>
+<script>
+	var oAround = document.getElementsByTagName('.around');
+	var oCenter = document.getElementsByTagName('.center');
+	var oSbox = document.getElementsByTagName('.sBox');
+</script>
+</html>
