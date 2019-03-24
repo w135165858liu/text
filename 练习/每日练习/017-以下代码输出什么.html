@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script src="./js/jquery-1.12.4.js"></script>
+</script>
+<script>
+	let getDataPromise = (url)=>{
+		return new Promise((resolve,reject)=>{
+			$.get(url,data=>{
+				resolve(data)
+			})
+		})
+	}
+	async function fn(url){
+		return await getDataPromise(url)
+		// console.log(data1)
+		// let data2 = await getDataPromise(data1.followers_url);
+		// console.log(data2)
+		// let data3 = await getDataPromise(data2[0].followers_url)
+		// console.log(data3)
+	}
+	a = fn('https://api.github.com/users/kuazhu')
+	// console.log(a)
+	a
+	.then(data=>{return fn(data.followers_url)})
+	.then(data=>{return fn(data[4].followers_url)})
+	.then(data=>{console.log(data)})
+
+</script>
+</html>

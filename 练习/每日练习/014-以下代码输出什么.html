@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function show2(url,{method="GET",body="name=Tom"}={}){
+		console.log(url)
+		console.log(method,body)
+	}
+	show2({method:"POST",body:"name=Leo"})
+</script>
+</html>
