@@ -37,7 +37,7 @@ db.once('open',()=>{
 			console.log(docs)
 		}
 	})*/
-	UserModel.updateMany({age:{$gt:90}},{$set:{name:"gouzi"}},(err,docs)=>{
+	UserModel.updateMany({age:{$lt:90}},{$set:{age:100}},(err,docs)=>{
 		if(err){
 			console.log('updateOne err',err)
 		}else{

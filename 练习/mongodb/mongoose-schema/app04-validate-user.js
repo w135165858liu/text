@@ -1,6 +1,6 @@
-const mongooses = require("./models/user.js");
-const mongoose = mongooses.mongoose;
-const UserModel = mongooses.UserModel;
+const {mongoose,UserModel} = require("./models/user.js");
+// const mongoose = mongooses.mongoose;
+// const UserModel = mongooses.UserModel;
 //1.连接数据库服务
 mongoose.connect('mongodb://localhost/kuazhu',{useNewUrlParser:true});
 const db = mongoose.connection;
