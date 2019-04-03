@@ -59,7 +59,7 @@
 			})
 			.done(function(result){
 				if(result.status == 0){//成功
-					$('#go-login').trigger('click')
+					$('#go-login').trigger('click');
 				}else{//失败
 					$err.html(result.message);
 				}
@@ -103,6 +103,7 @@
 			})
 			.done(function(result){
 				if(result.status == 0){//成功
+				console.log(result)
 					/*
 					$login.hide();
 					$('#user-info span').html(result.data.username)
