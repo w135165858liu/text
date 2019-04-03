@@ -37,20 +37,21 @@ router.post("/register",(req,res)=>{
 		res.json(result)		
 	})
 });
-//处理注册
+//处理登陆
 router.post("/login",(req,res)=>{
 	const {username,password} = req.body;
 	const result = {
 		status:0,//成功
 		message:""
 	}
-	//检查是否已经注册过
 	
 	UserModel.findOne({username,password:hmac(password)},'-password -__v')
 	.then(user=>{
-		console.log(user)
+
 		if(user){//登陆成功
 			result.data = user
+			// req.cookies.set('userInfo',JSON.stringify(user))
+			req.session.userInfo = user
 			res.json(result)
 		}else{
 			result.status = 10
@@ -64,4 +65,14 @@ router.post("/login",(req,res)=>{
 		res.json(result)		
 	})
 });
+//退出处理
+router.get('/logout',(req,res)=>{
+	const result = {
+		status:0,
+		message:''
+	}
+	// req.cookies.set('userInfo',null)
+	req.session.destroy()
+	res.json(result)
+})
 module.exports = router

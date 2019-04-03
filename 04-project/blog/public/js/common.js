@@ -103,12 +103,11 @@
 			})
 			.done(function(result){
 				if(result.status == 0){//成功
-				console.log(result)
-					/*
-					$login.hide();
+					
+					/*$login.hide();
 					$('#user-info span').html(result.data.username)
-					$('#user-info').show()
-					*/
+					$('#user-info').show()*/
+					
 					window.location.reload()
 				}else{//失败
 					$err.html(result.message);
@@ -118,5 +117,21 @@
 				$err.html('请求失败,请稍后再试一试');	
 			})
 		}
+	})
+	//4.用户退出
+	$('#logout').on('click',function(){
+		$.ajax({
+			url:'/user/logout'
+		})
+		.done(function(result){
+			if(result.status == 0){//成功
+				window.location.reload();
+			}else{
+				$err.html(result.message);
+			}
+		})
+		.fail(function(err){
+			$err.html('请求失败，请稍后再试')
+		})
 	})
 })(jQuery);
