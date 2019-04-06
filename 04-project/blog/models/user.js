@@ -9,7 +9,7 @@ const UserSchema = new mongoose.Schema({
 	},
 	isAdmin:{
 		type:Boolean,
-		default:true
+		default:false
 	}
 })
 //2.生成模型Model
