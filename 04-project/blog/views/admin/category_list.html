@@ -16,8 +16,17 @@
       </tr>
     </thead>
     <tbody>
-
+      {% for category in categories %}
+      <tr>
+        <td>{{ category._id.toString() }}</td>
+        <td>{{ category.name }}</td>
+        <td>{{ category.order }}</td>
+      </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>
+{% if pages > 1 %}
+{% include './pagination.html' %}
+{% endif %}
 {% endblock %}

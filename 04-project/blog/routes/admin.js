@@ -1,5 +1,6 @@
 const express = require('express');
 const UserModel = require('../models/user.js');
+const pagination = require('../util/pagination.js');
 const router = express.Router();
 //显示后台首页
 //权限验证
@@ -18,7 +19,7 @@ router.get("/",(req,res)=>{
 });
 //用户管理列表
 router.get("/users",(req,res)=>{
-	/*
+/*
 	分页：
 	约定：每一页显示 2 条
 	第一页 跳过 0 条skip(0)
@@ -26,7 +27,7 @@ router.get("/users",(req,res)=>{
 	第三页 跳过 4 条skip(4)
 	第 page 页 跳过（page -1) *limit 条 skip (page -1)*limt
 	 */
-	let { page } = req.query;
+	/*let { page } = req.query;
 	page = parseInt(page);
 	if(isNaN(page)){
 		page = 1;
@@ -62,6 +63,24 @@ router.get("/users",(req,res)=>{
                 list
             });
         })
+    })*/
+    const options = {
+    	page:req.query.page,
+    	model:UserModel,
+    	query:{},
+    	projection:'-password -__v',
+    	sort:{order:-1}
+    }
+    pagination(options)
+    .then(data=>{
+    	res.render('admin/user_list',{
+    		userInfo:req.userInfo,
+    		users:data.docs,
+    		page:data.page,
+    		list:data.list,
+    		pages:data.pages,
+    		url:'/admin/users'
+    	})
     })
 })
 module.exports = router
