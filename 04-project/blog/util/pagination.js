@@ -28,6 +28,7 @@ async function pagination(options){
     if (page > pages) {
         page = pages
     }
+    //如果总页数是0
     if(page == 0){
     	page = 1
     }
