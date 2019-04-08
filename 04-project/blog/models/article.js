@@ -11,10 +11,12 @@ const ArticleSchema = new mongoose.Schema({
 		type:String
 	},
 	user:{
-		type:mongoose.Schema.Types.ObjectId
+		type:mongoose.Schema.Types.ObjectId,
+		ref:'User'
 	},
 	category:{
-		type:mongoose.Schema.Types.ObjectId
+		type:mongoose.Schema.Types.ObjectId,
+		ref:'Category'
 	},
 	click:{
 		type:Number,

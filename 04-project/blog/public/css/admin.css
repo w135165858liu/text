@@ -12,3 +12,6 @@
 .content{
 	min-height: 200px;
 }
+.ck-editor__editable{
+	height: 200px;
+}

@@ -1,4 +1,6 @@
 const express = require('express');
+const multer = require('multer');
+const upload = multer({ dest:'public/uploads/' })
 const UserModel = require('../models/user.js');
 const pagination = require('../util/pagination.js');
 const router = express.Router();
@@ -81,6 +83,17 @@ router.get("/users",(req,res)=>{
     		pages:data.pages,
     		url:'/admin/users'
     	})
+    })
+})
+//处理上传图片//single里的参数是前台传回来的参数
+console.log(upload.single('upload'))
+router.post('/uploadImage',upload.single('upload'),(req,res)=>{
+    const uploadedFilePath = '/uploads/'+req.file.filename;
+    console.log(uploadedFilePath)
+    //上传的规定
+    res.json({
+        uploaded:true,
+        url:uploadedFilePath
     })
 })
 module.exports = router
