@@ -10,6 +10,6 @@ const CategorySchema = new mongoose.Schema({
 	}
 })
 //2.生成模型Model
-const CategoryModel = mongoose.model('category',CategorySchema);
+const CategoryModel = mongoose.model('Category',CategorySchema);
 //3.导出模型Model
 module.exports = CategoryModel;
