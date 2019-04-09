@@ -24,7 +24,6 @@ router.get("/",(req,res)=>{
     }
     pagination(options)
     .then(data=>{
-    	console.log(data)
     	res.render('admin/article_list',{
     		userInfo:req.userInfo,
     		articles:data.docs,

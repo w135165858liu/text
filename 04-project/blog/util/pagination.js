@@ -43,7 +43,7 @@ async function pagination(options){
     let result = model.find(query,projection);
     if(populates){
     	populates.forEach(populate=>{
-    		result = result.populate(populate)
+    		result = result.populate(populate);
     	})
     }
     const docs = await result.sort(sort).skip(skip).limit(limit)
