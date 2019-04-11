@@ -9,50 +9,69 @@ class App extends Component{
 			list:["吃饭","睡觉","玩"],
 			val:''
 		}
+		this.handleChange = this.handleChange.bind(this);
+		this.handleAdd = this.handleAdd.bind(this);
 	}
 	handleAdd(){
-		// console.log('add...')
-		this.setState({
+		/*this.setState({
 			list:[...this.state.list,this.state.val],
 			val:''
-		})
+		})*/
+		/*this.setState(()=>{
+			return {
+				list:[...this.state.list,this.state.val],
+				val:''
+			}
+		})*/
+		this.setState(preState=>({
+			list:[...preState.list,
+			preState.val],val:''
+		}));
+		console.log(this.ul.querySelectAll('li'))
 	}
 	handleChange(ev){
 		// console.log(ev.target.value)
-		this.setState({
+		/*this.setState({
 			val:ev.target.value
-		})
+		})*/
+		const val = this.input.value
+		// const val = ev.target.value;
+		this.setState(()=>({
+			val
+		});
 	}
 	handleDel(index){
 		// console.log('del',index)
 		// this.state.list.splice(index,1)
 		const list = [...this.state.list]
 		list.splice(index,1)
-		this.setState({
+		/*this.setState({
 			list:list
+		})*/
+		this.setState(()=>({
+			list
+		}));
+	}
+	getItem(){
+		return this.state.list.map((item,index)=>{
+			return <Item key={index} content={item} handleDel={this.handleDel.bind(this,index)}/>
 		})
-		
 	}
 	render(){
 		return (
 			<Fragment>
 			<div className="App">
-				<input  onChange={this.handleChange.bind(this)} value={this.state.val}/>
-				{
-					//我是单行注释
-					/*我是多行注释*/
-				}
-				<button onClick={this.handleAdd.bind(this)}>新增</button>
-				<ul>
+				<input  
+				onChange={this.handleChange} 
+				value={this.state.val}
+				ref={(input)=>{
+					this.input = input
+				}}
+				/>
+				<button onClick={this.handleAdd}>新增</button>
+				<ul ref={ul=>{this.ul = ul}}>
 					{
-						this.state.list.map((item,index)=>{
-							/*return (
-									<li key={index} onClick={this.handleDel.bind(this,index)}>{item}</li>
-
-								)*/
-							// return <Item key={index} content={item} list={this.state.list} index={index}/>
-							return <Item key={index} content={item} handleDel={this.handleDel.bind(this,index)}/>
-						})
+						this.getItem()
 					}
 				</ul>
 				</div>

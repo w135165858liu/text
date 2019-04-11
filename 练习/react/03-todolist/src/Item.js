@@ -1,18 +1,23 @@
-import React,{ Component } from 'react'
+import React,{ Component } from 'react';
+import PropTypes = from 'prop-types'
 class Item extends Component{
-	// handleDel(){
-	// 	console.log(this.props.list)
-	// 	console.log(this.props.index);
-	// 	this.props.list.splice(this.props.index,1)
-	// 	console.log(this.props.list)
-	// }
 	render(){
+		const { handleDel,content } = this.props
 		return (
-			// <li onClick={this.handleDel.bind(this)}>
-			<li onClick={this.props.handleDel}>
-				{this.props.content}
+			<li onClick={handleDel}>
+				{content}
 			</li>
 		)
 	}
+}
+//isrequired 必须滴
+Item.PropTypes = {
+	handleDel:PropTypes.func,
+	content:PropTypes.string.isrequired
+
+}
+Item.defaultProps = {
+	content:'睡觉'
+
 }
 export default Item
