@@ -1,6 +1,8 @@
 import React,{ Component,Fragment } from 'react';
+
 import './App.css';
 import Item from './Item.js';
+import store from './store/index.js'
 
 class App extends Component{
 	constructor(props){
@@ -12,26 +14,6 @@ class App extends Component{
 		}
 		this.handleChange = this.handleChange.bind(this)
 		this.handleAdd = this.handleAdd.bind(this)
-	}
-	static getDerivedStateFromProps(nextProps, prevState){
-		console.log('getDerivedStateFromProps(nextProps, prevState)',nextProps, prevState)
-		return {
-		}
-	}
-	shouldComponentUpdate(nextProps, nextState){
-		console.log('shouldComponentUpdate(nextProps, nextState)',nextProps, nextState)
-		return true
-		
-	}
-	getSnapshotBeforeUpdate(prevProps, prevState){
-		console.log('getSnapshotBeforeUpdate(prevProps, prevState)',prevProps, prevState)
-		return 123;
-	}
-	componentDidUpdate(prevProps, prevState,snapshot){
-		console.log('componentDidUpdate(prevProps, prevState,snapshot)',prevProps, prevState,snapshot)
-	}
-	componentWillUnmount(){
-		console.log('Item componentWillUnmount')
 	}
 	handleAdd(){
 		this.setState(preState=>({
@@ -59,7 +41,7 @@ class App extends Component{
 		})
 	}
 	render(){
-		console.log('App render ...')
+		// console.log(store)
 		return (
 			<Fragment>
 			<div className="App">
