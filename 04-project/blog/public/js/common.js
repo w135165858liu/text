@@ -118,4 +118,9 @@
 			})
 		}
 	})
+	//4.文章列表分类
+	var $articlePagination = $('#article-list');
+	$articlePagination.pagination({
+		url:'/articles'
+	})
 })(jQuery);

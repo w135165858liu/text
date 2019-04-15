@@ -14,15 +14,7 @@ router.use((req,res,next)=>{
 })
 //現實文章列表
 router.get("/",(req,res)=>{
-  	const options = {
-    	page:req.query.page,
-    	model:ArticleModel,
-    	query:{},
-    	projection:'-__v',
-    	sort:{_id:-1},
-    	populates:[{path:"user",select:'username'},{path:"category",select:'name'}]
-    }
-    pagination(options)
+  	ArticleModel.getPaginationArticles(req)
     .then(data=>{
     	res.render('admin/article_list',{
     		userInfo:req.userInfo,
