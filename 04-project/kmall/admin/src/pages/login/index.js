@@ -40,7 +40,9 @@ class NormalLoginForm extends Component {
       if (!err) {
         this.props.handleLogin(values);
         /*
+        isFething改变登录按钮记载状态样式
         this.setState(()=>({isFething:true}))
+        发送ajax验证输入的数据
         axios({
         	method:'post',
         	url:'http://127.0.0.1:3000/admin/login',
@@ -111,7 +113,9 @@ const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLogin
 //5.因此state里面有每一个组件自己的数据
 //6.该方法返回一个对象,这个对象的属性会映射到connect方法返回的方法指定的UI组件上的this.props上
 const mapStateToProps = (state)=>{
+  //state是immutable数据指向顶层数据，state.get('login')是顶层数据的login:loginReducer，state.get('login').get('isFetching')是./store/reducer.js里面的state
 	return {
+
 		isFetching:state.get('login').get('isFetching')
 	}
 }

@@ -39,7 +39,7 @@ export const getLoginAction = (values)=>{
         	// console.log(result)
         	if(result.data.code == 0){//登录成功
         		//跳转到后台首页
-        		window.location.href = "/"
+        		// window.location.href = "/login"
         	}else if(result.data.code == 1){
         		message.error(result.data.message)
         	}
