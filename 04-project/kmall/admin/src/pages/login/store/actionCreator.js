@@ -7,7 +7,8 @@
 import * as types from './actionTypes.js'
 import axios from 'axios';
 import { message } from 'antd';
-
+import { request,setUserName } from 'util';
+import { ADMIN_LOGIN } from 'api';
 const getLoginRequestAction = ()=>{
 	return {
 		type:types.LOGIN_REQUEST
@@ -27,10 +28,34 @@ export const getLoginAction = (values)=>{
 		//1.3 dispatch把action派发到store
 		//1.4 store再把action转交个reducer
 		//1.5 相当于程序流程走到./reducer.js
-	
-		dispatch(getLoginRequestAction());
 
-        axios({
+		dispatch(getLoginRequestAction());
+                request({
+                        method:'post',
+                        url:ADMIN_LOGIN,
+                        data:values
+                })
+                .then(result=>{
+                        // console.log(result)
+                        if(result.code == 0){//登录成功
+                                //把用户名保存到本地
+                                setUserName(result.data.username)
+                                //跳转到后台首页
+                                // window.location.href = "/"
+                        }else if(result.code == 1){
+                                message.error(result.message)
+                        }
+                })
+                .catch(err=>{
+                        console.log(err);
+                        message.error('网络请求失败,请稍后再试')
+                })
+                .finally(()=>{
+                        //2.让登录按钮处于活动状态
+                        dispatch(getLoginDoneAction())
+                })
+
+        /*axios({
         	method:'post',
         	url:'http://127.0.0.1:3000/admin/login',
         	data:values
@@ -39,7 +64,7 @@ export const getLoginAction = (values)=>{
         	// console.log(result)
         	if(result.data.code == 0){//登录成功
         		//跳转到后台首页
-        		// window.location.href = "/login"
+        		window.location.href = "/"
         	}else if(result.data.code == 1){
         		message.error(result.data.message)
         	}
@@ -51,8 +76,8 @@ export const getLoginAction = (values)=>{
         .finally(()=>{
         	//2.让登录按钮处于活动状态
         	dispatch(getLoginDoneAction())
-        })		
-	}
+        })*/		
+}
 }
 
 

@@ -6,11 +6,11 @@
 */
 // import { combineReducers } from 'redux'
 import { combineReducers } from 'redux-immutable'
-import { reducer as todolistReducer  } from '../pages/todolist/store'
+import { reducer as todolistReducer  } from 'pages/todolist/store'
 
 //1.引入login组件自己的reducer,相当于引用 '../pages/login/store/index.js'
 //2.为了避免命名冲突,对引入的reducer重命名
-import { reducer as loginReducer  } from '../pages/login/store'
+import { reducer as loginReducer  } from 'pages/login/store'
 
 export default combineReducers({
 	todolist:todolistReducer,
