@@ -41,7 +41,7 @@ export const getLoginAction = (values)=>{
                                 //把用户名保存到本地
                                 setUserName(result.data.username)
                                 //跳转到后台首页
-                                // window.location.href = "/"
+                                window.location.href = "/"
                         }else if(result.code == 1){
                                 message.error(result.message)
                         }
