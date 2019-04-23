@@ -62,6 +62,7 @@ router.post("/login",(req,res)=>{
 
 //权限控制
 router.use((req,res,next)=>{
+	console.log(req.userInfo.isAdmin)
 	if(req.userInfo.isAdmin){
 		next()
 	}else{

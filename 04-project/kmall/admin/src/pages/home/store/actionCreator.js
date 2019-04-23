@@ -24,6 +24,9 @@ export const getCountAction = ()=>{
 				dispatch(action)
 			}
 		})
+		.catch(err=>{
+			console.log(err)
+		})
 	}
 }
 

@@ -4,4 +4,4 @@
 * @Last Modified by:   TomChen
 * @Last Modified time: 2019-04-12 20:11:26
 */
-export const SET_DOUNT = 'home@set_count'
+export const SET_COUNT = 'home@set_count'
