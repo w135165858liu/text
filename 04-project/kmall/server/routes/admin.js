@@ -15,7 +15,7 @@ const hmac = require('../util/hmac.js')
 const router = Router();
 
 
-router.get("/init",(req,res)=>{
+/*router.get("/init",(req,res)=>{
 	//插入数据到数据库
 	new UserModel({
 		username:'admin',
@@ -29,6 +29,23 @@ router.get("/init",(req,res)=>{
 			res.send('err')				
 		}
 	})
+});
+*/
+router.get("/init",(req,res)=>{
+	//插入数据到数据库
+	const users = [];
+	for(let i=0;i<100;i++){
+		users.push({
+			username:'test'+i,
+			password:hmac('test'+i),
+			phone:'13668182'+parseInt(Math.random()*1000),
+			email:'test' + i + '@kuazhu'
+		})
+		UserModel.insertMany(users)
+		.then(result=>{
+			res.send('ok')
+		})
+	}
 });
 
 //用户登录
@@ -54,7 +71,7 @@ router.post("/login",(req,res)=>{
 			 res.json(result);
 		}else{
 			result.code = 1;
-			result.message = '用户名和密码错误'
+			result.message = '用户名和密码错误';
 			res.json(result);
 		}
 	})
@@ -62,7 +79,6 @@ router.post("/login",(req,res)=>{
 
 //权限控制
 router.use((req,res,next)=>{
-	console.log(req.userInfo.isAdmin)
 	if(req.userInfo.isAdmin){
 		next()
 	}else{

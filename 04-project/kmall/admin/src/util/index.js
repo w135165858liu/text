@@ -5,7 +5,15 @@ export const request = (options)=>{
 			method:options.method || 'get',
 			url:options.url || '',
 			data:options.data || '',
-			withCredentials:true,
+			withCredentials:true
+		}
+		switch(params.method.toUpperCase()){
+			case 'GET':
+			case 'DELETE':
+				params.params = options.data
+				break
+			default:
+				params.data = options.data
 		}
 		axios(params)
 		.then(result=>{
@@ -18,6 +26,7 @@ export const request = (options)=>{
 				reject('没有权限')
 
 			}else{
+				console.log('a',result)
 				resolve(result.data)
 			}
 		})
