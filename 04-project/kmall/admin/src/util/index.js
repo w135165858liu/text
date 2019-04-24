@@ -26,7 +26,6 @@ export const request = (options)=>{
 				reject('没有权限')
 
 			}else{
-				console.log('a',result)
 				resolve(result.data)
 			}
 		})

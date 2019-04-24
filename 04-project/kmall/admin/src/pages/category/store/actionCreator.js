@@ -6,7 +6,7 @@
 */
 import * as types from './actionTypes.js'
 import { request } from 'util';
-import { GET_USERS } from 'api';
+import { GET_USERS,ADD_CATEGORY,GET_CATEGORIES } from 'api';
 const getPageRequestAction = ()=>{
 	return {
 		type:types.PAGE_REQUEST
@@ -17,9 +17,25 @@ const getPageDoneAction = ()=>{
 		type:types.PAGE_DONE
 	}
 }
+const getAddRequestAction = ()=>{
+	return {
+		type:types.PAGE_REQUEST
+	}
+}
+const getAddDoneAction = ()=>{
+	return {
+		type:types.PAGE_DONE
+	}
+}
 const setPageAction = (payload)=>{
 	return {
 		type:types.SET_PAGE,
+		payload
+	}
+}
+const setLevelOneCategoriesAction = (payload)=>{
+	return {
+		type:types.SET_LEVEL_ONE_CATEGORIES,
 		payload
 	}
 }
@@ -27,13 +43,13 @@ export const getPageAction = (page)=>{
 	return (dispatch)=>{
 		dispatch(getPageRequestAction())
 		request({
+			
 			url:GET_USERS,
 			data:{
 				page:page
 			}
 		})
 		.then(result=>{
-			console.log(result)
 			if(result.code == 0){
 				dispatch(setPageAction(result.data))
 			}
@@ -42,10 +58,42 @@ export const getPageAction = (page)=>{
 			console.log(err)
 		})
 		.finally((result)=>{
-			console.log(result)
 			dispatch(getPageDoneAction())
 		})
 	}
 }
-
-
+export const getAddAction = (values)=>{
+	return (dispatch)=>{
+		dispatch(getAddRequestAction())
+		request({
+			method:'post',
+			url:ADD_CATEGORY,
+			data:values
+		})
+		.then(result=>{
+			if(result.code == 0){
+				dispatch(setPageAction(result.data))
+			}
+		})
+		.catch(err=>{
+			console.log(err)
+		})
+		.finally((result)=>{
+			dispatch(getAddDoneAction())
+		})
+	}	
+}
+export const getLevelOneCategoriesAction = ()=>{
+	return (dispatch)=>{
+		request({
+			url:ADD_CATEGORY,
+			data:{
+				pid:0
+			}
+		})
+		.then(result=>{
+			console.log('aa::',result)
+			dispatch(setLevelOneCategoriesAction(result.data))
+		})
+	}
+}
