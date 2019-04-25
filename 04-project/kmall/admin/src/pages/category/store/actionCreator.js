@@ -2,11 +2,13 @@
 * @Author: TomChen
 * @Date:   2019-04-11 20:15:26
 * @Last Modified by:   TomChen
-* @Last Modified time: 2019-04-12 20:09:18
+* @Last Modified time: 2019-04-21 15:38:19
 */
 import * as types from './actionTypes.js'
-import { request } from 'util';
-import { GET_USERS,ADD_CATEGORY,GET_CATEGORIES } from 'api';
+import { message } from 'antd'
+import { request } from 'util'
+import { GET_USERS,ADD_CATEGORY,GET_CATEGORIES,UPDATE_CATEGORY_ORDER,UPDATE_CATEGORY_NAME } from 'api'
+
 const getPageRequestAction = ()=>{
 	return {
 		type:types.PAGE_REQUEST
@@ -19,12 +21,12 @@ const getPageDoneAction = ()=>{
 }
 const getAddRequestAction = ()=>{
 	return {
-		type:types.PAGE_REQUEST
+		type:types.ADD_REQUEST
 	}
 }
 const getAddDoneAction = ()=>{
 	return {
-		type:types.PAGE_DONE
+		type:types.ADD_DONE
 	}
 }
 const setPageAction = (payload)=>{
@@ -39,14 +41,14 @@ const setLevelOneCategoriesAction = (payload)=>{
 		payload
 	}
 }
-export const getPageAction = (page)=>{
+export const getPageAction = (pid,page)=>{
 	return (dispatch)=>{
 		dispatch(getPageRequestAction())
 		request({
-			
-			url:GET_USERS,
+			url:GET_CATEGORIES,
 			data:{
-				page:page
+				page:page,
+				pid:pid
 			}
 		})
 		.then(result=>{
@@ -57,7 +59,7 @@ export const getPageAction = (page)=>{
 		.catch(err=>{
 			console.log(err)
 		})
-		.finally((result)=>{
+		.finally(()=>{
 			dispatch(getPageDoneAction())
 		})
 	}
@@ -72,13 +74,18 @@ export const getAddAction = (values)=>{
 		})
 		.then(result=>{
 			if(result.code == 0){
-				dispatch(setPageAction(result.data))
+				if(result.data){
+					dispatch(setLevelOneCategoriesAction(result.data))
+				}
+				message.success('添加分类成功')
+			}else if(result.code == 1){
+				message.error(result.message)
 			}
 		})
 		.catch(err=>{
-			console.log(err)
+			message.error('添加分类失败')
 		})
-		.finally((result)=>{
+		.finally(()=>{
 			dispatch(getAddDoneAction())
 		})
 	}	
@@ -86,14 +93,82 @@ export const getAddAction = (values)=>{
 export const getLevelOneCategoriesAction = ()=>{
 	return (dispatch)=>{
 		request({
-			url:ADD_CATEGORY,
+			url:GET_CATEGORIES,
 			data:{
 				pid:0
 			}
 		})
 		.then(result=>{
-			console.log('aa::',result)
 			dispatch(setLevelOneCategoriesAction(result.data))
 		})
-	}
+	}	
 }
+export const getUpdateOrderAction = (pid,id,newOrder)=>{
+	return (dispatch,getState)=>{
+		const state = getState().get('category');
+		request({
+			method:'put',
+			url:UPDATE_CATEGORY_ORDER,
+			data:{
+				pid:pid,
+				id:id,
+				order:newOrder,
+				page:state.get('current')
+			}
+		})
+		.then(result=>{
+			if(result.code == 0){
+				message.success('更新排序成功')
+				dispatch(setPageAction(result.data))
+			}
+		})
+	}	
+}
+
+export const getShowUpdateNameModalAction = (updateId,updateName)=>{
+	return {
+		type:types.SHOW_UPDATE_NAME_MODAL,
+		payload:{
+			updateId,
+			updateName
+		}
+	}	
+}
+export const getCloseUpdateNameModalAction = ()=>{
+	return {
+		type:types.CLOSE_UPDATE_NAME_MODAL
+	}	
+}
+export const getUpdateNameChangeAction = (payload)=>{
+	return {
+		type:types.UPDATE_NAME_CHANGE,
+		payload
+	}	
+}
+export const getUpdateNameAction = (pid)=>{
+	return (dispatch,getState)=>{
+		const state = getState().get('category');
+		request({
+			method:'put',
+			url:UPDATE_CATEGORY_NAME,
+			data:{
+				pid:pid,
+				id:state.get('updateId'),
+				name:state.get('updateName'),
+				page:state.get('current')
+			}
+		})
+		.then(result=>{
+			if(result.code == 0){
+				message.success('更新名称成功')
+				dispatch(getCloseUpdateNameModalAction());
+				dispatch(setPageAction(result.data))
+			}
+		})
+	}	
+}
+
+
+
+
+

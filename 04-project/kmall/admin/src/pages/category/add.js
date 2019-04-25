@@ -33,7 +33,6 @@ class CategoryAdd extends Component{
 	render(){
 		const { getFieldDecorator } = this.props.form;
 		const { isAddFetching,leveOneCategories } = this.props;
-		console.log(leveOneCategories)
 		const formItemLayout = {
 			labelCol: {
 				xs: { span: 24 },
@@ -66,7 +65,7 @@ class CategoryAdd extends Component{
 			</Breadcrumb>
 			<Form {...formItemLayout}>
 			<Form.Item label="分类名称">
-			{getFieldDecorator('username', {
+			{getFieldDecorator('name', {
 				rules: [{ required: true, message: '请输入分类名称' }],
 			})(
 			<Input placeholder="分类名称" style={{width:300}} />
@@ -88,11 +87,11 @@ class CategoryAdd extends Component{
 			</Form.Item>
 			<Form.Item {...tailFormItemLayout}>
 			<Button
-			onClick={this.handleSubmit}
 			type="primary" 
 			loading={isAddFetching}
+			onClick={this.handleSubmit}
 			>
-			提交
+			提交 
 			</Button>
 			</Form.Item>
 			</Form>
