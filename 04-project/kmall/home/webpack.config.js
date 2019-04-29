@@ -10,9 +10,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 //css单独打包成一个文件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const publicPath = "/";
-const getHtmlConfig = (name)=>({
+const getHtmlConfig = (name,title)=>({
 	        template:'./src/view/'+name+'.html',//模板文件
 	        filename:name+'.html',//输出的文件名
+	        title:title,
 	        inject:true,//脚本写在那个标签里,默认是true(在body结束后)
 	        hash:true,//给生成的js/css文件添加一个唯一的hash
 	        chunks:['common',name]
@@ -29,7 +30,8 @@ module.exports = {
 		//chunk名称:文件路径
 		'index':'./src/pages/index/index.js',		
 		'user-login':'./src/pages/user-login/index.js',		
-		'common':'./src/pages/common/index.js',		
+		'user-register':'./src/pages/user-register/index.js',		
+		'common':'./src/pages/common/index.js',
 	},
 	//单入口写法二
 	//entry: './src/index.js',
@@ -47,7 +49,7 @@ module.exports = {
 		alias:{
 			pages:path.resolve(__dirname,'./src/pages'),
 			util:path.resolve(__dirname,'./src/util'),
-			api:path.resolve(__dirname,'./src/api'),
+			service:path.resolve(__dirname,'./src/service'),
 			common:path.resolve(__dirname,'./src/common'),
 			node_modules:path.resolve(__dirname,'./node_modules'),
 		}
@@ -93,8 +95,9 @@ module.exports = {
 		]
 	},
 	plugins:[
-	    new htmlWebpackPlugin(getHtmlConfig('index')),
-	    new htmlWebpackPlugin(getHtmlConfig('user-login')),
+	    new htmlWebpackPlugin(getHtmlConfig('index','kMALL-首页')),
+	    new htmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
+	    new htmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
 	    	filename:'css/[name].css'
@@ -103,5 +106,9 @@ module.exports = {
 	devServer:{
 		contentBase: './dist',//内容的目录
 		port:3002,//服务运行的端口
+		proxy:[{
+			context:['/user'],
+			target:'http://127.0.0.1:3000/',
+		}]
 	}			
 };
