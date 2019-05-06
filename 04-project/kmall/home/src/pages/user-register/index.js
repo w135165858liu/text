@@ -63,7 +63,7 @@ var page = {
 		if(validateResult.status){//验证通过
 			formErr.hide();
 			_user.register(formData,function(){
-				_util.goHome();
+				window.location.href = './result.html?type=register'
 			},function(msg){
 				formErr.show(msg)
 			})

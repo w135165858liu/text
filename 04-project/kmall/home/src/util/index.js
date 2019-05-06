@@ -38,6 +38,16 @@ var _util = {
 	goHome:function(){
 		window.location.href = '/'
 	},
+	getParamFromUrl:function(key){
+		//?type=register
+		//?name=tom&&type=register
+		//?name=tom&&type=register&&id=123
+		var query = window.location.search.substr(1);
+		var reg = new RegExp('(^|&)'+key+'=([^&]*)(&|$)')
+		var result = query.match(reg);
+		console.log(result)
+		return result ? result[2] : null
+	},
 	validate:function(value,type){
 		//非空验证
 		var value = $.trim(value)

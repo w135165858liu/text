@@ -32,6 +32,7 @@ module.exports = {
 		'user-login':'./src/pages/user-login/index.js',		
 		'user-register':'./src/pages/user-register/index.js',		
 		'common':'./src/pages/common/index.js',
+		'result':'./src/pages/result/index.js',
 	},
 	//单入口写法二
 	//entry: './src/index.js',
@@ -98,6 +99,7 @@ module.exports = {
 	    new htmlWebpackPlugin(getHtmlConfig('index','kMALL-首页')),
 	    new htmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
 	    new htmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+	    new htmlWebpackPlugin(getHtmlConfig('result','结果提示')),
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
 	    	filename:'css/[name].css'
