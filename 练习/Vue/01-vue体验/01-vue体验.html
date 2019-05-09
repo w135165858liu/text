@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div">
+		
+	</div>
+</body>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+var data = { a: 1 }
+let vm = new Vue({
+	el:'#div',
+	data:data
+})
+
+vm.$data === data // => true
+vm.$el === document.getElementById('example') // => true
+
+// $watch 是一个实例方法
+vm.$watch('a', function (newValue, oldValue) {
+  // 这个回调将在 `vm.a` 改变后调用
+})
+</script>
+</html>
