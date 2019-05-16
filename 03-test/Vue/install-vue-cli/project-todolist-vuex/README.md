@@ -1,4 +1,4 @@
-# project-org
+# project-todolist-vuex
 
 ## Project setup
 ```
