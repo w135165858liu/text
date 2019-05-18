@@ -3,10 +3,9 @@
 	<div class="App">
 		<!--使用组件-->
 		<h3>To Do List</h3>
-		<Header :addTodos="addTodos" />
-		<List :todos="todos" :delTodo="delTodo" />
+		<Header />
+		<List />
 		<Footer 
-			:todos="todos" 
 			:selectAllTodo="selectAllTodo" 
 			:delAllDoneTodo="delAllDoneTodo" 
 		/>
@@ -26,7 +25,7 @@
 			List,
 			Footer
 		},
-		data(){
+		/*data(){
 			return {
 				todos:[
 					{task:'吃饭',done:false}	,
@@ -34,9 +33,9 @@
 					{task:'看电影',done:true}	
 				]
 			}
-		},
+		},*/
 		methods:{
-			addTodos(todo){
+			addTodo(todo){
 				this.todos.unshift(todo)
 			},
 			delTodo(index){
