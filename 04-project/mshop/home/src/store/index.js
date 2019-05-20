@@ -6,7 +6,7 @@ import mutations from './mutations.js'
 import getters from './getters.js'
 import state from './state.js'
 
-
+//声明
 Vue.use(Vuex);
 
 

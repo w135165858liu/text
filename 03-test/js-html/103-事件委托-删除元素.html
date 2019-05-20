@@ -21,13 +21,13 @@
 	</div>
 </body>
 <script>
-	var oUl = document.get
-	var aLi = document.querySelectorAll('li');
-	var aA = document.querySelectorAll('a');
-	for(var i = 0 ;i<aLi.length ;i++){
-		aA[i].onclick = function(ev){
-			console.log(ev.target)
+	var oUl = document.getElementsByTagName('ul')[0]
+	var aA = document.getElementsByTagName('a')
+
+	oUl.addEventListener('click',function(ev){
+		if(ev.target.className == 'del'){
+			oUl.removeChild(ev.target.parentNode);
 		}
-	}
+	})
 </script>
 </html>
