@@ -25,7 +25,7 @@
 						<img class="product-image" :src="product.image" alt="">
 						<div class="product-content">
 							<h4 class="product-name">{{product.name}}</h4>
-							<p class="product-price">{{product.price}}</p>
+							<p class="product-price">{{ product.price }}</p>
 							<span class="btn-buy">购买</span>
 						</div>
 					</li>		
@@ -44,6 +44,7 @@
 	export default{
 		name:'Home',
 		mounted(){
+
 			new Swiper ('.swiper-container', {
 				// 循环模式选项
 				loop: true,
