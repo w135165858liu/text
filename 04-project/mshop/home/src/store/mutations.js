@@ -1,7 +1,9 @@
-
+import {
+	GET_HOME_PRODUCTS
+} from './types.js'
 
 export default {
-	getHomeProducts(state,payload){
+	[GET_HOME_PRODUCTS](state,payload){
 		state.homeProducts = payload.homeProducts
 	}
 }

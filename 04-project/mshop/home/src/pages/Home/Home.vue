@@ -38,6 +38,9 @@
 	import Swiper from 'swiper';
 	import 'swiper/dist/css/swiper.min.css';
 	import { mapState } from 'vuex'
+	import {
+		GET_HOME_PRODUCTS
+	} from '../../store/types.js'
 	export default{
 		name:'Home',
 		mounted(){
