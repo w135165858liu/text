@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div id="app">
-		<a href="www.baidu.com"></a>
+		<a v-bind:href="baiduUrl">百度</a>
 	</div>
 </body>
 <script src="node_modules/vue/dist/vue.js"></script>
@@ -14,5 +14,9 @@
 	let vm = new Vue({
 		el:'#app',
 		data:{
-			baiduUrl:'www.baidu.com'
-	
+			baiduUrl:'https://www.baidu.com'
+		}
+	})
+</script>
+
+</html>
