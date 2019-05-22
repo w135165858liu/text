@@ -2,8 +2,7 @@
 	<div class="TabBar">
 		<ul class="tab-bar-wrap">
 			<li class="tab-bar-item">
-				<router-link class="tab-bar-link" to="/home"
-				:class="{active:$route.path.includes('/home')}">
+				<router-link class="tab-bar-link" to="/home" :class="{active:$route.path.includes('/home')}">
 					<i class="fa fa-home"></i>
 					<span>首页</span>
 				</router-link>
@@ -19,19 +18,19 @@
 					<i class="fa fa-user"></i>
 					<span>个人中心</span>
 				</router-link>
-			</li>
+			</li>						
 		</ul>
 	</div>
 </template>
 <script>
 	export default {
-		name:'TabBar'
+		name:"TabBar",
 	}
 </script>
 <style scoped lang="less">
 	.TabBar{
 		position: fixed;
-		left: 0;
+		left:0;
 		bottom: 0;
 		width: 100%;
 		.tab-bar-wrap{
@@ -41,8 +40,7 @@
 			background-color: #ccc;
 			.rem(padding,10,0);
 			.tab-bar-link{
-				-webkit-tap-highlight-color:rgba(0,0,0,0);
-				.rem(font-size,16);
+				.rem(font-size,18);
 				display: flex;
 				flex-direction: column;
 				text-align: center;

@@ -1,9 +1,15 @@
+/*
+* @Author: TomChen
+* @Date:   2019-04-23 19:31:31
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-04-26 18:20:26
+*/
 require('pages/common/footer')
 require('pages/common/logo')
 require('./index.css')
 var _util = require('util')
 var _user = require('service/user')
-var formErr =  {
+var formErr = {
 	show:function(msg){
 		$('.error-item')
 		.show()
@@ -14,7 +20,7 @@ var formErr =  {
 		$('.error-item')
 		.hide()
 		.find('.error-msg')
-		.text('')
+		.text('')		
 	}
 }
 var page = {
@@ -37,20 +43,20 @@ var page = {
 		//1.获取数据
 		var formData = {
 			username:$.trim($('[name="username"]').val()),
-			password:$.trim($('[name="password"]').val()),
+			password:$.trim($('[name="password"]').val())
 		}
 		//2.验证数据
 		var validateResult = this.validate(formData)
 		//3.发送请求
 		if(validateResult.status){//验证通过
-			formErr.hide();
+			formErr.hide()
 			_user.login(formData,function(){
-				_util.goHome();
+				window.location.href = _util.getParamFromUrl('redirect') || "/"
 			},function(msg){
 				formErr.show(msg)
 			})
 		}
-		else{//验证失败	
+		else{//验证失败
 			formErr.show(validateResult.msg)
 		}
 	},
@@ -78,13 +84,12 @@ var page = {
 		if(!_util.validate(formData.password,'password')){
 			result.msg = '密码格式不正确'
 			return result;
-		}
+		}		
 		result.status = true;
 		return result;
+
 	}
 }
-
 $(function(){
 	page.init();
 })
-

@@ -3,35 +3,34 @@
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="../../assets/images/a1.png" alt="">
+					<img src="../../assets/images/s1.jpg" alt="">
 				</div>
 				<div class="swiper-slide">
-					<img src="../../assets/images/a2.png" alt="">
+					<img src="../../assets/images/s2.jpg" alt="">
 				</div>
 				<div class="swiper-slide">
-					<img src="../../assets/images/a3.png" alt="">
+					<img src="../../assets/images/s3.jpg" alt="">
 				</div>
 			</div>
 			<!-- 如果需要分页器 -->
 			<div class="swiper-pagination"></div>
 		</div>
 		<!--首页商品列表-->
-		<ul class="product-wrap" v-if="homeProducts.length>0">
-			<!--电器-->
-			<li class="product-floor" v-for="(floor,floorIndex) in homeProducts">
-				<h3 class="floor-title">{{ floor.title }}</h3>
+		<ul class="product-wrap" v-if="homeProducts.length > 0">
+			<li class="product-floor" v-for="(floor,floorIndex) in homeProducts" :key="floorIndex">
+				<h3 class="floor-title">{{floor.title}}</h3>
 				<ul class="product-list">
 					<li class="product-item" v-for="(product,productIndex) in floor.products" :key="productIndex">
 						<img class="product-image" :src="product.image" alt="">
 						<div class="product-content">
 							<h4 class="product-name">{{product.name}}</h4>
-							<p class="product-price">{{ product.price | formatPrice}}</p>
+							<p class="product-price">{{product.price | formatPrice}}</p>
 							<span class="btn-buy">购买</span>
 						</div>
-					</li>		
+					</li>														
 				</ul>
 			</li>		
-		</ul>	
+		</ul>		
 	</div>
 </template>
 <script>
@@ -41,10 +40,9 @@
 	import {
 		GET_HOME_PRODUCTS
 	} from '../../store/types.js'
-	export default{
+	export default {
 		name:'Home',
 		mounted(){
-
 			new Swiper ('.swiper-container', {
 				// 循环模式选项
 				loop: true,
@@ -55,8 +53,7 @@
 					clickable:true
 				},
 			})
-			this.$store.dispatch('getHomeProducts')
-
+			this.$store.dispatch(GET_HOME_PRODUCTS)			
 		},
 		computed:{
 			...mapState(['homeProducts'])
@@ -97,7 +94,6 @@
 							.rem(height,100);
 						}
 						.product-content{
-
 							.rem(height,100);
 							.rem(width,125);
 							.product-name{
@@ -105,13 +101,13 @@
 								.rem(line-height,20);
 								.rem(font-size,12);
 								overflow: hidden;
-								text-align: center;
+								text-align: left;
 								color: #111;
 							}
 							.product-price{
 								.rem(line-height,20);
 								.rem(font-size,18);
-								text-align: center;
+								text-align: left;
 								color: #f21;
 							}
 							.btn-buy{
@@ -123,7 +119,6 @@
 								background-color: #f21;
 								color: #fff;
 								border-radius: 5px;
-								margin: 0 auto;
 								margin-top: 10px;
 							}
 						}

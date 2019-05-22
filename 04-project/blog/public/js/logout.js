@@ -13,7 +13,7 @@
 		.done(function(result){
 			if(result.status == 0){//成功
 				// window.location.reload()
-				window.location.href = "/";
+				window.location.href = "/"
 			}else{//失败
 				$err.html(result.message);
 			}			

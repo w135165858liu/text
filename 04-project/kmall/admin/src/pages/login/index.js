@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2019-04-09 19:29:30
 * @Last Modified by:   TomChen
-* @Last Modified time: 2019-04-15 20:58:01
+* @Last Modified time: 2019-04-18 19:14:40
 */
 
 import React,{ Component } from 'react'
@@ -17,7 +17,6 @@ import { connect } from 'react-redux'
 //3.而'./store/index.js'中的actionCreator是引入'./actionCreator.js'中的所有action的别名
 import { actionCreator } from './store'
 
-import axios from 'axios'
 import {
   Form, Icon, Input, Button, message,
 } from 'antd';
@@ -28,43 +27,12 @@ class NormalLoginForm extends Component {
   constructor(props){
   	super(props);
   	this.handleSubmit = this.handleSubmit.bind(this)
-    /*
-  	this.state = {
-  		isFething:false
-  	}
-    */
   }
   handleSubmit(e){
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         this.props.handleLogin(values);
-        /*
-        isFething改变登录按钮记载状态样式
-        this.setState(()=>({isFething:true}))
-        发送ajax验证输入的数据
-        axios({
-        	method:'post',
-        	url:'http://127.0.0.1:3000/admin/login',
-        	data:values
-        })
-        .then(result=>{
-        	// console.log(result)
-        	if(result.data.code == 0){//登录成功
-        		//跳转到后台首页
-        		window.location.href = "/"
-        	}else if(result.data.code == 1){
-        		message.error(result.data.message)
-        	}
-        })
-        .catch(err=>{
-        	console.log(err);
-        	message.error('网络请求失败,请稍后再试')
-        })
-        .finally(()=>{
-        	this.setState(()=>({isFething:false}))
-        })
-        */
       }
     });
   }
@@ -113,9 +81,7 @@ const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLogin
 //5.因此state里面有每一个组件自己的数据
 //6.该方法返回一个对象,这个对象的属性会映射到connect方法返回的方法指定的UI组件上的this.props上
 const mapStateToProps = (state)=>{
-  //state是immutable数据指向顶层数据，state.get('login')是顶层数据的login:loginReducer，state.get('login').get('isFetching')是./store/reducer.js里面的state
 	return {
-
 		isFetching:state.get('login').get('isFetching')
 	}
 }
