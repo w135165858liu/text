@@ -3,10 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			background: yellow;
+		}
+		.error{
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	<div id="app">
-		<a v-bind:href="baiduUrl">百度</a>
+		<p :class="{active:true,error:true}">我是段落</p>
+		<p :class="{active:isActive,error:hasError}">我是段落</p>
+		<p :class="{active:isActive}" class="error">我是段落</p>
+		<p :class="['active','error']">我是:class="['active','error']"</p>
+		<p :class="[isActive ? 'active' : '','error']">我是:class="['active','error']"</p>
+		<p :class="classObj">我是:class="classObj"</p>
+		<p :class="classArr">我是:class="classArr"</p>
 	</div>
 </body>
 <script src="node_modules/vue/dist/vue.js"></script>
@@ -14,7 +32,15 @@
 	let vm = new Vue({
 		el:'#app',
 		data:{
-			baiduUrl:'https://www.baidu.com'
+			isActive:false,
+			hasError:true,
+			classObj:{
+				active:true,
+				error:false
+			},
+			classArr:[
+				'active','error'
+			]
 		}
 	})
 </script>

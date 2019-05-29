@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p style="background: yellow;color:red">我是段落</p>
+		<p :style="{backgroundColor:'yellow',color:'red'}">我是段落</p>
+		<p :style="{backgroundColor:bg,color:color}">我是段落</p>
+		<p :style="styleObj">我是段落</p>
+		<p :style="styleObj2">我是段落</p>
+		<p :style="[styleObj,styleObj2]">我是段落</p>
+		<p :style="styleArr">我是段落</p>
+	</div>
+</body>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#app',
+		data:{
+			bg:'yellow',
+			color:'red',
+			styleObj:{
+				backgroundColor:'yellow',
+				color:'red'
+			},
+			styleObj2:{
+				fontSize:'36px'
+			},
+			styleArr:[
+				{
+					backgroundColor:'yellow',
+					color:'red'					
+				},
+				{
+					fontSize:'36px'
+				}
+			]
+		}
+	})
+</script>
+
+</html>
