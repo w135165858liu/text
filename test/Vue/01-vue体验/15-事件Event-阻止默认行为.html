@@ -3,16 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-	</style>
 </head>
 <body>
 	<div id="app">
-		<p style="background: yellow;color:red">我是段落</p>
+		<a @click="goShopping($event)" href="https://www.taobao.com">去购物</a>
 	</div>
 </body>
 <script src="node_modules/vue/dist/vue.js"></script>
@@ -21,6 +15,11 @@
 		el:'#app',
 		data:{
 			
+		},
+		methods:{
+			goShopping(event){
+				event.preventDefault();
+			}
 		}
 	})
 </script>
