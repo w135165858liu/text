@@ -22,12 +22,12 @@
 <script>
 	$(function(){
 		var cl = console.log;
-		// $('ul').delegate('li','click',function(){
-		// 	console.log(this)
-		// })
-		$('ul').on('click','li',function(){
-			cl(this)
+		$('ul').delegate('li','click',function(){
+			console.log(this)
 		})
+		// $('ul').on('click','li',function(){
+		// 	cl(this)
+		// })
 		$('button').click(function(){
 			var oLi = document.createElement('li')
 			oLi.innerHTML = '我是生成的'

@@ -19,13 +19,16 @@
 				type:'GET',
 				dataType:'json',
 				success:function(data,statusMsg,jqXHR){
-					console.log(data,statusMsg,jqXHR)
+					console.log('11::',data)
+					console.log('22::',statusMsg)
+					console.log('33::',jqXHR)
 				},
 				error:function(jqXHR,statusMsg){
-					console.log(jqXHR,statusMsg)
+					console.log('00::',jqXHR,statusMsg)
 				},
 				complete:function(jqXHR,statusMsg){
-					console.log(jqXHR,statusMsg)
+					console.log('aa::',jqXHR)
+					console.log('bb::',statusMsg)
 				},
 				timeout:1000,
 				statusCode:{
